@@ -1,24 +1,31 @@
-import js from "@eslint/js";
-import typescript from "typescript-eslint";
-import prettierConfig from "eslint-config-prettier";
-import prettier from "eslint-plugin-prettier";
-import accessibility from "eslint-plugin-jsx-a11y";
-import functional from "eslint-plugin-functional";
-import react from "eslint-plugin-react";
-import hooks from "eslint-plugin-react-hooks";
-import unicorn from "eslint-plugin-unicorn";
-import next from "@next/eslint-plugin-next";
-import * as regexp from "eslint-plugin-regexp";
-import security from "eslint-plugin-security";
-import sonar from "eslint-plugin-sonarjs";
-import promise from "eslint-plugin-promise";
-import comments from "eslint-plugin-eslint-comments";
-import importx from "eslint-plugin-import-x";
-import tailwindcss from "eslint-plugin-tailwindcss";
-import simpleImportSort from "eslint-plugin-simple-import-sort";
+import { fixupPluginRules } from '@eslint/compat';
 
-import { fixupPluginRules } from "@eslint/compat";
+import js from '@eslint/js';
+import typescript from 'typescript-eslint';
+import prettierConfig from 'eslint-config-prettier';
+import prettier from 'eslint-plugin-prettier';
+import accessibility from 'eslint-plugin-jsx-a11y';
+import functional from 'eslint-plugin-functional';
+import react from 'eslint-plugin-react';
+import hooks from 'eslint-plugin-react-hooks';
+import unicorn from 'eslint-plugin-unicorn';
+import regexp from 'eslint-plugin-regexp';
+import security from 'eslint-plugin-security';
+import sonar from 'eslint-plugin-sonarjs';
+import promise from 'eslint-plugin-promise';
+import comments from 'eslint-plugin-eslint-comments';
+import importx from 'eslint-plugin-import-x';
+import tailwindcss from 'eslint-plugin-tailwindcss';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import next from '@next/eslint-plugin-next';
 
+const rulesMapper = (value, pluginsRules) => {
+  return Object.fromEntries(
+    Object.entries(pluginsRules).flatMap(([plugin, rules]) => {
+      return rules.map(rule => [`${plugin}/${rule}`, value]);
+    })
+  );
+};
 export default typescript.config(
   importx.configs.typescript,
   // comments.configs.recommended,
