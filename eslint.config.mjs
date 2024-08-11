@@ -26,16 +26,52 @@ const rulesMapper = (value, pluginsRules) => {
     })
   );
 };
+const namingConvention = [
+  'error',
+  {
+    selector: ['memberLike', 'property', 'parameter'],
+    format: ['camelCase'],
+  },
+  {
+    selector: ['typeLike'],
+    format: ['PascalCase'],
+  },
+  {
+    selector: ['function'],
+    format: ['camelCase', 'PascalCase'],
+  },
+  {
+    selector: 'variable',
+    types: ['boolean'],
+    format: ['camelCase'],
+    prefix: ['is', 'should', 'has', 'can', 'did', 'will'],
+  },
+  {
+    selector: [
+      'classProperty',
+      'objectLiteralProperty',
+      'typeProperty',
+      'method',
+      'accessor',
+      'enumMember',
+    ],
+    format: null,
+    modifiers: ['requiresQuotes'],
+  },
+  {
+    selector: 'variable',
+    modifiers: ['destructured'],
+    format: null,
+  },
+];
+
 export default typescript.config(
-  importx.configs.typescript,
-  // comments.configs.recommended,
-  // next.configs["recommended"],
-  promise.configs["flat/recommended"],
+  promise.configs['flat/recommended'],
   accessibility.flatConfigs.strict,
   sonar.configs.recommended,
   security.configs.recommended,
-  unicorn.configs["flat/all"],
-  regexp.configs["flat/all"],
+  unicorn.configs['flat/all'],
+  regexp.configs['flat/all'],
   js.configs.all,
   react.configs.flat.all,
   ...typescript.configs.strictTypeChecked,
@@ -54,28 +90,25 @@ export default typescript.config(
     plugins: {
       prettier,
       tailwindcss,
-      "simple-import-sort": simpleImportSort,
-      "import-x": importx,
-      "react-hooks": fixupPluginRules(hooks),
-      "eslint-comments": fixupPluginRules(comments),
-      "@next/next": fixupPluginRules(next),
-      // "@next/next": fixupPluginRules(next),
+      'simple-import-sort': simpleImportSort,
+      'import-x': importx,
+      'react-hooks': fixupPluginRules(hooks),
+      'eslint-comments': fixupPluginRules(comments),
+      '@next/next': fixupPluginRules(next),
     },
     settings: {
-      /** importx */
-      "import/parsers": {
-        "@typescript-eslint/parser": [".ts", ".tsx"],
+      'import/parsers': {
+        '@typescript-eslint/parser': ['.ts', '.tsx'],
       },
-      "import/resolver": {
+      'import/resolver': {
         typescript: {
           alwaysTryTypes: true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
-          project: "tsconfig.json",
+          project: 'tsconfig.json',
         },
       },
-      /** importx */
 
       react: {
-        version: "detect",
+        version: 'detect',
       },
     },
     rules: {
@@ -94,6 +127,7 @@ export default typescript.config(
           selector: ["memberLike", "property", "parameter"],
           format: ["camelCase"],
         },
+      '@typescript-eslint/naming-convention': namingConvention,
         {
           selector: ["typeLike"],
           format: ["PascalCase"],
