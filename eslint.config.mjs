@@ -121,45 +121,7 @@ export default typescript.config(
         "error",
         { default: "array-simple", readonly: "array-simple" },
       ],
-      "@typescript-eslint/naming-convention": [
-        "error",
-        {
-          selector: ["memberLike", "property", "parameter"],
-          format: ["camelCase"],
-        },
       '@typescript-eslint/naming-convention': namingConvention,
-        {
-          selector: ["typeLike"],
-          format: ["PascalCase"],
-        },
-        {
-          selector: ["function"],
-          format: ["camelCase", "PascalCase"],
-        },
-        {
-          selector: "variable",
-          types: ["boolean"],
-          format: ["camelCase"],
-          prefix: ["is", "should", "has", "can", "did", "will"],
-        },
-        {
-          selector: [
-            "classProperty",
-            "objectLiteralProperty",
-            "typeProperty",
-            "method",
-            "accessor",
-            "enumMember",
-          ],
-          format: null,
-          modifiers: ["requiresQuotes"],
-        },
-        {
-          selector: "variable",
-          modifiers: ["destructured"],
-          format: null,
-        },
-      ],
       "@typescript-eslint/class-methods-use-this": "error",
       "@typescript-eslint/consistent-type-definitions": ["error", "type"],
       "@typescript-eslint/consistent-type-imports": [
@@ -262,6 +224,8 @@ export default typescript.config(
       "unicorn/prevent-abbreviations": "off",
       "simple-import-sort/exports": "error",
       "simple-import-sort/imports": "error",
+      "eslint-comments/require-description": "error",
+      "eslint-comments/no-unused-disable": "error",
     },
   },
   {
