@@ -1,5 +1,3 @@
-/* eslint "@typescript-eslint/ban-types": "off" -- Would otherwise error and flag the two types below */
-
 // These types are for debugging purposes only.
 
 /** Expands a type by one level */
@@ -18,5 +16,7 @@ type ExpandRecursively<T> = T extends (...args: infer A) => infer R
       : never
     : T;
 
-/** Hide implementation details like Omit<T, K> and instead show the object type */
-type Resolve<T> = T extends Function ? T : { [K in keyof T]: T[K] };
+/** Hide implementation details like `Omit<T, K>` and instead show the object type */
+type Resolve<T> = T extends (...args: never) => unknown
+  ? T
+  : { [K in keyof T]: T[K] };
