@@ -34,12 +34,12 @@ function PostLayout({ params }: { readonly params: { slug: string } }) {
   const MDXContent = useMDXComponent(post.body.code);
 
   return (
-    <div className="flex flex-col items-center">
-      <h1>{post.title}</h1>
+    <div className="grid grid-cols-[1fr_65ch_1fr] grid-rows-[2rem_2rem_1fr] flex-col items-center">
+      <h1 className="col-span-full">{post.title}</h1>
       <time dateTime={post.date}>
         {format(parseISO(post.date), "LLLL d, yyyy")}
       </time>
-      <article className="max-w-prose">
+      <article className="col-start-2 col-end-2 row-start-3">
         <MDXContent components={mdxComponents} />
       </article>
     </div>
