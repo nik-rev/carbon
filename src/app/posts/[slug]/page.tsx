@@ -1,11 +1,8 @@
 import { allPosts } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
 import { type MDXComponents } from "mdx/types";
-import { type Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import { MDXRemote } from "next-mdx-remote/rsc";
 
 export const generateStaticParams = () =>
   allPosts.map((post) => ({ slug: post._raw.flattenedPath }));
@@ -25,10 +22,10 @@ export const generateMetadata = ({ params }: { params: { slug: string } }) => {
 };
 
 const mdxComponents: MDXComponents = {
-  a: ({ href, children }) => <Link href={href!}>{children}</Link>,
+  h1: ({ children }) => <h1 className="bg-red-500">{children}</h1>,
 };
 
-async function PostLayout({ params }: { readonly params: { slug: string } }) {
+function PostLayout({ params }: { readonly params: { slug: string } }) {
   const post = allPosts.find(
     (mdxPost) => mdxPost._raw.flattenedPath === params.slug,
   );

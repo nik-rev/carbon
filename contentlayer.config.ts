@@ -1,4 +1,10 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import { s } from "hastscript";
+import rehypeAutolinkHeadings, {
+  type Options as AutolinkOptions,
+} from "rehype-autolink-headings";
+import highlight from "rehype-highlight";
+import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 
 export const Post = defineDocumentType(() => ({
