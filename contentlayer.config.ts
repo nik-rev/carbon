@@ -1,9 +1,6 @@
+import a11yEmoji from "@fec/remark-a11y-emoji";
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
-import { s } from "hastscript";
-import rehypeAutolinkHeadings, {
-  type Options as AutolinkOptions,
-} from "rehype-autolink-headings";
-import highlight from "rehype-highlight";
+import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 
@@ -37,6 +34,8 @@ export default makeSource({
   contentDirPath: "src/posts",
   documentTypes: [Post],
   mdx: {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [remarkGfm, a11yEmoji],
+    // @ts-expect-error -- No control over this
+    rehypePlugins: [rehypeSlug, rehypeHighlight],
   },
 });

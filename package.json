@@ -9,14 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fec/remark-a11y-emoji": "^4.0.2",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
     "@next/mdx": "^14.2.5",
     "@types/mdx": "^2.0.13",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "contentlayer": "^0.3.4",
     "date-fns": "^3.6.0",
     "gray-matter": "^4.0.3",
     "hastscript": "^9.0.0",
+    "lucide-react": "^0.429.0",
     "next": "^14.2.5",
     "next-contentlayer": "^0.3.4",
     "next-mdx-remote": "^5.0.0",
@@ -26,9 +30,13 @@
     "rehype-highlight": "^7.0.0",
     "rehype-pretty-code": "^0.13.2",
     "rehype-slug": "^6.0.0",
-    "remark-gfm": "^3.0.1"
+    "remark-abbr": "^1.4.2",
+    "remark-gfm": "^3.0.1",
+    "tailwind-merge": "^2.5.2",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@catppuccin/highlightjs": "^0.2.2",
     "@tailwindcss/typography": "^0.5.14",
     "@total-typescript/ts-reset": "^0.5.1",
     "@types/node": "^20.16.1",
