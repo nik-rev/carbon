@@ -1,6 +1,107 @@
 ---
 title: okie dokie
 date: 2022-03-11
+excerpt: This is my first post
+tags: [next.js, blog, static blog, tailwind, mdx]
 ---
 
-This is my first blog post.
+# Exploring MDX Components with GitHub Flavored Markdown
+
+MDX (Markdown with JSX) is a powerful way to write content using Markdown syntax while also enabling you to include React components. In this post, we'll explore how to use Markdown and GitHub Flavored Markdown (GFM) features that map to HTML components.
+
+## Headings
+
+Markdown supports various heading levels:
+
+# This is an H1
+## This is an H2
+### This is an H3
+#### This is an H4
+##### This is an H5
+###### This is an H6
+
+## Paragraphs
+
+Regular text in Markdown automatically converts to paragraphs.
+
+This is a paragraph using standard Markdown.
+
+## Lists
+
+You can create unordered and ordered lists:
+
+- Item 1
+- Item 2
+- Item 3
+
+1. First
+2. Second
+3. Third
+
+## Blockquotes
+
+You can create blockquotes by using the `>` character:
+
+> This is a blockquote in Markdown.
+
+## Code Blocks
+
+Inline code is enclosed in backticks: `code example`.
+
+For multi-line code blocks, use triple backticks:
+
+```js
+const example = () => {
+  console.log("This is a code block");
+};
+```
+
+## Emphasis
+
+You can add emphasis with _italics_, **bold**, or ***bold italics***.
+
+## Horizontal Rule
+
+To create a horizontal rule, use three hyphens, asterisks, or underscores:
+
+---
+***
+___
+
+## Links and Images
+
+You can add links like this: [OpenAI](https://www.openai.com).
+
+To insert an image, use the following syntax:
+
+![Alt text for image](https://via.placeholder.com/150)
+
+## Tables
+
+You can create tables using GitHub Flavored Markdown:
+
+| Header 1 | Header 2 | Header 3 |
+| -------- | -------- | -------- |
+| Row 1    | Data 1   | Data 2   |
+| Row 2    | Data 3   | Data 4   |
+
+## Task Lists
+
+GFM also supports task lists:
+
+- [x] Task 1
+- [ ] Task 2
+- [ ] Task 3
+
+## Strikethrough
+
+Use `~~` to create strikethrough text:
+
+~~This text is strikethrough.~~
+
+## Footnotes
+
+You can also add footnotes in MDX[^1].
+
+[^1]: This is a footnote.
+

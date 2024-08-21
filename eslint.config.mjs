@@ -6,7 +6,7 @@ export default nikitarevenco(
     project: "tsconfig.json",
     tsconfigRootDir: import.meta.dirname,
   },
-  {},
+  { importxOverride: { "import/no-unresolved": "off" } },
   {
     files: ["**/*.mdx", "**/*.mdx/*"],
     ...mdx.flat,
