@@ -34,7 +34,7 @@ function PostLayout({ params }: { readonly params: { slug: string } }) {
   const MDXContent = useMDXComponent(post.body.code);
 
   return (
-    <div className="flex items-center flex-col">
+    <div className="flex flex-col items-center">
       <h1>{post.title}</h1>
       <time dateTime={post.date}>
         {format(parseISO(post.date), "LLLL d, yyyy")}
