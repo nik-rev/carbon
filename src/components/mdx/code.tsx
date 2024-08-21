@@ -9,7 +9,7 @@ export function CodeBlock({
   ...rest
 }: HTMLAttributes<HTMLPreElement>) {
   return (
-    <pre className={cn("my-8 rounded-md", className)} {...rest}>
+    <pre className={cn("my-8 w-full rounded-md", className)} {...rest}>
       {
         // @ts-expect-error -- children is always <code>
         cloneElement(children, { isInCodeBlock: true })
@@ -29,9 +29,9 @@ export function InlineCode({
     <code
       className={cn(
         {
-          "relative bg-slate-100 px-[0.3rem] py-[0.2rem] font-mono text-sm text-slate-900 dark:bg-slate-800 dark:text-slate-400":
+          "relative rounded-md bg-slate-100 px-[0.3rem] py-[0.2rem] font-mono text-sm text-slate-900 dark:bg-slate-800 dark:text-slate-400":
             isInlineCode,
-          "block w-[73ch] min-w-full -translate-x-[4ch] overflow-x-auto rounded-lg p-[4ch] shadow-inner":
+          "block w-[73ch] -translate-x-[2.4ch] overflow-x-auto rounded-lg p-[4ch] shadow-inner":
             isInCodeBlock,
         },
         className,
