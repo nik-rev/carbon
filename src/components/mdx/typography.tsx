@@ -73,7 +73,7 @@ export function Blockquote({
 }: HTMLAttributes<HTMLQuoteElement>) {
   return (
     <blockquote
-      className="mt-6 w-[73ch] -translate-x-[2.4ch] border-l-2 border-slate-300 pl-6 px-[4ch] italic text-slate-800 dark:border-slate-600 dark:text-slate-200"
+      className="mt-6 w-[73ch] -translate-x-[2.4ch] border-l-2 border-slate-300 px-[4ch] pl-6 italic text-slate-800 dark:border-slate-600 dark:text-slate-200"
       {...props}
     >
       <Quote className="-mb-4 fill-slate-300 stroke-slate-300" />

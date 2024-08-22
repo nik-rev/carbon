@@ -26,9 +26,11 @@ import {
   P,
   Ul,
 } from "./typography";
+import { Bleed } from "./container";
 
 export const mdxComponents: MDXComponents = {
   /* eslint ts/naming-convention: "off" -- We have to use PascalCase in order for our custom components to work */
+  Bleed,
   Note,
   Tip,
   Warning,
