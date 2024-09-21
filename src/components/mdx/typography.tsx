@@ -1,4 +1,5 @@
 import { Quote } from "lucide-react";
+import Link from "next/link";
 import { type HTMLAttributes } from "react";
 
 export function H1({ children, ...props }: HTMLAttributes<HTMLHeadingElement>) {
@@ -56,6 +57,18 @@ export function P({
   );
 }
 
+export function A({
+  children,
+  href,
+}: HTMLAttributes<HTMLAnchorElement> & { href: string }) {
+  /* eslint ts/no-non-null-assertion: "off" -- Realistally will always have an href */
+  return (
+    <Link href={href} className="text-blue-600 hover:underline">
+      {children}
+    </Link>
+  );
+}
+
 export function Asterisk({
   children,
   ...props
@@ -100,7 +113,7 @@ export function Ol({ children, ...props }: HTMLAttributes<HTMLOListElement>) {
 
 export function Li({ children, ...props }: HTMLAttributes<HTMLLIElement>) {
   return (
-    <li className="pl-2" {...props}>
+    <li className="pl-2 leading-7" {...props}>
       {children}
     </li>
   );

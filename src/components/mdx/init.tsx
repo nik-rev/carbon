@@ -25,6 +25,7 @@ import {
   Ol,
   P,
   Ul,
+  A,
 } from "./typography";
 import { Bleed } from "./container";
 
@@ -54,8 +55,7 @@ export const mdxComponents: MDXComponents = {
   tr: TableRow,
   th: TableHeader,
   td: TableData,
-  /* eslint ts/no-non-null-assertion: "off" -- Realistally will always have an href */
-  a: ({ children, href }) => <Link href={href!}>{children}</Link>,
+  a: A,
   img: (props) => (
     <Image
       sizes="100vw"

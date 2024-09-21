@@ -39,7 +39,7 @@ function PostLayout({ params }: { readonly params: { slug: string } }) {
       {/* <time dateTime={post.date}> */}
       {/*   {format(parseISO(post.date), "LLLL d, yyyy")} */}
       {/* </time> */}
-      <article className="flex max-w-[100vw] sm:max-w-prose flex-col bg-red-100 max-md:px-4">
+      <article className="flex max-w-[100vw] flex-col max-md:px-4 sm:max-w-prose">
         <MDXContent components={mdxComponents} />
       </article>
       {/* <article className="col-start-2 col-end-2 row-start-3"> */}
