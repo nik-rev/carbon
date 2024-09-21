@@ -63,7 +63,7 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "eslint": "^9.9.0",
-    "eslint-config-nikitarevenco": "link:/home/nikita/projects/eslint-config-nikitarevenco",
+    "eslint-config-nikitarevenco": "^2.3.0",
     "eslint-mdx": "^3.1.5",
     "eslint-plugin-mdx": "^3.1.5",
     "postcss": "^8.4.41",
