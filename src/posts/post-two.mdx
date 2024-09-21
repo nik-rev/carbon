@@ -28,7 +28,15 @@ Don't let the stack trace intimidate you. You don't need to read it all or even 
 
 The stack trace prints each line of code in your program that was executed before it crashed. <span id='most-useful-stack-trace-line'>The very first line of the stack trace</span> will generally provide the most useful information about the error your program encountered:
 
-<span id='stack-trace-first-line-info'>First, this line of the stack trace will tell you what specific line caused the runtime error. In the above example, the error was encountered in line 31 of the file `bottles.rb`. This line also provides a brief explanation of the error and the name of the error. (In this case, it's a [`NameError`](https://docs.ruby-lang.org/en/3.3/NameError.html)). And yes, in Ruby, [errors (Exceptions) are also objects](https://docs.ruby-lang.org/en/3.3/Exception.html).</span>
+<span id="stack-trace-first-line-info">
+  First, this line of the stack trace will tell you what specific line caused
+  the runtime error. In the above example, the error was encountered in line 31
+  of the file `bottles.rb`. This line also provides a brief explanation of the
+  error and the name of the error. (In this case, it's a
+  [`NameError`](https://docs.ruby-lang.org/en/3.3/NameError.html)). And yes, in
+  Ruby, [errors (Exceptions) are also
+  objects](https://docs.ruby-lang.org/en/3.3/Exception.html).
+</span>
 
 There you have it. At this point, you know where in your code the exception is being raised, and you know the type of error you're dealing with. You might even know what fixes need to be implemented in your code.
 
@@ -40,7 +48,7 @@ The debugging process is all about confirming assumptions about your code until 
 
 The easiest and quickest way to confirm your assumptions while debugging is by using `puts` statements to output the return value of variables, methods, calculations, iterations, or even entire lines of code to your terminal.
 
-Let's say that for *whatever* reason, we need to write a method that takes a string and checks if the string is an **isogram** (a word that has no repeating letters) or not. Perhaps it's a hostage situation that requires a pro debugger? Let's take a look at a first draft:
+Let's say that for _whatever_ reason, we need to write a method that takes a string and checks if the string is an **isogram** (a word that has no repeating letters) or not. Perhaps it's a hostage situation that requires a pro debugger? Let's take a look at a first draft:
 
 ```ruby
 def isogram?(string)
@@ -55,7 +63,7 @@ isogram?("Odin")
 #=> false
 ```
 
-Okay, that didn't work. We didn't expect that. Why? Because the string *Odin* is an isogram but we got `false`. The method didn't throw an exception, so we don't even have a line to start debugging at. Now what?
+Okay, that didn't work. We didn't expect that. Why? Because the string _Odin_ is an isogram but we got `false`. The method didn't throw an exception, so we don't even have a line to start debugging at. Now what?
 
 We know that `original_length == unique_length` returns `false` since it's the last statement, so why not place a `puts` on the line before that to see what `unique_length` is. As an alternative to `puts`, `p` is also commonly used for debugging; `p` is a combination of `puts` and `inspect` (more on that below). To better show the differences between what Ruby is printing to the terminal and returning, the examples in this section use the full IRB syntax, which is exactly what you'd see if you typed these commands into your own terminal IRB session.
 
@@ -75,7 +83,7 @@ irb(main):010:0> isogram?("Odin")
 => false
 ```
 
-*INTERESTING*. Using `p` on `unique_length` prints it to the console and shows us something must be wrong with how we called `#uniq` on `string_array` because we know that we have `4` unique characters in our input but we got `1` as output. For verification, let's place another `p` statement before the `unique_length` statement:
+_INTERESTING_. Using `p` on `unique_length` prints it to the console and shows us something must be wrong with how we called `#uniq` on `string_array` because we know that we have `4` unique characters in our input but we got `1` as output. For verification, let's place another `p` statement before the `unique_length` statement:
 
 ```ruby
 irb(main):001:1* def isogram?(string)
@@ -138,7 +146,7 @@ end
 isogram?("Odin")
 ```
 
-When your code executes and gets to `binding.pry`, it will open an IRB-like session in your terminal. You can then use that session to check the values of anything within the scope of where you included `binding.pry`. However, keep in mind that any code written *after* the `binding.pry` statement will not have been evaluated during the Pry session.
+When your code executes and gets to `binding.pry`, it will open an IRB-like session in your terminal. You can then use that session to check the values of anything within the scope of where you included `binding.pry`. However, keep in mind that any code written _after_ the `binding.pry` statement will not have been evaluated during the Pry session.
 
 For example, here `original_length` and `string_array` are in scope. However, `unique_length` is not in scope, because it is written after `binding.pry` and has not been evaluated yet.
 
@@ -196,22 +204,37 @@ There is far, far more that you can do with Pry-byebug, but that's beyond the sc
 
 ### How to start debugging
 
+<Note title="How do we do it?">
+
 Programs generally go wrong due to two main reasons:
 
 1. The program encounters an error and won't run. For example, a typo may cause a syntax error to be raised that causes the program to crash. In this case, Ruby provides a stack trace.
 
 1. The program runs but does not work the way you expect. For example, you expect a method to return a `2`, but it actually returns `6` when you run it. In this case, there is no stack trace.
 
+
+```jsx
+export function Note({ children }) {
+  return (
+    <aside className="-mx-4 my-4 block overflow-x-auto">
+      {children}
+    </aside>
+  );
+}
+```
+
 Obviously, if available, <span id='debugging-with-stack-trace'>the stack trace is the first place you should look when debugging.</span> <span id='debugging-without-stack-trace'>If there's no stack trace, then `puts` and Pry are the easiest and quickest tools you can use to get yourself back up and running.</span>
+
+</Note>
 
 ### Assignment
 
 1. Go through the Ruby Guides [Ruby Debugging](https://www.rubyguides.com/2015/07/ruby-debugging/) tutorial, which covers the same topics we went over, but in more depth.
-1. Read through the [Exceptions and Stack Traces](https://launchschool.com/books/ruby/read/more_stuff#readingstacktraces) section of Launch School's online book *Introduction to Programming with Ruby*.
+1. Read through the [Exceptions and Stack Traces](https://launchschool.com/books/ruby/read/more_stuff#readingstacktraces) section of Launch School's online book _Introduction to Programming with Ruby_.
 1. Check your [VSCode Extensions](https://code.visualstudio.com/docs/editor/extension-marketplace) and make sure the [Ruby LSP](https://marketplace.visualstudio.com/items?itemName=Shopify.ruby-lsp) and the [VSCode rdbg Ruby Debugger](https://marketplace.visualstudio.com/items?itemName=KoichiSasada.vscode-rdbg) extensions are installed.
 1. Now that you're familiar with the basics, we're going to have some fun with VSCode! Check the [VSCode rdbg Ruby Debugger documentation](https://github.com/ruby/vscode-rdbg) and generate the configuration inside your VSCode by going to `Run and Debug` and clicking on `create a launch.json file` then picking `Ruby (rdbg)`. Now, the configuration you want to use is `Debug current file with rdbg` that you can see at the top of the Debug sidebar. You can also invoke the last used debugging configuration with `F5`. `launch.json` files need to be created on a per project basis. If you're having a hard time figuring out how to navigate to your `launch.json` file in order to change the configuration, peek into [Debugging with VScode launch configurations portion](https://code.visualstudio.com/docs/editor/debugging#_launch-configurations). We encourage you to go through the entire article, though!
 1. Now that everything is installed, configured, let's create a new file which you can call `script.rb`. Next copy and paste the very first example in the [Debugging with pry-byebug](#debugging-with-pry-byebug) Section. Get rid of the `require pry-byebug` line and change `binding.pry` to `debugger`. Save the file.
-1. Click the `Run and Debug` button, open up the folder your script is located in, set a VSCode breakpoint somewhere within the function, and Run the debugger! This should all look very familiar to you, when you hit the VSCode breakpoint it should look similar to the breakpoints you used in the [JavaScript Developer Tools lesson](https://www.theodinproject.com/lessons/foundations-javascript-developer-tools). But *whoa*, once we hit the `debugger` breakpoint we got an interactive REPL to play around with! The best of both worlds! Play around with this, and feel free to reference [Debugging with VScode documentation](https://code.visualstudio.com/docs/editor/debugging) if you get stuck.
+1. Click the `Run and Debug` button, open up the folder your script is located in, set a VSCode breakpoint somewhere within the function, and Run the debugger! This should all look very familiar to you, when you hit the VSCode breakpoint it should look similar to the breakpoints you used in the [JavaScript Developer Tools lesson](https://www.theodinproject.com/lessons/foundations-javascript-developer-tools). But _whoa_, once we hit the `debugger` breakpoint we got an interactive REPL to play around with! The best of both worlds! Play around with this, and feel free to reference [Debugging with VScode documentation](https://code.visualstudio.com/docs/editor/debugging) if you get stuck.
 1. Although VSCode's debugger is a helpful tool that can make debugging simpler, many companies won't be using it - and will want you to be familiar with debugging using the concepts this lesson focused on: the stack trace, `puts`,`debug`, `pry-byebug`. Let's practice them by completing the debugging exercises from the [ruby-exercises repo](https://github.com/TheOdinProject/ruby-exercises) that you previously cloned.
 
 ### Knowledge check

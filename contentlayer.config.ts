@@ -1,5 +1,6 @@
 import remarkA11yEmoji from "@fec/remark-a11y-emoji";
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import GithubSlugger from "github-slugger";
 import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import remarkFlexibleContainers from "remark-flexible-containers";
@@ -20,6 +21,11 @@ export const Post = defineDocumentType(() => ({
     title: { type: "string", required: true },
     date: { type: "date", required: true },
     excerpt: { type: "string", required: true },
+    toc: {
+      type: "boolean",
+      required: false,
+      default: false,
+    },
     tags: { type: "list", of: { type: "string" }, required: true },
   },
   computedFields: {
@@ -33,6 +39,23 @@ export const Post = defineDocumentType(() => ({
         const WORDS_PER_MINUTE = 200;
         const numberOfWords = post.body.raw.split(/\s/v).length;
         return Math.ceil(numberOfWords / WORDS_PER_MINUTE);
+      },
+    },
+    headings: {
+      type: "json",
+      resolve: (doc) => {
+        const headingsRegex = /\n(?<flag>#{1,6})\s+(?<content>.+)/gv;
+        const slugger = new GithubSlugger();
+        return [...doc.body.raw.matchAll(headingsRegex)].map(({ groups }) => {
+          const flag = groups?.flag;
+          const content = groups?.content;
+          return {
+            level:
+              flag?.length === 1 ? "one" : flag?.length === 2 ? "two" : "three",
+            text: content,
+            slug: content ? slugger.slug(content) : null,
+          };
+        });
       },
     },
   },

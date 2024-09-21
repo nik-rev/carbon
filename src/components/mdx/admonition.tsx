@@ -1,33 +1,10 @@
-import { type HTMLAttributes } from "react";
+import { H4 } from "./typography";
 
-import {
-  Alert,
-  AlertDescription,
-  type alertMapper,
-  AlertTitle,
-} from "../ui/alert";
-
-function AdmonitionFactory(variant: keyof typeof alertMapper) {
-  return function Admonition({
-    children,
-    title,
-  }: HTMLAttributes<HTMLElement> & {
-    title: string;
-  }) {
-    return (
-      <Alert
-        {...{ variant }}
-        className="w-[73ch] translate-x-[-2.4ch] px-[4ch] my-8"
-      >
-        <AlertTitle>{title}</AlertTitle>
-        <AlertDescription>{children}</AlertDescription>
-      </Alert>
-    );
-  };
+export function Note({ children, title }) {
+  return (
+    <aside className="-mx-4 my-4 block overflow-x-auto border-l-4 border-l-blue-600 bg-blue-100 p-4 max-sm:text-sm md:-mx-8 md:my-8 md:p-8">
+      <H4 className="mt-0">{title}</H4>
+      {children}
+    </aside>
+  );
 }
-
-export const Note = AdmonitionFactory("note");
-export const Warning = AdmonitionFactory("warning");
-export const Caution = AdmonitionFactory("caution");
-export const Important = AdmonitionFactory("important");
-export const Tip = AdmonitionFactory("tip");

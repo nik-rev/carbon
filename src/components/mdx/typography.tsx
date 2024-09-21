@@ -1,4 +1,5 @@
-import { Quote } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Hash, Quote } from "lucide-react";
 import Link from "next/link";
 import { type HTMLAttributes } from "react";
 
@@ -24,21 +25,42 @@ export function H2({ children, ...props }: HTMLAttributes<HTMLHeadingElement>) {
   );
 }
 
-export function H3({ children, ...props }: HTMLAttributes<HTMLHeadingElement>) {
+export function LinkToHeading({ id }: { id: string }) {
+  return (
+    <a href={`#${id}`} className="md:hidden">
+      <Hash className="absolute -left-8 top-1 opacity-0 transition-opacity group-hover:opacity-100" />
+    </a>
+  );
+}
+
+export function H3({
+  children,
+  id,
+  ...props
+}: HTMLAttributes<HTMLHeadingElement>) {
   return (
     <h3
-      className="mt-8 scroll-m-20 text-2xl font-semibold tracking-tight"
+      className="group relative mt-8 scroll-m-20 text-2xl font-semibold tracking-tight"
+      id={id}
       {...props}
     >
+      <LinkToHeading id={id} />
       {children}
     </h3>
   );
 }
 
-export function H4({ children, ...props }: HTMLAttributes<HTMLHeadingElement>) {
+export function H4({
+  children,
+  className,
+  ...props
+}: HTMLAttributes<HTMLHeadingElement>) {
   return (
     <h4
-      className="mt-8 scroll-m-20 text-xl font-semibold tracking-tight"
+      className={cn(
+        "mt-8 scroll-m-20 text-xl font-semibold tracking-tight",
+        className,
+      )}
       {...props}
     >
       {children}
