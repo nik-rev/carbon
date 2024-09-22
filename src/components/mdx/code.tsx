@@ -1,29 +1,10 @@
 "use client";
 
 import { Check, Copy } from "lucide-react";
-import { Children, cloneElement, useState } from "react";
+import { cloneElement, useState } from "react";
 import { type HTMLAttributes } from "react";
 
-const extractTextFromChildren = (childrenOrText, text = "") => {
-  if (childrenOrText === null) {
-    return text;
-  }
-
-  if (typeof childrenOrText === "string") {
-    return extractTextFromChildren(null, text.concat(childrenOrText));
-  }
-
-  if ("props" in childrenOrText && "children" in childrenOrText.props) {
-    return extractTextFromChildren(childrenOrText.props.children, text);
-  }
-
-  if (Array.isArray(childrenOrText)) {
-    return childrenOrText.reduce(
-      (acc, kid) => acc.concat(extractTextFromChildren(kid)),
-      text,
-    );
-  }
-};
+import { extractTextFromChildren } from "@/lib/utils";
 
 export function CodeBlock({ children }: HTMLAttributes<HTMLPreElement>) {
   const [isCopying, setIsCopying] = useState(false);
@@ -41,17 +22,17 @@ export function CodeBlock({ children }: HTMLAttributes<HTMLPreElement>) {
   };
 
   return (
-    <pre className="relative -mx-4 my-4 overflow-x-scroll bg-mantle p-4 md:-mx-8 md:my-8 md:p-8">
+    <pre className="relative -mx-4 my-4 bg-mantle p-4 md:-mx-8 md:my-8 md:p-8">
+      <div className="overflow-x-scroll">
       {
         // @ts-expect-error -- will always be <code> element
         cloneElement(children, { isInCodeBlock: true })
-      }
-      <button onClick={handleCopy}>
-        {isCopying ? (
-          <Check className="absolute right-2 top-2 border-surface0 bg-crust" />
-        ) : (
-          <Copy className="absolute right-2 top-2 border-surface0 bg-crust" />
-        )}
+      }</div>
+      <button
+        onClick={handleCopy}
+        className="absolute right-4 top-4 md:right-8 md:top-8 hover:text-text transition-colors text-subtext0 bg-mantle transition-transform hover:scale-90"
+      >
+        {isCopying ? <Check className="text-green" /> : <Copy />}
       </button>
     </pre>
   );
