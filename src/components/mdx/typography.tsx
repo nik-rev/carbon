@@ -32,7 +32,7 @@ function Heading({ level, children, id, ...props }: HeadingProps) {
     1: { className: "text-4xl font-extrabold lg:text-5xl", iconSize: 32 },
     2: {
       className:
-        "mt-10 border-b border-text pb-2 text-3xl first:mt-0",
+        "mt-10 border-b border-text pb-2 text-3xl first:mt-0 group-hover:border-green",
       iconSize: 24,
     },
     3: { className: "relative mt-8 text-2xl", iconSize: 20 },
