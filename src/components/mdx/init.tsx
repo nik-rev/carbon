@@ -1,10 +1,11 @@
 import { type MDXComponents } from "mdx/types";
 import Image, { type ImageProps } from "next/image";
 
+import { langIcons, type Langs } from "@/lib/filetypes-icons";
+
 import { Separator } from "../ui/separator";
 import { Note } from "./admonition";
 import { CodeBlock, InlineCode } from "./code";
-import { Highlight } from "./highlight";
 import {
   Table,
   TableBody,
@@ -29,7 +30,6 @@ import {
 export const mdxComponents: MDXComponents = {
   /* eslint ts/naming-convention: "off" -- We have to use PascalCase in order for our custom components to work */
   Note,
-  Highlight,
   h1: H1,
   h2: H2,
   h3: H3,
@@ -57,6 +57,19 @@ export const mdxComponents: MDXComponents = {
     />
   ),
   hr: () => <Separator className="my-10" />,
+  figcaption: ({ children, ...rest }) => {
+    // @ts-expect-error -- data-language type may be passed, not in our control
+    const lang = rest["data-language"] as string;
+    const LangIcon = langIcons.get(lang);
+
+    return (
+      <figcaption {...rest}>
+        {LangIcon && <LangIcon className="inline" />}
+        {children}
+        {lang ? `.${lang}` : ""}
+      </figcaption>
+    );
+  },
   // sup: Asterisk,
   // figcaption: Figcaption,
   // br, a, em, hr, img, strong, del, input, section, sup
