@@ -1,4 +1,5 @@
 import remarkA11yEmoji from "@fec/remark-a11y-emoji";
+import { transformerCopyButton } from "@rehype-pretty/transformers";
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import GithubSlugger from "github-slugger";
 import rehypeHighlight from "rehype-highlight";
@@ -85,7 +86,12 @@ export default makeSource({
     // @ts-expect-error -- No control over this
     rehypePlugins: [
       rehypeSlug,
-      [rehypePrettyCode, { theme: "catppuccin-mocha" }],
+      [
+        rehypePrettyCode,
+        {
+          theme: "catppuccin-mocha",
+        },
+      ],
     ],
   },
 });

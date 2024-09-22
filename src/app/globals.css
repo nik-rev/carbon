@@ -110,3 +110,7 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
 aside [data-highlighted-line]::after {
   border-left: none;
 }
+
+[data-rehype-pretty-code-title] {
+  @apply bg-mantle text-text left-0 -mb-4 mt-4 md:-mb-8 md:mt-8 w-min px-4 md:px-6 py-1 rounded-t-lg font-mono md:text-sm
+}
