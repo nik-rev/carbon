@@ -10,6 +10,8 @@ export function CodeBlock({ children }: HTMLAttributes<HTMLPreElement>) {
   const [isCopying, setIsCopying] = useState(false);
 
   const handleCopy = () => {
+    console.log(children)
+
     const text = extractTextFromChildren(children);
 
     setIsCopying(true);
@@ -22,15 +24,15 @@ export function CodeBlock({ children }: HTMLAttributes<HTMLPreElement>) {
   };
 
   return (
-    <pre className="relative -mx-4 my-4 bg-mantle p-4 md:-mx-8 md:my-8 md:p-8">
-      <div className="overflow-x-scroll">
+    <pre className="relative">
+      <div className="overflow-x-scroll -mx-4 my-4 bg-mantle p-4 md:-mx-8 md:my-8 md:p-8">
       {
         // @ts-expect-error -- will always be <code> element
         cloneElement(children, { isInCodeBlock: true })
       }</div>
       <button
         onClick={handleCopy}
-        className="absolute right-4 top-4 md:right-8 md:top-8 hover:text-text transition-colors text-subtext0 bg-mantle transition-transform hover:scale-90"
+        className="absolute right-0 top-4 rounded-full -m-2 p-2 md:right-0 md:top-8 hover:text-text transition-colors text-subtext0 bg-mantle transition-transform hover:scale-90"
       >
         {isCopying ? <Check className="text-green" /> : <Copy />}
       </button>

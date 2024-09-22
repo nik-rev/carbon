@@ -57,12 +57,69 @@ Plug an ethernet cable in; the internet should work out of the box.
 
 ```bash
 iwctl
-device list # Choose the station/device name to connect to, e.g., `foo`, and the Wi-Fi name `bar`
+device list # Choose the station/device name to
 station foo connect bar
 
-# Verify internet connection, ensure you receive responses before proceeding
+# Verify internet connection, ensure you receive Verify internet connection, ensure you receive Verify internet connection, ensure you receive
 ping -c 4 archlinux.org
 exit
+```
+
+
+```js
+console.log('Hello, World!'); console.log('Hello, World!'); console.log('Hello, World!'); console.log('Hello, World!'); console.log('Hello, World!');
+console.log('Hello, World!'); console.log('Hello, World!'); console.log('Hello, World!'); console.log('Hello, World!'); console.log('Hello, World!');
+console.log('Hello, World!'); console.log('Hello, World!'); console.log('Hello, World!'); console.log('Hello, World!'); console.log('Hello, World!');
+console.log('Hello, World!'); console.log('Hello, World!'); console.log('Hello, World!'); console.log('Hello, World!'); console.log('Hello, World!');
+```
+
+```js
+const sum = (a, b) => a + b;
+
+console.log(sum(5, 3)); // 8
+```
+
+```js
+function factorial(n) {
+    if (n === 0) return 1;
+    return n * factorial(n - 1);
+}
+
+console.log(factorial(5)); // 120
+```
+
+```js
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+
+    speak() {
+        console.log(`${this.name} makes a sound.`);
+    }
+}
+
+class Dog extends Animal {
+    speak() {
+        console.log(`${this.name} barks.`);
+    }
+}
+
+const dog = new Dog('Rex');
+dog.speak(); // Rex barks.
+```
+
+```js
+function debounce(fn, delay) {
+    let timeoutId;
+    return function(...args) {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => fn(...args), delay);
+    };
+}
+
+const saveInput = debounce(() => console.log('Input saved!'), 500);
+document.querySelector('input').addEventListener('input', saveInput);
 ```
 
 ### Setting Up the Partitions
