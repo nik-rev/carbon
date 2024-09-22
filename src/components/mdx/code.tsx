@@ -7,9 +7,26 @@ import { cn } from "@/lib/utils";
 
 export function CodeBlock({ children }) {
   return (
-    <pre className="bg-bg0 -mx-4 my-4 overflow-x-scroll p-4 md:-mx-8 md:my-8 md:p-8">
-      {children}
+    <pre className="-mx-4 my-4 overflow-x-scroll bg-mantle p-4 md:-mx-8 md:my-8 md:p-8">
+      {cloneElement(children, { isInCodeBlock: true })}
     </pre>
+  );
+}
+
+export function InlineCode({
+  children,
+  isInCodeBlock,
+  ...rest
+}: {
+  children: React.ReactNode;
+  isInCodeBlock: boolean;
+}) {
+  return isInCodeBlock ? (
+    <code {...rest}>{children}</code>
+  ) : (
+    <code className="rounded-md bg-mantle border-surface0 px-[0.3rem] py-[0.2rem] align-middle font-mono text-sm border-[1.5px]">
+      {children}
+    </code>
   );
 }
 
