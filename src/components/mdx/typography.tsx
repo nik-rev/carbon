@@ -1,4 +1,4 @@
-import { Hash, Quote } from "lucide-react";
+import { Link as SvgLink, Quote } from "lucide-react";
 import Link from "next/link";
 import { type HTMLAttributes } from "react";
 
@@ -8,76 +8,81 @@ export function LinkToHeading({ id }: { id?: string }) {
   if (!id) throw new Error("no id specified");
 
   return (
-    <a href={`#${id}`} className="md:hidden">
-      <Hash className="absolute -left-8 top-1 opacity-0 transition-opacity group-hover:opacity-100" />
+    <a href={`#${id}`} className="inline-flex items-center md:hidden">
+      <SvgLink
+        className="inline text-accent opacity-0 group-hover:opacity-100"
+        size={20}
+      />
     </a>
   );
 }
 
-export function H1({
-  children,
-  id,
-  ...props
-}: HTMLAttributes<HTMLHeadingElement>) {
+type HeadingProps = HTMLAttributes<HTMLHeadingElement> & {
+  level: 1 | 2 | 3 | 4;
+  id?: string;
+  children: React.ReactNode;
+};
+
+function Heading({ level, children, id, ...props }: HeadingProps) {
+  const HeadingElement = `h${level}` as const;
+  const baseStyles =
+    "scroll-m-20 font-semibold tracking-tight transition-colors group-hover:text-accent";
+
+  const sizeStyles = {
+    1: { className: "text-4xl font-extrabold lg:text-5xl", iconSize: 32 },
+    2: {
+      className:
+        "mt-10 border-b border-b-slate-200 pb-2 text-3xl first:mt-0 dark:border-b-slate-700",
+      iconSize: 24,
+    },
+    3: { className: "relative mt-8 text-2xl", iconSize: 20 },
+    4: { className: "mt-8 text-xl", iconSize: 16 },
+  };
+
   return (
-    <h1
-      className="group scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl"
-      {...props}
-    >
-      <LinkToHeading id={id} />
+    <a href={`#${id}`} className="group">
+      <HeadingElement
+        className={`${baseStyles} ${sizeStyles[level].className}`}
+        {...props}
+      >
+        {children}
+        <SvgLink
+          className="mb-1 ml-2.5 inline text-accent opacity-0 transition-opacity group-hover:opacity-100"
+          size={sizeStyles[level].iconSize}
+        />
+      </HeadingElement>
+    </a>
+  );
+}
+export function H1({ children, ...rest }: HTMLAttributes<HTMLHeadingElement>) {
+  return (
+    <Heading level={1} {...rest}>
       {children}
-    </h1>
+    </Heading>
   );
 }
 
-export function H2({
-  children,
-  id,
-  ...props
-}: HTMLAttributes<HTMLHeadingElement>) {
+export function H2({ children, ...rest }: HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h2
-      className="group mt-10 scroll-m-20 border-b border-b-slate-200 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 dark:border-b-slate-700"
-      {...props}
-    >
-      <LinkToHeading id={id} />
+    <Heading level={2} {...rest}>
       {children}
-    </h2>
+    </Heading>
   );
 }
 
-export function H3({
-  children,
-  id,
-  ...props
-}: HTMLAttributes<HTMLHeadingElement>) {
+export function H3({ children, ...rest }: HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h3
-      className="group relative mt-8 scroll-m-20 text-2xl font-semibold tracking-tight"
-      id={id}
-      {...props}
-    >
-      <LinkToHeading id={id} />
+    <Heading level={3} {...rest}>
       {children}
-    </h3>
+    </Heading>
   );
 }
 
-export function H4({
-  children,
-  className,
-  ...props
-}: HTMLAttributes<HTMLHeadingElement>) {
+export function H4({ children, ...rest }: HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h4
-      className={cn(
-        "mt-8 scroll-m-20 text-xl font-semibold tracking-tight",
-        className,
-      )}
-      {...props}
-    >
+    <Heading level={4} {...rest}>
       {children}
-    </h4>
+    </Heading>
   );
 }
 
