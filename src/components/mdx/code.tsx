@@ -6,9 +6,8 @@ import { type HTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
 
 export function CodeBlock({ children }) {
-  console.log(children.props["data-line-numbers"] === "" ? children : null);
   return (
-    <pre className="-mx-4 my-4 overflow-x-scroll bg-[#eff1f5] p-4 md:-mx-8 md:my-8 md:p-8">
+    <pre className="bg-bg0 -mx-4 my-4 overflow-x-scroll p-4 md:-mx-8 md:my-8 md:p-8">
       {children}
     </pre>
   );

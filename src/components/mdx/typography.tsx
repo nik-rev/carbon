@@ -85,7 +85,7 @@ export function A({
 }: HTMLAttributes<HTMLAnchorElement> & { href: string }) {
   /* eslint ts/no-non-null-assertion: "off" -- Realistally will always have an href */
   return (
-    <Link href={href} className="text-blue-600 hover:underline">
+    <Link href={href} className="text-green hover:brightness-75">
       {children}
     </Link>
   );
