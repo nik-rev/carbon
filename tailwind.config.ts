@@ -19,6 +19,34 @@ const config = {
       },
     },
     extend: {
+      colors: {
+        rosewater: "hsl(var(--rosewater))",
+        flamingo: "hsl(var(--flamingo))",
+        pink: "hsl(var(--pink))",
+        mauve: "hsl(var(--mauve))",
+        red: "hsl(var(--red))",
+        maroon: "hsl(var(--maroon))",
+        peach: "hsl(var(--peach))",
+        yellow: "hsl(var(--yellow))",
+        green: "hsl(var(--green))",
+        teal: "hsl(var(--teal))",
+        sky: "hsl(var(--sky))",
+        sapphire: "hsl(var(--sapphire))",
+        blue: "hsl(var(--blue))",
+        lavender: "hsl(var(--lavender))",
+        text: "hsl(var(--text))",
+        "subtext-1": "hsl(var(--subtext-1))",
+        "subtext-0": "hsl(var(--subtext-0))",
+        "overlay-2": "hsl(var(--overlay-2))",
+        "overlay-1": "hsl(var(--overlay-1))",
+        "overlay-0": "hsl(var(--overlay-0))",
+        "surface-2": "hsl(var(--surface-2))",
+        "surface-1": "hsl(var(--surface-1))",
+        "surface-0": "hsl(var(--surface-0))",
+        base: "hsl(var(--base))",
+        mantle: "hsl(var(--mantle))",
+        crust: "hsl(var(--crust))",
+      },
       backgroundImage: {
         "highlight-gradient":
           "linear-gradient(45deg, hsl(30deg 98% 61%) 0%, hsl(33deg 100% 60%) 11%, hsl(36deg 100% 59%) 22%, hsl(39deg 100% 58%) 33%, hsl(42deg 100% 57%) 44%, hsl(45deg 100% 56%) 56%, hsl(47deg 100% 54%) 67%, hsl(50deg 100% 53%) 78%, hsl(53deg 100% 51%) 89%, hsl(55deg 100% 50%) 100%);",
@@ -49,4 +77,3 @@ const config = {
 } satisfies Config;
 
 export default config;
-

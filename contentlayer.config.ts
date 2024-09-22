@@ -2,6 +2,7 @@ import remarkA11yEmoji from "@fec/remark-a11y-emoji";
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import GithubSlugger from "github-slugger";
 import rehypeHighlight from "rehype-highlight";
+import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import remarkFlexibleContainers from "remark-flexible-containers";
 import remarkFlexibleMarkers from "remark-flexible-markers";
@@ -82,6 +83,9 @@ export default makeSource({
       [remarkFlexibleContainers, { containerTagName: "ruby" }],
     ],
     // @ts-expect-error -- No control over this
-    rehypePlugins: [rehypeSlug, rehypeHighlight],
+    rehypePlugins: [
+      rehypeSlug,
+      [rehypePrettyCode, { theme: "catppuccin-latte" }],
+    ],
   },
 });

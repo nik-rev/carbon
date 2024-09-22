@@ -48,7 +48,7 @@ export const mdxComponents: MDXComponents = {
   ol: Ol,
   li: Li,
   pre: CodeBlock,
-  code: InlineCode,
+  // code: InlineCode,
   table: Table,
   tbody: TableBody,
   thead: TableHead,

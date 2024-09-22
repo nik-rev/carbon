@@ -50,17 +50,43 @@ The easiest and quickest way to confirm your assumptions while debugging is by u
 
 Let's say that for _whatever_ reason, we need to write a method that takes a string and checks if the string is an **isogram** (a word that has no repeating letters) or not. Perhaps it's a hostage situation that requires a pro debugger? Let's take a look at a first draft:
 
-```ruby
-def isogram?(string)
-  original_length = string.length
-  string_array = string.downcase.split
-  unique_length = string_array.uniq.length
-  original_length == unique_length
-end
+```js showLineNumbers
+e
+e
+e
+e
+e
 
-isogram?("Odin")
+```
 
-#=> false
+```css {2-11} showLineNumbers
+code[data-line-numbers] {
+  counter-reset: line;
+}
+
+code[data-line-numbers] > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+
+  /* Other styling */
+  display: inline-block;
+  width: 0.75rem;
+  margin-right: 2rem;
+  text-align: right;
+  color: gray;
+}
+
+code[data-line-numbers-max-digits="2"] > [data-line]::before {
+  width: 1.25rem;
+}
+
+code[data-line-numbers-max-digits="3"] > [data-line]::before {
+  width: 1.75rem;
+}
+
+code[data-line-numbers-max-digits="4"] > [data-line]::before {
+  width: 2.25rem;
+}
 ```
 
 Okay, that didn't work. We didn't expect that. Why? Because the string _Odin_ is an isogram but we got `false`. The method didn't throw an exception, so we don't even have a line to start debugging at. Now what?
@@ -213,7 +239,7 @@ Programs generally go wrong due to two main reasons:
 1. The program runs but does not work the way you expect. For example, you expect a method to return a `2`, but it actually returns `6` when you run it. In this case, there is no stack trace.
 
 
-```jsx
+```jsx /aside/ {3}
 export function Note({ children }) {
   return (
     <aside className="-mx-4 my-4 block overflow-x-auto">
