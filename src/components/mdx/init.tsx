@@ -1,9 +1,8 @@
 import { type MDXComponents } from "mdx/types";
 import Image, { type ImageProps } from "next/image";
-import Link from "next/link";
 
 import { Separator } from "../ui/separator";
-import { Caution, Important, Note, Tip, Warning } from "./admonition";
+import { Note } from "./admonition";
 import { CodeBlock, InlineCode } from "./code";
 import { Highlight } from "./highlight";
 import {
@@ -15,7 +14,7 @@ import {
   TableRow,
 } from "./table";
 import {
-  Asterisk,
+  A,
   Blockquote as BlockQuote,
   H1,
   H2,
@@ -25,19 +24,12 @@ import {
   Ol,
   P,
   Ul,
-  A,
 } from "./typography";
-import { Bleed } from "./container";
 
 export const mdxComponents: MDXComponents = {
   /* eslint ts/naming-convention: "off" -- We have to use PascalCase in order for our custom components to work */
-  Bleed,
   Note,
-  Tip,
-  Warning,
-  Caution,
   Highlight,
-  Important,
   h1: H1,
   h2: H2,
   h3: H3,
@@ -48,6 +40,7 @@ export const mdxComponents: MDXComponents = {
   ol: Ol,
   li: Li,
   pre: CodeBlock,
+  // @ts-expect-error -- need variable to know if we should style it as an inline <code> or as a code block
   code: InlineCode,
   table: Table,
   tbody: TableBody,
@@ -63,7 +56,8 @@ export const mdxComponents: MDXComponents = {
       {...(props as ImageProps)}
     />
   ),
-  sup: Asterisk,
   hr: () => <Separator className="my-10" />,
+  // sup: Asterisk,
+  // figcaption: Figcaption,
   // br, a, em, hr, img, strong, del, input, section, sup
 };

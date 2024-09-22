@@ -1,35 +1,48 @@
-import { cn } from "@/lib/utils";
 import { Hash, Quote } from "lucide-react";
 import Link from "next/link";
 import { type HTMLAttributes } from "react";
 
-export function H1({ children, ...props }: HTMLAttributes<HTMLHeadingElement>) {
+import { cn } from "@/lib/utils";
+
+export function LinkToHeading({ id }: { id?: string }) {
+  if (!id) throw new Error("no id specified");
+
+  return (
+    <a href={`#${id}`} className="md:hidden">
+      <Hash className="absolute -left-8 top-1 opacity-0 transition-opacity group-hover:opacity-100" />
+    </a>
+  );
+}
+
+export function H1({
+  children,
+  id,
+  ...props
+}: HTMLAttributes<HTMLHeadingElement>) {
   return (
     <h1
-      className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl"
+      className="group scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl"
       {...props}
     >
+      <LinkToHeading id={id} />
       {children}
     </h1>
   );
 }
 
-export function H2({ children, ...props }: HTMLAttributes<HTMLHeadingElement>) {
+export function H2({
+  children,
+  id,
+  ...props
+}: HTMLAttributes<HTMLHeadingElement>) {
   return (
     <h2
-      className="mt-10 scroll-m-20 border-b border-b-slate-200 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 dark:border-b-slate-700"
+      className="group mt-10 scroll-m-20 border-b border-b-slate-200 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 dark:border-b-slate-700"
       {...props}
     >
+      <LinkToHeading id={id} />
       {children}
     </h2>
-  );
-}
-
-export function LinkToHeading({ id }: { id: string }) {
-  return (
-    <a href={`#${id}`} className="md:hidden">
-      <Hash className="absolute -left-8 top-1 opacity-0 transition-opacity group-hover:opacity-100" />
-    </a>
   );
 }
 
@@ -82,23 +95,13 @@ export function P({
 export function A({
   children,
   href,
-}: HTMLAttributes<HTMLAnchorElement> & { href: string }) {
-  /* eslint ts/no-non-null-assertion: "off" -- Realistally will always have an href */
+}: HTMLAttributes<HTMLAnchorElement> & { href?: string }) {
+  if (!href) throw new Error("no href specified");
+
   return (
     <Link href={href} className="text-accent hover:text-accent/90">
       {children}
     </Link>
-  );
-}
-
-export function Asterisk({
-  children,
-  ...props
-}: HTMLAttributes<HTMLParagraphElement>) {
-  return (
-    <span className="ml-[0.1rem] text-orange-500" {...props}>
-      *
-    </span>
   );
 }
 
@@ -108,7 +111,7 @@ export function Blockquote({
 }: HTMLAttributes<HTMLQuoteElement>) {
   return (
     <blockquote
-      className="mt-6 w-[73ch] -translate-x-[2.4ch] border-l-2 border-slate-300 px-[4ch] pl-6 italic text-slate-800 dark:border-slate-600 dark:text-slate-200"
+      className="mt-6 w-[73ch] translate-x-[-2.4ch] border-l-2 border-slate-300 px-[4ch] pl-6 italic text-slate-800 dark:border-slate-600 dark:text-slate-200"
       {...props}
     >
       <Quote className="-mb-4 fill-slate-300 stroke-slate-300" />
