@@ -18,14 +18,14 @@
   --blue: 220 91% 54%;
   --lavender: 231 97% 72%;
   --text: 234 16% 35%;
-  --subtext-1: 233 13% 41%;
-  --subtext-0: 233 10% 47%;
-  --overlay-2: 232 10% 53%;
-  --overlay-1: 231 10% 59%;
-  --overlay-0: 228 11% 65%;
-  --surface-2: 227 12% 71%;
-  --surface-1: 225 14% 77%;
-  --surface-0: 223 16% 83%;
+  --subtext1: 233 13% 41%;
+  --subtext0: 233 10% 47%;
+  --overlay2: 232 10% 53%;
+  --overlay1: 231 10% 59%;
+  --overlay0: 228 11% 65%;
+  --surface2: 227 12% 71%;
+  --surface1: 225 14% 77%;
+  --surface0: 223 16% 83%;
   --base: 220 23% 95%;
   --mantle: 220 22% 92%;
   --crust: 220 21% 89%;
@@ -39,7 +39,6 @@ code[data-line-numbers] > [data-line]::before {
   counter-increment: line;
   content: counter(line);
 
-  /* Other styling */
   display: inline-block;
   width: 0.75rem;
   margin-right: 2rem;
@@ -64,5 +63,16 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
 }
 
 [data-highlighted-line] {
-  background-color: red;
+  position: relative;
+}
+
+[data-highlighted-line]::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  border-left: 4px solid hsl(var(--green));
+  @apply bg-green/5;
 }

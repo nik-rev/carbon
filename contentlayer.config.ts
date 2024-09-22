@@ -85,7 +85,7 @@ export default makeSource({
     // @ts-expect-error -- No control over this
     rehypePlugins: [
       rehypeSlug,
-      [rehypePrettyCode, { theme: "catppuccin-latte" }],
+      [rehypePrettyCode, { theme: "everforest-light" }],
     ],
   },
 });
