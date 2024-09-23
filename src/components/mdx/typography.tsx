@@ -23,7 +23,7 @@ type HeadingProps = HTMLAttributes<HTMLHeadingElement> & {
   children: React.ReactNode;
 };
 
-function Heading({ level, children, id, ...props }: HeadingProps) {
+function Heading({ level, className, children, id, ...props }: HeadingProps) {
   const HeadingElement = `h${level}` as const;
   const baseStyles =
     "scroll-m-20 font-semibold tracking-tight transition-colors group-hover:text-accent";
@@ -42,7 +42,10 @@ function Heading({ level, children, id, ...props }: HeadingProps) {
   return (
     <a href={`#${id}`} className="group">
       <HeadingElement
-        className={`${baseStyles} ${sizeStyles[level].className}`}
+        className={cn(
+          `${baseStyles} ${sizeStyles[level].className}`,
+          className,
+        )}
         {...props}
       >
         {children}
