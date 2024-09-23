@@ -5,7 +5,7 @@ export function Table({
   ...props
 }: HTMLAttributes<HTMLTableElement>) {
   return (
-    <table className="w-full" {...props}>
+    <table className="w-full my-4 md:my-8" {...props}>
       {children}
     </table>
   );
@@ -31,7 +31,7 @@ export function TableRow({
 }: HTMLAttributes<HTMLTableRowElement>) {
   return (
     <tr
-      className="m-0 border-t border-slate-300 p-0 even:bg-slate-100 dark:border-slate-700 dark:even:bg-slate-800"
+      className="m-0 border-t border-surface0  p-0"
       {...props}
     >
       {children}
@@ -45,7 +45,7 @@ export function TableHeader({
 }: HTMLAttributes<HTMLTableCellElement>) {
   return (
     <th
-      className="border border-slate-200 px-4 py-2 text-left font-bold dark:border-slate-700 [&[align=center]]:text-center [&[align=right]]:text-right"
+      className="px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right"
       {...props}
     >
       {children}
@@ -59,7 +59,7 @@ export function TableData({
 }: HTMLAttributes<HTMLTableCellElement>) {
   return (
     <td
-      className="border border-slate-200 px-4 py-2 text-left dark:border-slate-700 [&[align=center]]:text-center [&[align=right]]:text-right"
+      className="px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right"
       {...props}
     >
       {children}
