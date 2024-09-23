@@ -111,6 +111,10 @@ aside [data-highlighted-line]::after {
   border-left: none;
 }
 
+::selection {
+  @apply bg-accent/30
+}
+
 [data-rehype-pretty-code-title] {
   @apply bg-mantle text-text left-0 -mb-4 mt-4 md:-mb-8 md:mt-8 w-max px-4 md:px-6 py-1 md:py-2 font-mono text-sm md:text-[1rem] flex justify-between items-center gap-2
 }

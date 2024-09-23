@@ -32,7 +32,7 @@ export function CodeBlock({ children }: HTMLAttributes<HTMLPreElement>) {
       }</div>
       <button
         onClick={handleCopy}
-        className="absolute right-0 top-4 rounded-full -m-2 p-2 md:right-0 md:top-8 hover:text-text transition-colors text-subtext0 bg-mantle transition-transform hover:scale-90"
+        className="absolute max-md:hidden right-0 top-4 md:right-0 md:top-8 hover:text-text transition-colors text-subtext0 bg-transparent transition-transform hover:scale-90"
       >
         {isCopying ? <Check className="text-green" /> : <Copy />}
       </button>
