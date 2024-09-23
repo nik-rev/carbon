@@ -1,11 +1,10 @@
-import { allPosts } from "contentlayer/generated";
+import { allPosts, type Post } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
 import { notFound } from "next/navigation";
 import { useMDXComponent } from "next-contentlayer/hooks";
 
 import { mdxComponents } from "@/components/mdx/init";
 import { Badge } from "@/components/ui/badge";
-import { Spotlight } from "@/components/ui/spotlight";
 
 export const generateStaticParams = () =>
   allPosts.map((post) => ({ slug: post._raw.flattenedPath }));
@@ -24,7 +23,7 @@ export const generateMetadata = ({ params }: { params: { slug: string } }) => {
   };
 };
 
-function SectionBubble({ post }) {
+function Hero({ post }: { post: Post }) {
   return (
     <div className="relative flex w-full flex-col justify-start">
       <span className="flex w-full flex-col items-center justify-center gap-12 bg-mantle">
@@ -32,18 +31,19 @@ function SectionBubble({ post }) {
           <h1 className="scroll-m-20 bg-gradient-to-b from-text to-subtext1 bg-clip-text pt-10 text-left text-4xl font-extrabold tracking-tight text-transparent lg:py-16 lg:text-5xl">
             {post.title}
           </h1>
-          <div className="space-x-2 mt-4">
+          <div className="mt-4 space-x-2">
             {post.tags.map((tag) => (
-              <Badge className="w-max">{tag}</Badge>
+              <Badge className="w-max" key={tag}>
+                {tag}
+              </Badge>
             ))}
           </div>
-          <time dateTime={post.date} className="my-8 text-subtext0">
+          <time dateTime={post.date} className="mb-6 mt-10 text-subtext1">
             {format(parseISO(post.date), "LLLL do, yyyy")}
           </time>
         </span>
       </span>
 
-      {/* Custom Divider */}
       <div className="mb-8 w-full overflow-hidden">
         <svg
           data-name="Layer 1"
@@ -75,7 +75,7 @@ function PostLayout({ params }: { readonly params: { slug: string } }) {
 
   return (
     <div className="flex flex-col items-center">
-      <SectionBubble post={post} />
+      <Hero post={post} />
       <article className="z-10 flex max-w-[100vw] flex-col max-md:px-4 sm:max-w-prose">
         <MDXContent components={mdxComponents} />
       </article>
