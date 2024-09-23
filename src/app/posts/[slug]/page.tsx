@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { useMDXComponent } from "next-contentlayer/hooks";
 
 import { mdxComponents } from "@/components/mdx/init";
+import { Badge } from "@/components/ui/badge";
 import { Spotlight } from "@/components/ui/spotlight";
 
 export const generateStaticParams = () =>
@@ -26,13 +27,20 @@ export const generateMetadata = ({ params }: { params: { slug: string } }) => {
 function SectionBubble({ post }) {
   return (
     <div className="relative flex w-full flex-col justify-start">
-      <span className="flex w-full flex-col justify-center bg-mantle items-center gap-12">
-        <h1 className="max-w-[656.5px] scroll-m-20 bg-gradient-to-b m-8 from-text to-subtext1 bg-clip-text pt-10 text-left text-4xl font-extrabold tracking-tight text-transparent lg:py-16 lg:text-5xl">
-          {post.title}
-        </h1>
-        <time dateTime={post.date} className="text-subtext0 mb-8">
-          {format(parseISO(post.date), "LLLL do, yyyy")}
-        </time>
+      <span className="flex w-full flex-col items-center justify-center gap-12 bg-mantle">
+        <span className="m-8 flex max-w-[656.5px] flex-col">
+          <h1 className="scroll-m-20 bg-gradient-to-b from-text to-subtext1 bg-clip-text pt-10 text-left text-4xl font-extrabold tracking-tight text-transparent lg:py-16 lg:text-5xl">
+            {post.title}
+          </h1>
+          <div className="space-x-2 mt-4">
+            {post.tags.map((tag) => (
+              <Badge className="w-max">{tag}</Badge>
+            ))}
+          </div>
+          <time dateTime={post.date} className="my-8 text-subtext0">
+            {format(parseISO(post.date), "LLLL do, yyyy")}
+          </time>
+        </span>
       </span>
 
       {/* Custom Divider */}
