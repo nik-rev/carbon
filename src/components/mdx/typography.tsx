@@ -26,16 +26,15 @@ type HeadingProps = HTMLAttributes<HTMLHeadingElement> & {
 function Heading({ level, className, children, id, ...props }: HeadingProps) {
   const HeadingElement = `h${level}` as const;
   const baseStyles =
-    "scroll-m-20 font-semibold tracking-tight transition-colors group-hover:text-accent";
+    "scroll-m-20 font-semibold tracking-tight transition-colors";
 
   const sizeStyles = {
     1: { className: "text-4xl font-extrabold lg:text-5xl", iconSize: 32 },
     2: {
-      className:
-        "mt-10 border-b border-text pb-2 text-3xl first:mt-0 group-hover:border-green",
+      className: "mt-24 pb-2 text-4xl text-green bg-gradient-to-b from-green to-subtext1/80 bg-clip-text",
       iconSize: 24,
     },
-    3: { className: "relative mt-8 text-2xl", iconSize: 20 },
+    3: { className: "relative mt-16 text-2xl", iconSize: 20 },
     4: { className: "mt-8 text-xl", iconSize: 16 },
   };
 
