@@ -1,6 +1,7 @@
 import remarkA11yEmoji from "@fec/remark-a11y-emoji";
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import GithubSlugger from "github-slugger";
+import readingTime from "reading-time";
 import prettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
@@ -27,13 +28,12 @@ export const Post = defineDocumentType(() => ({
       type: "string",
       resolve: (post) => `/posts/${post._raw.flattenedPath}`,
     },
+    /**
+     * Estimated number of minutes to read the post
+     * */
     readTime: {
-      type: "string",
-      resolve: (post) => {
-        const WORDS_PER_MINUTE = 200;
-        const numberOfWords = post.body.raw.split(/\s/v).length;
-        return Math.ceil(numberOfWords / WORDS_PER_MINUTE);
-      },
+      type: "number",
+      resolve: (post) => Math.round(readingTime(post.body.raw).minutes),
     },
     headings: {
       type: "json",

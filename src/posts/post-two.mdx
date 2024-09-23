@@ -49,20 +49,6 @@ Note that we included the `--save-dev` flag (you can also use `-D` as a shortcut
 
 Also notice that when these finished installing, a `node_modules` directory and a `package-lock.json` got auto-generated. `node_modules` is where Webpack's actual code (and a whole bunch of other stuff) lives, and `package-lock.json` is just another file npm uses to track package information.
 
-<div class="lesson-note" markdown="1">
-
-## src and dist
-
-When dealing with Webpack (and often with any other bundler or build tool), we have two very important directories: `src` (short for "source") and `dist` (short for "distribution"). We could technically call these directories whatever we want, but these names are conventions.
-
-`src` is where we keep all of our website's source code, essentially where all of our work will be done (with an exception being altering any configuration files in the root of the project). When we run Webpack to bundle our code, it will output the bundled files into the `dist` directory. The idea is that if someone were to fork or clone the project, they would not need the `dist` directory, as they'd just be able to run Webpack to build from `src` into their own `dist`. Similarly, to deploy our website, we would only need the `dist` code and nothing else. Keep that in mind! Work inside `src`, build into `dist`, then deploy from there!
-
-</div>
-
-## Bundling JavaScript
-
-<div class="lesson-note" markdown="1">
-
 ## Import file extensions
 
 Normally, with ESM, we need to specify file extensions when we import from other files (e.g. `"./greeting.js"`). With Webpack and many other bundlers, some file extensions like `.js` are optional, as Webpack will automatically check extensionless file paths for `.js` files by default (e.g. `"./greeting"`).
@@ -70,8 +56,6 @@ Normally, with ESM, we need to specify file extensions when we import from other
 This is a feature of Webpack, not ESM.
 
 In this lesson, examples with imports will always include the file extension where appropriate to be explicit.
-
-</div>
 
 Now that we've installed Webpack in our project directory, let's create a `src` directory with two JavaScript files inside it: `index.js` and `greeting.js`.
 
@@ -217,16 +201,6 @@ module.exports = {
 
 All this does is tell Webpack that if it encounters an imported file ending with `.css`, it should use the listed loaders to process that CSS file.
 
-<div class="lesson-note lesson-note--warning" markdown="1">
-
-## Loader order matters for CSS!
-
-Notice how we put `css-loader` **at the end** of the array. We **must** set this order and not the reverse.
-
-Webpack will run the loaders starting at the end, so we want it to read the CSS file into a string with `css-loader` first, then use `style-loader` to inject the JavaScript that applies the CSS in that string to the page. It wouldn't work the same the other way round.
-
-</div>
-
 Now that Webpack knows what to do with imported CSS files, let's add some CSS! Create a `src/styles.css` with the following:
 
 ```css
@@ -341,16 +315,6 @@ module.exports = {
 
 You might notice that when images are included when bundling, the output image file in `dist` has a different file name (it will likely be some jumble of numbers and letters). By default, Webpack gives your bundled image files a new name by hashing their contents. You do not need to know how this works, nor do you need to dig into the details of why, nor how to change it. You just need to be aware that this is expected behavior (it's to do with preventing issues with the browser cache and matching file names).
 
-<div class="lesson-note lesson-note--tip" markdown="1">
-
-## You only need to configure what you need
-
-You may not need everything we've mentioned. If your project does not have images with local file path sources in your HTML template, you do not need `html-loader` set up. If you aren't using any local images in your JavaScript, you won't need the image `asset/resource` rule set up.
-
-Similarly, in the future, you may end up working with things that need a special loader or plugin, such as custom fonts or preprocessors. You can always use Google or reference Webpack's documentation for instructions on what you'd need when that time comes.
-
-</div>
-
 ## Webpack dev server
 
 During this lesson, did you get a bit annoyed with having to run `npx webpack` to rebundle with every change? Fortunately, there are multiple solutions for this, and we will focus on what we think is the most useful option: `webpack-dev-server`. Install it as follows:
@@ -414,12 +378,6 @@ Secondly, by default, `webpack-dev-server` will only auto-restart when it detect
 
 Once set up, `npx webpack serve` will host our web page on `http://localhost:8080/`, which we can open in our browser and start working!
 
-<div class="lesson-note" markdown="1">
-
-Note that the webpack-dev-server only reads your webpack configuration when you start it. If you change the webpack config file while the dev server is running, it will not reflect those config changes. Use <kbd>Ctrl</kbd> + <kbd>C</kbd> in the terminal to kill it then rerun `npx webpack serve` to apply the new config.
-
-</div>
-
 ## Rounding up
 
 Yes, yes, this all might seem like a lot. You've gone from just having some basic HTML, CSS and JS files, and not needing much else to suddenly needing this loader, that plugin, this configuration file, etc. In the real world, as apps get more complex, we need tools that can improve our development experience while optimizing things in production. Even though we're not using all of the features available to us right now, a general understanding of what these sorts of tools are doing for us is valuable. Later in the curriculum, you will use different tools that abstract a lot of these underlying mechanisms away from us. Using them and having no clue what they're actually doing for you can make things harder for you when you eventually encounter a situation that actually needs some kind of manual configuration.
@@ -427,13 +385,6 @@ Yes, yes, this all might seem like a lot. You've gone from just having some basi
 In a later lesson, we will introduce some extra things that can make setting up and working with Webpack much quicker and more straightforward. For now, however, it's good to get a little manual practice in.
 
 ## Assignment
-
-<div class="lesson-content__panel" markdown="1">
-
-1. Start by reading the [Webpack concepts](https://webpack.js.org/concepts/) page to get a general understanding of some of the main terms.
-1. [Webpack's Asset Management guide](https://webpack.js.org/guides/asset-management/) goes through some examples of how to handle various kinds of assets, like CSS, images, and fonts. You'll see that its examples use `npm run build` to bundle the files; in these examples, that's the equivalent of `npx webpack`. We will go through npm scripts in a later lesson.
-
-</div>
 
 ## Knowledge check
 

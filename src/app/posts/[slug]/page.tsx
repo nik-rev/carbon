@@ -38,6 +38,7 @@ function Hero({ post }: { post: Post }) {
               </Badge>
             ))}
           </div>
+          {post.readTime}
           <time dateTime={post.date} className="mb-6 mt-10 text-subtext1">
             {format(parseISO(post.date), "LLLL do, yyyy")}
           </time>

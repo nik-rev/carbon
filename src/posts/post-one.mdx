@@ -153,25 +153,6 @@ Take a moment and guess what will happen to `object` and what will happen to `pr
 
 If you answered that the object counter would increase by 1, and the primitive counter wouldn't change, you're correct. Remember that the parameter `objectCounter` contains a _reference_ to the same object as the `object` variable we gave it, while `primitiveCounter` contains only a copy of the primitive value only.
 
-<div class="lesson-note" markdown="1">
-
-#### Reassigning object data type variables
-
-While mutating the object we have a reference to will affect all other variables that reference it, reassigning a variable won’t affect what the other variables refer to. For example:
-
-```javascript
-let animal = { species: "dog" };
-let dog = animal;
-
-// reassigning animal variable with a completely new object
-animal = { species: "cat" };
-
-console.log(animal); // { species: "cat" }
-console.log(dog); // { species: "dog" }
-```
-
-</div>
-
 ### Intermediate/advanced array magic
 
 Besides being a quick and handy way to store data, arrays also have a set of functions for manipulating that data in very powerful ways. Once you begin to master these functions you will start to see ways to use them all over the place! There are really only a handful of these functions, but as you'll soon see, the possibilities of what you can do with them are near endless.
@@ -311,24 +292,6 @@ Let's do some quick practice before your assignment! Rewrite the `sumOfTripledEv
 Once you are finished and you've tested that your function works correctly, check out the solution below.
 
 ### Assignment
-
-<div class="lesson-content__panel" markdown="1">
-
-1. Read through the [array method guide](https://javascript.info/array-methods) for a comprehensive overview of array methods in JavaScript. Complete the exercises at the end, except for "Create an extendable calculator," as it involves more advanced concepts that we have not yet covered.
-1. Follow up by watching [JavaScript Array Cardio Practice - Day 1](https://www.youtube.com/watch?v=HB1ZC7czKRs) by Wes Bos. To follow along, fork and clone the [JavaScript30 repository](https://github.com/wesbos/JavaScript30).
-1. Watch and code along with [Array Cardio Day 2](https://www.youtube.com/watch?v=QNmRfyNg1lw).
-1. At this point you just need a little more practice! Go back to the [JavaScript exercises repository](https://github.com/TheOdinProject/javascript-exercises) that we introduced in the [Fundamentals Part 4](https://www.theodinproject.com/lessons/foundations-fundamentals-part-4) assignment. Review each README file prior to completing the following exercises in order:
-   - `08_calculator`
-   - `09_palindromes`
-   - `10_fibonacci`
-   - `11_getTheTitles`
-   - `12_findTheOldest`
-
-Note: Solutions for these exercises can be found in the `solution` folder of each exercise.
-
-If you feel yourself getting overwhelmed or stuck, don't be afraid to go back and review or ask for help in the [TOP Discord server](https://discord.com/invite/theodinproject)!
-
-</div>
 
 ### Knowledge check
 
