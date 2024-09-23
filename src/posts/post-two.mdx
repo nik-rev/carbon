@@ -21,13 +21,13 @@ This section contains a general overview of topics that you will learn in this l
 - Configure Webpack to handle non-JavaScript files during bundling, including using HtmlWebpackPlugin.
 - Set up Webpack's development server.
 
-### Bundling
+## Bundling
 
 In the previous lesson, we learned what an **entry point** is, what a **dependency graph** is, and how to add an entry point file to HTML as a module script. With bundling, the same concepts of entry points and dependency graphs apply: we provide the bundler with an entry point. It then builds a dependency graph from that file, combines all relevant files together, and then outputs a single file with all the necessary code included.
 
 While it does this, we could also get it to do a whole bunch of other things, such as [minifying our code](https://en.wikipedia.org/wiki/Minification_(programming)), image optimizations, or even ["tree shaking"](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking). Most of these extra optimizations are out of the scope of this course; we will instead be focusing on basic bundling of JavaScript, and handling HTML, CSS, and images.
 
-### Webpack
+## Webpack
 
 Webpack is one of the most popular JavaScript bundlers, if not the most popular one, and has been for a long time. Let's get started with bundling!
 
@@ -51,7 +51,7 @@ Also notice that when these finished installing, a `node_modules` directory and 
 
 <div class="lesson-note" markdown="1">
 
-#### src and dist
+## src and dist
 
 When dealing with Webpack (and often with any other bundler or build tool), we have two very important directories: `src` (short for "source") and `dist` (short for "distribution"). We could technically call these directories whatever we want, but these names are conventions.
 
@@ -59,11 +59,11 @@ When dealing with Webpack (and often with any other bundler or build tool), we h
 
 </div>
 
-### Bundling JavaScript
+## Bundling JavaScript
 
 <div class="lesson-note" markdown="1">
 
-#### Import file extensions
+## Import file extensions
 
 Normally, with ESM, we need to specify file extensions when we import from other files (e.g. `"./greeting.js"`). With Webpack and many other bundlers, some file extensions like `.js` are optional, as Webpack will automatically check extensionless file paths for `.js` files by default (e.g. `"./greeting"`).
 
@@ -133,7 +133,7 @@ You should see that Webpack has created a `dist` directory for us containing a `
 
 Congratulations! You've just made your first bundle with Webpack!
 
-### Handling HTML
+## Handling HTML
 
 Let's actually include some HTML. After all, we're interested in making websites! Since HTML isn't JavaScript, Webpack can't just bundle it straight away, but there's a nifty tool we can use called `HtmlWebpackPlugin` that's just perfect for us.
 
@@ -174,7 +174,7 @@ We've now successfully configured Webpack to handle our HTML file and inject the
 
 Let's see how we'd handle CSS.
 
-### Loading CSS
+## Loading CSS
 
 We don't just need one new package for CSS, we need *two*. Gosh, what a greedy little thing... Let's install them.
 
@@ -219,7 +219,7 @@ All this does is tell Webpack that if it encounters an imported file ending with
 
 <div class="lesson-note lesson-note--warning" markdown="1">
 
-#### Loader order matters for CSS!
+## Loader order matters for CSS!
 
 Notice how we put `css-loader` **at the end** of the array. We **must** set this order and not the reverse.
 
@@ -247,13 +247,13 @@ console.log(greeting);
 
 Once again, bundle with Webpack using `npx webpack`, then open `dist/index.html` and enjoy the beautiful purple screen!
 
-#### What about link tags?
+## What about link tags?
 
 Notice how we don't link our CSS file in our HTML template like we would've done before. While you could do this with one of the loaders from the next section, in the real world, projects often contain many moving parts and many modules. Eventually, it becomes easier to work with multiple smaller CSS files that you import in the modules they're needed. There are even ways those files can be scoped only to those modules and not globally!
 
 We're only introducing the minimum to allow you to import your CSS into your JavaScript, but many build tools and more sophisticated bundler configurations will do a lot more to imported CSS than what we're showing here.
 
-### Loading images
+## Loading images
 
 We're nearly done with the main Webpack configuration! If we have any local image files we want to include within our website, they will also require a little extra configuration since they're not JavaScript files.
 
@@ -343,7 +343,7 @@ You might notice that when images are included when bundling, the output image f
 
 <div class="lesson-note lesson-note--tip" markdown="1">
 
-#### You only need to configure what you need
+## You only need to configure what you need
 
 You may not need everything we've mentioned. If your project does not have images with local file path sources in your HTML template, you do not need `html-loader` set up. If you aren't using any local images in your JavaScript, you won't need the image `asset/resource` rule set up.
 
@@ -351,7 +351,7 @@ Similarly, in the future, you may end up working with things that need a special
 
 </div>
 
-### Webpack dev server
+## Webpack dev server
 
 During this lesson, did you get a bit annoyed with having to run `npx webpack` to rebundle with every change? Fortunately, there are multiple solutions for this, and we will focus on what we think is the most useful option: `webpack-dev-server`. Install it as follows:
 
@@ -420,13 +420,13 @@ Note that the webpack-dev-server only reads your webpack configuration when you 
 
 </div>
 
-### Rounding up
+## Rounding up
 
 Yes, yes, this all might seem like a lot. You've gone from just having some basic HTML, CSS and JS files, and not needing much else to suddenly needing this loader, that plugin, this configuration file, etc. In the real world, as apps get more complex, we need tools that can improve our development experience while optimizing things in production. Even though we're not using all of the features available to us right now, a general understanding of what these sorts of tools are doing for us is valuable. Later in the curriculum, you will use different tools that abstract a lot of these underlying mechanisms away from us. Using them and having no clue what they're actually doing for you can make things harder for you when you eventually encounter a situation that actually needs some kind of manual configuration.
 
 In a later lesson, we will introduce some extra things that can make setting up and working with Webpack much quicker and more straightforward. For now, however, it's good to get a little manual practice in.
 
-### Assignment
+## Assignment
 
 <div class="lesson-content__panel" markdown="1">
 
@@ -435,7 +435,7 @@ In a later lesson, we will introduce some extra things that can make setting up 
 
 </div>
 
-### Knowledge check
+## Knowledge check
 
 The following questions are an opportunity to reflect on key topics in this lesson. If you can't answer a question, click on it to review the material, but keep in mind you are not expected to memorize or master this knowledge.
 
@@ -448,7 +448,7 @@ The following questions are an opportunity to reflect on key topics in this less
 - [What Webpack tool could you use during development to view changes to your website live?](#webpack-dev-server)
 - [How does using a source map help with development?](#source-maps)
 
-### Additional resources
+## Additional resources
 
 This section contains helpful links to related content. It isn't required, so consider it supplemental.
 
