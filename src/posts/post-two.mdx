@@ -79,7 +79,7 @@ const sum = (a, b) => a + b;
 console.log(sum(5, 3)); // 8
 ```
 
-```js
+```js "factorial" "function" "===" "console" "5" "{"
 function factorial(n) {
     if (n === 0) return 1;
     return n * factorial(n - 1);
@@ -88,7 +88,7 @@ function factorial(n) {
 console.log(factorial(5)); // 120
 ```
 
-```js
+```js "Animal"
 class Animal {
     constructor(name) {
         this.name = name;
@@ -159,6 +159,35 @@ When done setting up the partitions, `w` to write.
 #### Encrypt the Partitions
 
 Make sure the encryption modules are loaded.
+
+#### Group Highlighted Chars By Id
+
+Place an id after `#` after the chars. This allows you to color chars
+differently based on their id.
+
+````md
+```js /age/
+const [age, setAge] = useState(50);
+const [name, setName] = useState("Taylor");
+```
+````
+
+```js "Taylor"
+const [age, setAge] = useState(50);
+const [name, setName] = useState("Taylor");
+```
+
+**Styling**: The chars `<span>{:html}` receives a `data-chars-id="<id>"`
+attribute to style via CSS.
+
+#### Highlight Inline Code
+
+Append `\{:lang}` (e.g. `\{:js}`) to the end of inline code to highlight it like
+a regular code block.
+
+```md
+This is an array `[1, 2, 3]{:js}` of numbers 1 through 3.
+```
 
 ---
 
