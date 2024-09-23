@@ -33,10 +33,28 @@ Webpack is one of the most popular JavaScript bundlers, if not the most popular 
 
 We'll first need to make a new directory for our practice app, then create a `package.json` file in it for npm to record information about packages we use (like Webpack). Run the following in your terminal:
 
-```bash
-mkdir webpack-practice &&
-cd webpack-practice &&
-npm init -y
+```tsx
+import { signup } from '@/app/actions/auth'
+ 
+export function SignupForm() {
+  return (
+    <form action={signup}>
+      <div>
+        <label htmlFor="name">Name</label>
+        <input id="name" name="name" placeholder="Name" />
+      </div>
+      <div>
+        <label htmlFor="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="Email" />
+      </div>
+      <div>
+        <label htmlFor="password">Password</label>
+        <input id="password" name="password" type="password" />
+      </div>
+      <button type="submit">Sign Up</button>
+    </form>
+  )
+}
 ```
 
 Once inside your new directory, we can go ahead and install Webpack, which involves two packages.

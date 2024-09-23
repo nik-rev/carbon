@@ -1,11 +1,22 @@
 import { Moon, Sun } from "lucide-react";
-import { useState } from "react";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export function ThemeSwitch() {
-  const [isDarkTheme, setIsDarkTheme] = useState(true);
+  const [isMounted, setIsMounted] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
+
+  const ee = useTheme();
+  console.log(ee)
+
+  const isDarkTheme = resolvedTheme === "dark";
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const handleClick = () => {
-    setIsDarkTheme(!isDarkTheme);
+    setTheme(isDarkTheme ? "light" : "dark");
   };
 
   return (
@@ -14,3 +25,4 @@ export function ThemeSwitch() {
     </button>
   );
 }
+// {isDarkTheme ? <Moon /> : <Sun />}

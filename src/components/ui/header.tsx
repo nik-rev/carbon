@@ -12,7 +12,7 @@ export function Logo() {
 
 export function Header() {
   return (
-    <header className="flex justify-center bg-mantle p-8">
+    <header className="flex justify-center bg-mantle p-8 sticky">
       <span className="align-center flex w-full max-w-[1000px] justify-between">
         <Logo />
         <ThemeSwitch />

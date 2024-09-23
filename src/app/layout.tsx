@@ -3,6 +3,7 @@ import "@catppuccin/highlightjs/css/catppuccin-latte.css";
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 
 import { Footer } from "@/components/ui/footer";
 import { Header } from "@/components/ui/header";
@@ -20,13 +21,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${inter.className} flex min-h-screen min-w-fit flex-col justify-between bg-base text-text`}
       >
-        <Header />
-        {children}
-        <Footer />
+        <ThemeProvider>
+          <Header />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

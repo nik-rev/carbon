@@ -72,7 +72,10 @@ export default makeSource({
         // @ts-expect-error -- No control over this
         prettyCode,
         {
-          theme: "catppuccin-mocha",
+          theme: {
+            dark: "catppuccin-mocha",
+            light: "catppuccin-latte",
+          },
           transformers: [transformerNotationDiff()],
         },
       ],

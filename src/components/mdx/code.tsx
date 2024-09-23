@@ -32,7 +32,7 @@ export function CodeBlock({ children }: HTMLAttributes<HTMLPreElement>) {
       className={`group relative after:pointer-events-none after:absolute after:-inset-x-4 after:inset-y-0 md:after:-inset-x-8 ${isAfterVisible ? "after:bg-text/20" : "after:bg-text/0"} after:transition-colors`}
       ref={preRef}
     >
-      <div className="-mx-4 my-4 overflow-x-scroll bg-mantle p-4 md:-mx-8 md:my-8 md:p-8">
+      <div className="-mx-4 my-4 overflow-x-auto bg-mantle p-4 md:-mx-8 md:my-8 md:p-8">
         {
           // @ts-expect-error -- will always be <code> element
           cloneElement(children, { isInCodeBlock: true })

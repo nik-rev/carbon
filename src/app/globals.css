@@ -32,7 +32,7 @@
   --accent: var(--green);
 }
 
-:root.light-theme {
+[data-theme="light"] {
   --rosewater: 11 59% 67%;
   --flamingo: 0 60% 67%;
   --pink: 316 73% 69%;
@@ -140,4 +140,19 @@ aside [data-highlighted-line]::after {
 
 [data-rehype-pretty-code-title] {
   @apply bg-mantle text-text left-0 -mb-4 mt-4 md:-mb-8 md:mt-8 w-max px-4 md:px-6 py-1 md:py-2 font-mono text-sm md:text-[1rem] flex justify-between items-center gap-2
+}
+
+/* light and dark mode for code blocks */
+code[data-theme*=" "],
+code[data-theme*=" "] span {
+  color: var(--shiki-dark);
+  background-color: var(--shiki-dark-bg);
+}
+
+[data-theme="light"] {
+  code[data-theme*=" "],
+  code[data-theme*=" "] span {
+    color: var(--shiki-light);
+    background-color: var(--shiki-light-bg);
+  }
 }
