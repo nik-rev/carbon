@@ -107,6 +107,21 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
   @apply bg-blue/5;
 }
 
+[data-line].diff.add {
+  @apply bg-green/5 relative;
+}
+[data-line].diff.add::after {
+  content: "+";
+  @apply font-mono text-green font-bold left-3 absolute
+}
+[data-line].diff.remove {
+  @apply bg-red/5 relative;
+}
+[data-line].diff.remove::after {
+  content: "-";
+  @apply font-mono text-red font-bold left-3 absolute
+}
+
 aside [data-highlighted-line]::after {
   border-left: none;
 }

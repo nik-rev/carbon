@@ -1,8 +1,6 @@
 import remarkA11yEmoji from "@fec/remark-a11y-emoji";
-import { transformerCopyButton } from "@rehype-pretty/transformers";
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 import GithubSlugger from "github-slugger";
-import rehypeHighlight from "rehype-highlight";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import remarkFlexibleContainers from "remark-flexible-containers";
@@ -14,6 +12,7 @@ import remarkHint from "remark-hint";
 import remarkImages from "remark-images";
 import remarkIns from "remark-ins";
 import remarkSectionize from "remark-sectionize";
+import { transformerNotationDiff } from "shikiji-transformers";
 
 export const Post = defineDocumentType(() => ({
   name: "Post",
@@ -90,6 +89,7 @@ export default makeSource({
         rehypePrettyCode,
         {
           theme: "catppuccin-mocha",
+          transformers: [transformerNotationDiff()],
         },
       ],
     ],

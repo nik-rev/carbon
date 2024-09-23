@@ -79,11 +79,11 @@ const sum = (a, b) => a + b;
 console.log(sum(5, 3)); // 8
 ```
 
-```js "factorial" "function" "===" "console" "5" "{"
-function factorial(n) {
-    if (n === 0) return 1;
-    return n * factorial(n - 1);
-}
+```js showLineNumbers "factorial"
+function factorial(n) { // [!code --]
+    if (n === 0) return 1; // [!code ++]
+    return n * factorial(n - 1); // [!code --]
+} // [!code --]
 
 console.log(factorial(5)); // 120
 ```

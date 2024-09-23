@@ -55,6 +55,7 @@
     "remark-sectionize": "^2.0.0",
     "remark-smartypants": "^3.0.2",
     "remark-terms": "^2.1.2",
+    "shikiji-transformers": "^0.10.2",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
     "unist-util-visit": "^5.0.0",
