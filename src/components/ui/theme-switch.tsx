@@ -6,14 +6,15 @@ export function ThemeSwitch() {
   const [isMounted, setIsMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
 
-  const ee = useTheme();
-  console.log(ee)
-
   const isDarkTheme = resolvedTheme === "dark";
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
+  if (!isMounted) {
+    return null;
+  }
 
   const handleClick = () => {
     setTheme(isDarkTheme ? "light" : "dark");

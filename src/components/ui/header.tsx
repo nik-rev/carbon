@@ -1,10 +1,12 @@
 "use client";
 
+import Link from "next/link";
+
 import { ThemeSwitch } from "./theme-switch";
 
 export function Logo() {
   return (
-    <span className="font-bold text-green [word-spacing:2px]">
+    <span className="text-2xl font-bold text-green [word-spacing:2px]">
       Nikita Revenco
     </span>
   );
@@ -12,9 +14,11 @@ export function Logo() {
 
 export function Header() {
   return (
-    <header className="flex justify-center bg-mantle p-8 sticky">
+    <header className="sticky flex justify-center bg-mantle p-12">
       <span className="align-center flex w-full max-w-[1000px] justify-between">
-        <Logo />
+        <Link href="/">
+          <Logo />
+        </Link>
         <ThemeSwitch />
       </span>
     </header>
