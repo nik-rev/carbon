@@ -102,9 +102,6 @@ importers:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@3.4.12)
     devDependencies:
-      '@catppuccin/highlightjs':
-        specifier: ^0.2.2
-        version: 0.2.2
       '@tailwindcss/typography':
         specifier: ^0.5.15
         version: 0.5.15(tailwindcss@3.4.12)
@@ -172,9 +169,6 @@ packages:
   '@babel/runtime@7.25.6':
     resolution: {integrity: sha512-VBj9MYyDb9tuLq7yzqjgzt6Q+IBQLrGZfdjOekyEirZPHxXWoTSGUTMrpsfi58Up73d13NfYLv8HT9vmznjzhQ==}
     engines: {node: '>=6.9.0'}
-
-  '@catppuccin/highlightjs@0.2.2':
-    resolution: {integrity: sha512-ez8X2MCFSBY14hc7Gw7z8Labzcm9n1yq5cAvGohakv3Z9utx6HrgB2YxugX5WXWw+W/Bdltor84iFUlDuaNF0Q==}
 
   '@contentlayer/cli@0.3.4':
     resolution: {integrity: sha512-vNDwgLuhYNu+m70NZ3XK9kexKNguuxPXg7Yvzj3B34cEilQjjzSrcTY/i+AIQm9V7uT5GGshx9ukzPf+SmoszQ==}
@@ -4059,8 +4053,6 @@ snapshots:
   '@babel/runtime@7.25.6':
     dependencies:
       regenerator-runtime: 0.14.1
-
-  '@catppuccin/highlightjs@0.2.2': {}
 
   '@contentlayer/cli@0.3.4(esbuild@0.18.20)':
     dependencies:

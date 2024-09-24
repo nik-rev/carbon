@@ -1,22 +1,51 @@
 import { type Post } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-export function PostCard({ date, url, excerpt, title }: Post) {
+import { Badge } from "./ui/badge";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
+
+//
+export function PostCard({ date, url, excerpt, title, readTime, tags }: Post) {
   return (
-    <article className="flex flex-col items-start justify-between">
-      <div className="flex items-center gap-x-4 text-xs">
-        <time dateTime={date}>{format(parseISO(date), "LLLL d, yyyy")}</time>
-      </div>
-      <div className="group relative">
-        <h3 className="mt-3 text-lg font-semibold leading-6">
-          <Link className="link" href={url}>
-            <span className="absolute inset-0" />
-            {title}
-          </Link>
-        </h3>
-        <p className="mt-5 line-clamp-3 text-sm leading-6">{excerpt}</p>
-      </div>
-    </article>
+    <Link href={url}>
+      <Card className="group">
+        <CardHeader>
+          <CardTitle>{title}</CardTitle>
+          <CardDescription className="space-y-4">
+            <div className="space-x-2">
+              {tags.map((tag) => (
+                <Badge
+                  variant="outline"
+                  className="text-2xs w-max font-normal"
+                  key={tag}
+                >
+                  {tag}
+                </Badge>
+              ))}
+            </div>
+            <span className="block">
+              <time dateTime={date}>
+                {format(parseISO(date), "LLLL d, yyyy")}
+              </time>{" "}
+              &#8226; <span className="text-subtext1">{readTime} min read</span>
+            </span>
+          </CardDescription>
+        </CardHeader>
+        <CardContent>{excerpt}</CardContent>
+        <CardFooter className="space-x-1 group-hover:text-green">
+          <strong>Read more</strong>
+          <ArrowRight className="animate-bounce opacity-0 transition-opacity group-hover:opacity-100" />
+        </CardFooter>
+      </Card>
+    </Link>
   );
 }

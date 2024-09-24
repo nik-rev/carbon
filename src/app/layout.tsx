@@ -1,5 +1,4 @@
 import "./globals.css";
-import "@catppuccin/highlightjs/css/catppuccin-latte.css";
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";

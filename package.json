@@ -42,7 +42,6 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@catppuccin/highlightjs": "^0.2.2",
     "@tailwindcss/typography": "^0.5.15",
     "@total-typescript/ts-reset": "^0.5.1",
     "@types/node": "^20.16.5",
