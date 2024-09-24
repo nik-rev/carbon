@@ -25,7 +25,10 @@ export const Post = defineDocumentType(() => ({
       required: false,
       default: false,
     },
+    /** for searching */
     tags: { type: "list", of: { type: "string" }, required: true },
+    /** for SEO */
+    keywords: { type: "list", of: { type: "string" }, required: true },
   },
   computedFields: {
     url: {

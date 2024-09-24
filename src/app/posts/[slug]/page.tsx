@@ -22,7 +22,7 @@ export const generateMetadata = ({
 
   if (!post) throw new Error(`Post not found for slug: ${params.slug}`);
 
-  const { title, description, tags, date, updatedAt } = post;
+  const { title, description, keywords, date, updatedAt } = post;
 
   return {
     title,
@@ -32,11 +32,11 @@ export const generateMetadata = ({
       title,
       description,
       authors: "Nikita Revenco",
-      tags,
+      tags: keywords,
       publishedTime: new Date(date).toISOString(),
       modifiedTime: new Date(updatedAt).toISOString(),
     },
-    keywords: tags,
+    keywords,
     twitter: {
       title,
       description,
