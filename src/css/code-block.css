@@ -40,7 +40,7 @@ code:has(span.diff.add) > span::before, code:has(span.diff.remove) > span::befor
 }
 
 [data-line].diff::after {
-  @apply absolute top-0 left-0 w-full border-l-4
+  @apply absolute top-0 left-0 w-full border-l-4 pointer-events-none
 }
 
 [data-line].diff.remove {
