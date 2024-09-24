@@ -34,14 +34,16 @@ export function PostCard({ date, url, excerpt, title, readTime, tags }: Post) {
           <span className="block">
             <time dateTime={date} className="text-subtext0">
               {format(parseISO(date), "LLLL d, yyyy")}
-            </time>{" "}
-            &#8226; <span className="text-subtext1">{readTime} min read</span>
+            </time>
           </span>
         </CardHeader>
         <CardContent>{excerpt}</CardContent>
-        <CardFooter className="space-x-1 group-hover:text-green">
-          <strong>Read more</strong>
-          <ArrowRight className="animate-bounce opacity-0 transition-opacity group-hover:opacity-100" />
+        <CardFooter className="flex justify-between">
+          <span className="space-x-1 flex group-hover:text-green">
+            <strong>Read more</strong>
+            <ArrowRight className="animate-bounce opacity-0 transition-opacity group-hover:opacity-100" />
+          </span>
+          <span className="text-subtext1">{readTime} min read</span>
         </CardFooter>
       </Card>
     </Link>

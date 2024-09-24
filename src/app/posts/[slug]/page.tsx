@@ -76,9 +76,9 @@ function PostLayout({ params }: { readonly params: { slug: string } }) {
   return (
     <div className="flex flex-col items-center">
       <Hero post={post} />
-      <article className="z-10 flex max-w-[100vw] flex-col max-md:px-4 sm:max-w-prose">
+      <main className="z-10 flex max-w-[100vw] flex-col max-md:px-4 sm:max-w-prose">
         <MDXContent components={mdxComponents} />
-      </article>
+      </main>
     </div>
   );
 }
