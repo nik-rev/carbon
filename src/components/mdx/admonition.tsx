@@ -24,7 +24,7 @@ function Admonition({
   /* eslint-disable ts/naming-convention -- Icon is a component */
   Icon: LucideIcon;
   /* eslint-enable ts/naming-convention -- Icon is a component */
-  iconClassName: ClassNameValue;
+  iconClassName: string;
 }) {
   return (
     <aside
@@ -37,7 +37,7 @@ function Admonition({
         <H4 className="mt-0" linkClassName={iconClassName}>
           {title}
         </H4>
-        <Icon className={cn("", iconClassName)} />
+        <Icon className={iconClassName} />
       </span>
       {children}
     </aside>

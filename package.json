@@ -39,7 +39,8 @@
     "remark-sectionize": "^2.0.0",
     "shikiji-transformers": "^0.10.2",
     "tailwind-merge": "^2.5.2",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "title-case": "^4.3.2"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.15",

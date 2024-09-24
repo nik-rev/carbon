@@ -21,8 +21,12 @@ export function ThemeSwitch() {
   };
 
   return (
-    <button type="button" className="hover:text-accent transition-colors" onClick={handleClick}>
-      {isDarkTheme ? <Moon /> : <Sun />}
+    <button type="button" onClick={handleClick}>
+      {isDarkTheme ? (
+        <Moon className="transition-colors hover:text-mauve" />
+      ) : (
+        <Sun className="transition-colors hover:text-peach" />
+      )}
     </button>
   );
 }

@@ -3,6 +3,7 @@ import { format, parseISO } from "date-fns";
 import { type Metadata } from "next";
 import { notFound } from "next/navigation";
 import { useMDXComponent } from "next-contentlayer/hooks";
+import { titleCase } from "title-case";
 
 import { mdxComponents } from "@/components/mdx/init";
 import { Badge } from "@/components/ui/badge";
@@ -50,7 +51,7 @@ function Hero({ post }: { post: Post }) {
       <span className="flex w-full flex-col items-center justify-center gap-12 bg-mantle">
         <span className="m-8 flex max-w-[656.5px] flex-col">
           <h1 className="scroll-m-20 bg-gradient-to-b from-text to-subtext1 bg-clip-text pt-10 text-left text-4xl font-extrabold tracking-tight text-transparent lg:py-16 lg:text-5xl">
-            {post.title}
+            {titleCase(post.title)}
           </h1>
           <div className="mt-4 space-x-2">
             {post.tags.map((tag) => (
