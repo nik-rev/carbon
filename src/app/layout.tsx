@@ -1,6 +1,6 @@
 import "./globals.css";
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 
@@ -9,9 +9,26 @@ import { Header } from "@/components/ui/header";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#40a02b" },
+    { media: "(prefers-color-scheme: dark)", color: "#a6e3a1" },
+  ],
+  colorScheme: "dark light",
+};
+
 export const metadata: Metadata = {
   title: "nikitarevenco",
   description: "Nikita Revenco's Blog",
+  robots: {
+    index: true,
+    follow: true,
+    "max-image-preview": "large",
+    "max-snippet": -1,
+    "max-video-preview": -1,
+    googleBot: "index, follow",
+  },
+  twitter: { creator: "@nikitarevenco1" },
   icons: {
     icon: [
       {

@@ -1,5 +1,6 @@
 import { allPosts, type Post } from "contentlayer/generated";
 import { format, parseISO } from "date-fns";
+import { type Metadata } from "next";
 import { notFound } from "next/navigation";
 import { useMDXComponent } from "next-contentlayer/hooks";
 
@@ -9,17 +10,37 @@ import { Badge } from "@/components/ui/badge";
 export const generateStaticParams = () =>
   allPosts.map((post) => ({ slug: post._raw.flattenedPath }));
 
-export const generateMetadata = ({ params }: { params: { slug: string } }) => {
+export const generateMetadata = ({
+  params,
+}: {
+  params: { slug: string };
+  searchParams: string;
+}): Metadata => {
   const post = allPosts.find(
     (mdxPost) => mdxPost._raw.flattenedPath === params.slug,
   );
 
   if (!post) throw new Error(`Post not found for slug: ${params.slug}`);
 
-  const { title } = post;
+  const { title, description, tags, date, updatedAt } = post;
 
   return {
     title,
+    description,
+    openGraph: {
+      type: "article",
+      title,
+      description,
+      authors: "Nikita Revenco",
+      tags,
+      publishedTime: new Date(date).toISOString(),
+      modifiedTime: new Date(updatedAt).toISOString(),
+    },
+    keywords: tags,
+    twitter: {
+      title,
+      description,
+    },
   };
 };
 

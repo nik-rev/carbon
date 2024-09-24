@@ -15,7 +15,11 @@ export const Post = defineDocumentType(() => ({
   fields: {
     title: { type: "string", required: true },
     date: { type: "date", required: true },
+    updatedAt: { type: "date", required: true },
+    /** displayed on preview card */
     excerpt: { type: "string", required: true },
+    /** for SEO */
+    description: { type: "string", required: true },
     toc: {
       type: "boolean",
       required: false,
