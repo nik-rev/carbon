@@ -1,4 +1,5 @@
-import "./globals.css";
+import "@/css/code-block.css";
+import "@/css/theme.css";
 
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
