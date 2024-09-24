@@ -78,6 +78,16 @@ const config = {
             height: "0",
           },
         },
+        "bounce-right": {
+          "50%": {
+            transform: "translateX(-25%)",
+            "animation-timing-function": "cubic-bezier(0.8, 0, 1, 1)",
+          },
+          "0%, 100%": {
+            transform: "translateY(0)",
+            "animation-timing-function": "cubic-bezier(0, 0, 0.2, 1)",
+          },
+        },
         spotlight: {
           "0%": {
             opacity: "0",
@@ -111,6 +121,7 @@ const config = {
         spotlight: "spotlight 2s ease .75s 1 forwards",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "bounce-right": "bounce-right 1s infinite",
       },
     },
   },

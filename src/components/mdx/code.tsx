@@ -59,7 +59,7 @@ export function InlineCode({
   return isInCodeBlock ? (
     <code {...rest}>{children}</code>
   ) : (
-    <code className="rounded-md border-[1.5px] border-surface0 bg-mantle px-[0.3rem] py-[0.2rem] align-middle font-mono text-sm">
+    <code className="select-all rounded-md border-[1.5px] border-surface0 bg-mantle px-[0.3rem] py-[0.2rem] align-middle font-mono text-sm">
       {children}
     </code>
   );
