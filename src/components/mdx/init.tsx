@@ -1,10 +1,10 @@
 import { type MDXComponents } from "mdx/types";
 import Image, { type ImageProps } from "next/image";
 
-import { langIcons, type Langs } from "@/lib/filetypes-icons";
+import { langIcons } from "@/lib/filetypes-icons";
 
 import { Separator } from "../ui/separator";
-import { Note } from "./admonition";
+import { Alert, Note, Warning } from "./admonition";
 import { CodeBlock, InlineCode } from "./code";
 import {
   Table,
@@ -29,6 +29,8 @@ import {
 
 export const mdxComponents: MDXComponents = {
   /* eslint ts/naming-convention: "off" -- We have to use PascalCase in order for our custom components to work */
+  Alert,
+  Warning,
   Note,
   h1: H1,
   h2: H2,

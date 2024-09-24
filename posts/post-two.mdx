@@ -30,6 +30,8 @@ In the previous lesson, we learned what an **entry point** is, what a **dependen
 
 While it does this, we could also get it to do a whole bunch of other things, such as [minifying our code](<https://en.wikipedia.org/wiki/Minification_(programming)>), image optimizations, or even ["tree shaking"](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking). Most of these extra optimizations are out of the scope of this course; we will instead be focusing on basic bundling of JavaScript, and handling HTML, CSS, and images.
 
+testing
+
 ## Webpack
 
 Webpack is one of the most popular JavaScript bundlers, if not the most popular one, and has been for a long time. Let's get started with bundling!
@@ -43,16 +45,24 @@ export function SignupForm() {
   return (
     <form action={signup}>
       <div>
-<label htmlFor="name">Name</label>
+        <label htmlFor="name">Name</label>
         <input id="name" name="name" placeholder="Name" /> /* [!code --] */
-      </div> {/* [!code --] */}
-      <div> {/* [!code --] */}
+      </div>{" "}
+      {/* [!code --] */}
+      <div>
+        {" "}
+        {/* [!code --] */}
         <label htmlFor="email">Email</label> {/* [!code --] */}
-        <input id="email" name="email" type="email" placeholder="Email" /> {/* [!code ++] */}
-      </div> {/* [!code ++] */}
-      <div> {/* [!code ++] */}
+        <input id="email" name="email" type="email" placeholder="Email" />{" "}
+        {/* [!code ++] */}
+      </div>{" "}
+      {/* [!code ++] */}
+      <div>
+        {" "}
+        {/* [!code ++] */}
         <label htmlFor="password">Password</label> {/* [!code ++] */}
-        <input id="password" name="password" type="password" /> {/* [!code ++] */}
+        <input id="password" name="password" type="password" />{" "}
+        {/* [!code ++] */}
       </div>
       <button type="submit">Sign Up</button>
     </form>
@@ -61,11 +71,11 @@ export function SignupForm() {
 ```
 
 ```js showLineNumbers {3-5}
-const lol = "hahahaha"
-const lol = "hahahaha"
-const lol = "hahahaha"
-const lol = "hahahaha"
-const lol = "hahahaha"
+const lol = "hahahaha";
+const lol = "hahahaha";
+const lol = "hahahaha";
+const lol = "hahahaha";
+const lol = "hahahaha";
 ```
 
 Once inside your new directory, we can go ahead and install Webpack, which involves two packages.
@@ -74,7 +84,25 @@ Once inside your new directory, we can go ahead and install Webpack, which invol
 npm install --save-dev webpack webpack-cli
 ```
 
-Note that we included the `--save-dev` flag (you can also use `-D` as a shortcut), which tells npm to record our two packages as development dependencies. We will only be using Webpack during development. The actual code that makes Webpack run will not be part of the code that the browser will run.
+<Note title="This is my note">
+This is my super awesome admonition enen
+</Note>
+
+<Alert title="This is my note">
+
+This is my super awesome admonition enen
+
+</Alert>
+
+<Warning title="This is my note">
+
+This is my super awesome admonition enen
+
+</Warning>
+Note that we included the `--save-dev` flag (you can also use `-D` as a
+shortcut), which tells npm to record our two packages as development
+dependencies. We will only be using Webpack during development. The actual code
+that makes Webpack run will not be part of the code that the browser will run.
 
 Also notice that when these finished installing, a `node_modules` directory and a `package-lock.json` got auto-generated. `node_modules` is where Webpack's actual code (and a whole bunch of other stuff) lives, and `package-lock.json` is just another file npm uses to track package information.
 
