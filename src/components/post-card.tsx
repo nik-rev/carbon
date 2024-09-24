@@ -18,20 +18,20 @@ export function PostCard({ date, url, excerpt, title, readTime, tags }: Post) {
   return (
     <Link href={url}>
       <Card className="group">
-        <CardHeader>
+        <CardHeader className="space-y-2">
           <CardTitle>{title}</CardTitle>
-          <CardDescription className="space-y-4">
-            <div className="space-x-2">
-              {tags.map((tag) => (
-                <Badge
-                  variant="outline"
-                  className="text-2xs w-max font-normal"
-                  key={tag}
-                >
-                  {tag}
-                </Badge>
-              ))}
-            </div>
+          <span className="flex gap-x-2">
+            {tags.map((tag) => (
+              <Badge
+                variant="outline"
+                className="text-2xs w-max font-normal"
+                key={tag}
+              >
+                {tag}
+              </Badge>
+            ))}
+          </span>
+          <CardDescription>
             <span className="block">
               <time dateTime={date}>
                 {format(parseISO(date), "LLLL d, yyyy")}
