@@ -24,7 +24,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} flex min-h-screen min-w-fit flex-col justify-between bg-base text-text`}
       >
-        <ThemeProvider>
+        <ThemeProvider disableTransitionOnChange>
           <Header />
           {children}
           <Footer />

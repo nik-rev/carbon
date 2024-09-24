@@ -31,14 +31,12 @@ export function PostCard({ date, url, excerpt, title, readTime, tags }: Post) {
               </Badge>
             ))}
           </span>
-          <CardDescription>
-            <span className="block">
-              <time dateTime={date}>
-                {format(parseISO(date), "LLLL d, yyyy")}
-              </time>{" "}
-              &#8226; <span className="text-subtext1">{readTime} min read</span>
-            </span>
-          </CardDescription>
+          <span className="block">
+            <time dateTime={date} className="text-subtext0">
+              {format(parseISO(date), "LLLL d, yyyy")}
+            </time>{" "}
+            &#8226; <span className="text-subtext1">{readTime} min read</span>
+          </span>
         </CardHeader>
         <CardContent>{excerpt}</CardContent>
         <CardFooter className="space-x-1 group-hover:text-green">

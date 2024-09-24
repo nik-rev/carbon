@@ -21,7 +21,7 @@ export function ThemeSwitch() {
   };
 
   return (
-    <button type="button" onClick={handleClick}>
+    <button type="button" className="hover:text-accent transition-colors" onClick={handleClick}>
       {isDarkTheme ? <Moon /> : <Sun />}
     </button>
   );
