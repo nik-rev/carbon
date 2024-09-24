@@ -33,8 +33,10 @@ function Admonition({
         className,
       )}
     >
-      <span className="align-center mt-0 flex justify-between">
-        <H4 className="mt-0">{title}</H4>
+      <span className="align-center -mb-2 mt-0 flex justify-between">
+        <H4 className="mt-0" linkClassName={iconClassName}>
+          {title}
+        </H4>
         <Icon className={cn("", iconClassName)} />
       </span>
       {children}

@@ -1,6 +1,7 @@
 import { Link as SvgLink, Quote } from "lucide-react";
 import Link from "next/link";
 import { type HTMLAttributes } from "react";
+import { type ClassNameValue } from "tailwind-merge";
 
 import { cn } from "@/lib/utils";
 
@@ -21,9 +22,17 @@ type HeadingProps = HTMLAttributes<HTMLHeadingElement> & {
   level: 1 | 2 | 3 | 4;
   id?: string;
   children: React.ReactNode;
+  linkClassName?: ClassNameValue;
 };
 
-function Heading({ level, className, children, id, ...props }: HeadingProps) {
+function Heading({
+  level,
+  className,
+  linkClassName,
+  children,
+  id,
+  ...props
+}: HeadingProps) {
   const HeadingElement = `h${level}` as const;
   const baseStyles =
     "scroll-m-20 font-semibold tracking-tight transition-colors";
@@ -31,7 +40,8 @@ function Heading({ level, className, children, id, ...props }: HeadingProps) {
   const sizeStyles = {
     1: { className: "text-4xl font-extrabold lg:text-5xl", iconSize: 32 },
     2: {
-      className: "mt-24 pb-2 text-4xl text-green bg-gradient-to-b from-green to-subtext1/80 bg-clip-text",
+      className:
+        "mt-24 pb-2 text-4xl text-green bg-gradient-to-b from-green to-subtext1/80 bg-clip-text",
       iconSize: 24,
     },
     3: { className: "relative mt-16 text-2xl", iconSize: 20 },
@@ -49,40 +59,56 @@ function Heading({ level, className, children, id, ...props }: HeadingProps) {
       >
         {children}
         <SvgLink
-          className="mb-1 ml-2.5 inline text-accent opacity-0 transition-opacity group-hover:opacity-100"
+          className={cn(
+            `mb-1 ml-2.5 inline text-accent opacity-0 transition-opacity group-hover:opacity-100`,
+            linkClassName,
+          )}
           size={sizeStyles[level].iconSize}
         />
       </HeadingElement>
     </a>
   );
 }
-export function H1({ children, ...rest }: HTMLAttributes<HTMLHeadingElement>) {
+
+export function H1({
+  children,
+  ...rest
+}: HTMLAttributes<HTMLHeadingElement> & Omit<HeadingProps, "level">) {
   return (
-    <Heading level={1} {...rest}>
+    <Heading {...rest} level={1}>
       {children}
     </Heading>
   );
 }
 
-export function H2({ children, ...rest }: HTMLAttributes<HTMLHeadingElement>) {
+export function H2({
+  children,
+  ...rest
+}: HTMLAttributes<HTMLHeadingElement> & Omit<HeadingProps, "level">) {
   return (
-    <Heading level={2} {...rest}>
+    <Heading {...rest} level={2}>
       {children}
     </Heading>
   );
 }
 
-export function H3({ children, ...rest }: HTMLAttributes<HTMLHeadingElement>) {
+export function H3({
+  children,
+  ...rest
+}: HTMLAttributes<HTMLHeadingElement> & Omit<HeadingProps, "level">) {
   return (
-    <Heading level={3} {...rest}>
+    <Heading {...rest} level={3}>
       {children}
     </Heading>
   );
 }
 
-export function H4({ children, ...rest }: HTMLAttributes<HTMLHeadingElement>) {
+export function H4({
+  children,
+  ...rest
+}: HTMLAttributes<HTMLHeadingElement> & Omit<HeadingProps, "level">) {
   return (
-    <Heading level={4} {...rest}>
+    <Heading {...rest} level={4}>
       {children}
     </Heading>
   );
