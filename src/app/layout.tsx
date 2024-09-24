@@ -12,6 +12,20 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "nikitarevenco",
   description: "Nikita Revenco's Blog",
+  icons: {
+    icon: [
+      {
+        media: "(prefers-color-scheme: light)",
+        url: `icon-light.ico`,
+        href: `icon-light.ico`,
+      },
+      {
+        media: "(prefers-color-scheme: dark)",
+        url: `icon-dark.ico`,
+        href: `icon-dark.ico`,
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
