@@ -6,7 +6,7 @@ const nextConfig = {
   basePath: "/blog",
   images: {
     unoptimized: true,
-  },
+  }
 };
 
 export default withContentlayer(nextConfig);
