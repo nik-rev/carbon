@@ -51,6 +51,22 @@ export const mdxComponents: MDXComponents = {
   th: TableHeader,
   td: TableData,
   a: A,
+  aside: ({ children, ...rest }) => {
+    switch (rest["data-alert-container"]) {
+      case "NOTE": {
+        return <Note title={rest["data-alert-title"]}>{children}</Note>;
+      }
+      case "WARNING": {
+        return <Warning title={rest["data-alert-title"]}>{children}</Warning>;
+      }
+      case "ALERT": {
+        return <Alert title={rest["data-alert-title"]}>{children}</Alert>;
+      }
+      default: {
+        return <aside {...rest}>{children}</aside>;
+      }
+    }
+  },
   img: (props) => (
     <Image
       sizes="100vw"

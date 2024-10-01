@@ -1,7 +1,9 @@
 import remarkA11yEmoji from "@fec/remark-a11y-emoji";
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import rehypeAlerts from "rehype-alerts";
 import GithubSlugger from "github-slugger";
 import readingTime from "reading-time";
+import rehypeSemanticBlockquotes from "rehype-semantic-blockquotes";
 import prettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
@@ -75,6 +77,8 @@ export default makeSource({
     ],
     rehypePlugins: [
       rehypeSlug,
+      rehypeSemanticBlockquotes,
+      rehypeAlerts,
       [
         // @ts-expect-error -- No control over this
         prettyCode,
