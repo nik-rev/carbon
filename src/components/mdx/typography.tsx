@@ -70,10 +70,7 @@ function Heading({
   );
 }
 
-export function H1({
-  children,
-  ...rest
-}: HTMLAttributes<HTMLHeadingElement> & Omit<HeadingProps, "level">) {
+export function H1({ children, ...rest }: HTMLAttributes<HTMLHeadingElement>) {
   return (
     <Heading {...rest} level={1}>
       {children}
@@ -81,10 +78,7 @@ export function H1({
   );
 }
 
-export function H2({
-  children,
-  ...rest
-}: HTMLAttributes<HTMLHeadingElement> & Omit<HeadingProps, "level">) {
+export function H2({ children, ...rest }: HTMLAttributes<HTMLHeadingElement>) {
   return (
     <Heading {...rest} level={2}>
       {children}
@@ -92,10 +86,7 @@ export function H2({
   );
 }
 
-export function H3({
-  children,
-  ...rest
-}: HTMLAttributes<HTMLHeadingElement> & Omit<HeadingProps, "level">) {
+export function H3({ children, ...rest }: HTMLAttributes<HTMLHeadingElement>) {
   return (
     <Heading {...rest} level={3}>
       {children}
@@ -103,10 +94,7 @@ export function H3({
   );
 }
 
-export function H4({
-  children,
-  ...rest
-}: HTMLAttributes<HTMLHeadingElement> & Omit<HeadingProps, "level">) {
+export function H4({ children, ...rest }: HTMLAttributes<HTMLHeadingElement>) {
   return (
     <Heading {...rest} level={4}>
       {children}

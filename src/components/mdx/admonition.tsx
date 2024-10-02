@@ -1,12 +1,5 @@
-import {
-  CircleAlert,
-  Flame,
-  Info,
-  type LucideIcon,
-  TriangleAlert,
-} from "lucide-react";
+import { Flame, Info, type LucideIcon, TriangleAlert } from "lucide-react";
 import { type HTMLAttributes } from "react";
-import { type ClassNameValue } from "tailwind-merge";
 
 import { cn } from "@/lib/utils";
 
@@ -34,6 +27,7 @@ function Admonition({
       )}
     >
       <span className="align-center -mb-2 mt-0 flex justify-between">
+        {/* @ts-expect-error -- TODO: remove this and refactor to use CSS */}
         <H4 className="mt-0" linkClassName={iconClassName}>
           {title}
         </H4>

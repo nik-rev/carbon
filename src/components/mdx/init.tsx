@@ -1,5 +1,6 @@
 import { type MDXComponents } from "mdx/types";
 import Image, { type ImageProps } from "next/image";
+import { type HTMLAttributes } from "react";
 
 import { langIcons } from "@/lib/filetypes-icons";
 
@@ -51,7 +52,14 @@ export const mdxComponents: MDXComponents = {
   th: TableHeader,
   td: TableData,
   a: A,
-  aside: ({ children, ...rest }) => {
+  // @ts-expect-error -- due to rehype-alerts plugin, aside may have these attributes
+  aside: ({
+    children,
+    ...rest
+  }: HTMLAttributes<HTMLDivElement> & {
+    ["data-alert-container"]: string;
+    ["data-alert-title"]: string;
+  }) => {
     switch (rest["data-alert-container"]) {
       case "NOTE": {
         return <Note title={rest["data-alert-title"]}>{children}</Note>;
