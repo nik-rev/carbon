@@ -6,8 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "typecheck": "tsc",
+    "tsc:check": "tsc --noEmit",
+    "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
+    "format:fix": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
+    "lint:check": "eslint",
     "lint:fix": "eslint --fix"
   },
   "dependencies": {
