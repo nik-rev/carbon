@@ -10,8 +10,6 @@ import remarkGfm from "remark-gfm";
 import remarkSectionize from "remark-sectionize";
 import { transformerNotationDiff } from "shikiji-transformers";
 
-const hello: string = 1;
-
 export const Post = defineDocumentType(() => ({
   name: "Post",
   filePathPattern: "**/*.mdx",
