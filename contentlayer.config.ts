@@ -1,14 +1,16 @@
 import remarkA11yEmoji from "@fec/remark-a11y-emoji";
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
-import rehypeAlerts from "rehype-alerts";
 import GithubSlugger from "github-slugger";
 import readingTime from "reading-time";
-import rehypeSemanticBlockquotes from "rehype-semantic-blockquotes";
+import rehypeAlerts from "rehype-alerts";
 import prettyCode from "rehype-pretty-code";
+import rehypeSemanticBlockquotes from "rehype-semantic-blockquotes";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import remarkSectionize from "remark-sectionize";
 import { transformerNotationDiff } from "shikiji-transformers";
+
+const hello: string = 1;
 
 export const Post = defineDocumentType(() => ({
   name: "Post",

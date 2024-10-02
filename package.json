@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint",
+    "typecheck": "tsc",
+    "lint:fix": "eslint --fix"
   },
   "dependencies": {
     "@fec/remark-a11y-emoji": "^4.0.2",
