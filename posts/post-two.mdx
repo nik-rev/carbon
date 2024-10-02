@@ -58,11 +58,12 @@ Added and removed lines of code
 ```ts
 const myThing = "hello world";
 const myCoolFunction = (a) => Number(a); // [!code ++]
- // [!code ++]
-console.log("Oh yes") // [!code ++]
+// [!code ++]
+console.log("Oh yes"); // [!code ++]
 
 // a comment // [!code --]
-function whatever() { // [!code --]
+function whatever() {
+  // [!code --]
   return "something"; // [!code --]
 } // [!code --]
 ```
@@ -73,11 +74,11 @@ Basic markdown features.
 
 ### Text Formatting
 
-*Italic text.*
+_Italic text._
 
 **Bold test.**
 
-***Bold italic text.***
+**_Bold italic text._**
 
 ~~Strikethrough text~~
 
@@ -130,8 +131,8 @@ Numbered list:
 
 An example table
 
-| Name       | Age | Occupation     |
-|------------|-----|----------------|
+| Name       | Age | Occupation        |
+| ---------- | --- | ----------------- |
 | John Doe   | 28  | Software Engineer |
 | Jane Smith | 34  | Data Scientist    |
 | Sam Green  | 22  | Graphic Designer  |

@@ -5,7 +5,7 @@ export function Table({
   ...props
 }: HTMLAttributes<HTMLTableElement>) {
   return (
-    <table className="w-full my-4 md:my-8" {...props}>
+    <table className="my-4 w-full md:my-8" {...props}>
       {children}
     </table>
   );
@@ -30,10 +30,7 @@ export function TableRow({
   ...props
 }: HTMLAttributes<HTMLTableRowElement>) {
   return (
-    <tr
-      className="m-0 border-t border-surface0  p-0"
-      {...props}
-    >
+    <tr className="m-0 border-t border-surface0 p-0" {...props}>
       {children}
     </tr>
   );
