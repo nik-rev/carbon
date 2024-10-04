@@ -8,16 +8,15 @@
     "start": "next start",
     "tsc:check": "tsc --noEmit",
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
-    "format:fix": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
     "lint:check": "eslint",
-    "lint:fix": "eslint --fix"
+    "fix": "eslint --fix && prettier --write \"**/*.{ts,tsx,mdx}\" --cache"
   },
   "dependencies": {
     "@fec/remark-a11y-emoji": "^4.0.2",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
-    "@next/mdx": "^14.2.13",
-    "@radix-ui/react-accordion": "^1.2.0",
+    "@next/mdx": "^14.2.14",
+    "@radix-ui/react-accordion": "^1.2.1",
     "@radix-ui/react-separator": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.0",
     "@types/mdx": "^2.0.13",
@@ -30,7 +29,7 @@
     "hast-util-whitespace": "^3.0.0",
     "hastscript": "^9.0.0",
     "lucide-react": "^0.429.0",
-    "next": "^14.2.13",
+    "next": "^14.2.14",
     "next-contentlayer": "^0.3.4",
     "next-mdx-remote": "^5.0.0",
     "next-themes": "^0.3.0",
@@ -45,7 +44,7 @@
     "remark-gfm": "^3.0.1",
     "remark-sectionize": "^2.0.0",
     "shikiji-transformers": "^0.10.2",
-    "tailwind-merge": "^2.5.2",
+    "tailwind-merge": "^2.5.3",
     "tailwindcss-animate": "^1.0.7",
     "title-case": "^4.3.2",
     "unist-util-visit": "^5.0.0"
@@ -53,18 +52,16 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.15",
     "@total-typescript/ts-reset": "^0.5.1",
-    "@types/node": "^20.16.5",
-    "@types/react": "^18.3.8",
+    "@types/node": "^20.16.10",
+    "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
-    "eslint": "^9.11.0",
-    "eslint-config-nikitarevenco": "^2.3.0",
+    "eslint": "^9.11.1",
+    "eslint-config-nikitarevenco": "^3.1.8",
     "eslint-mdx": "^3.1.5",
-    "eslint-plugin-mdx": "^3.1.5",
     "postcss": "^8.4.47",
     "prettier": "^3.3.3",
-    "prettier-plugin-tailwindcss": "^0.6.6",
-    "tailwindcss": "^3.4.12",
-    "typescript": "^5.6.2",
-    "typescript-eslint": "^8.6.0"
+    "prettier-plugin-tailwindcss": "^0.6.8",
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.6.2"
   }
 }

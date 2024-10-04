@@ -1,79 +1,62 @@
-import { Flame, Info, type LucideIcon, TriangleAlert } from "lucide-react";
-import { type HTMLAttributes } from "react";
+import { Flame, Info, TriangleAlert } from "lucide-react";
 
-import { cn } from "@/lib/utils";
+import { H4 } from "./heading";
 
-import { H4 } from "./typography";
+const alertTypes = ["note", "warning", "danger"] as const;
 
-function Admonition({
-  children,
+export const isValidAdmonitionType = (str: string): str is AlertType =>
+  alertTypes.includes(str);
+
+export type AlertType = (typeof alertTypes)[number];
+
+export function Admonition({
+  alertType,
   title,
-  /* eslint-disable ts/naming-convention -- Icon is a component */
-  Icon,
-  /* eslint-enable ts/naming-convention -- Icon is a component */
-  className,
-  iconClassName,
-}: HTMLAttributes<HTMLElement> & {
-  /* eslint-disable ts/naming-convention -- Icon is a component */
-  Icon: LucideIcon;
-  /* eslint-enable ts/naming-convention -- Icon is a component */
-  iconClassName: string;
+  children,
+}: {
+  alertType: AlertType;
+  title: string;
+  children: React.ReactNode;
 }) {
+  const data =
+    alertType === "note"
+      ? ({
+          icon: Info,
+          className: "border-l-blue bg-blue/5",
+          iconClassName: "text-blue",
+        } as const)
+      : alertType === "warning"
+        ? ({
+            icon: TriangleAlert,
+            className: "border-l-yellow bg-yellow/5",
+            iconClassName: "text-yellow",
+          } as const)
+        : ({
+            icon: Flame,
+            className: "border-l-red bg-red/5",
+            iconClassName: "text-red",
+          } as const);
+
   return (
     <aside
-      className={cn(
-        "relative -mx-4 my-4 block overflow-x-auto border-l-4 p-4 max-sm:text-sm md:-mx-8 md:my-8 md:p-8",
-        className,
+      className={`relative -mx-4 my-4 block overflow-x-auto border-l-4 p-4 max-sm:text-sm md:-mx-8 md:my-8 md:p-8 ${data.className}`}
+    >
+      {title !== "" && (
+        <span className="align-center -mb-2 mt-0 flex justify-between">
+          {title !== "" && (
+            <H4 className="mt-0" linkClassName={data.iconClassName}>
+              {title}
+            </H4>
+          )}
+          <data.icon className={data.iconClassName} />
+        </span>
       )}
-    >
-      <span className="align-center -mb-2 mt-0 flex justify-between">
-        {/* @ts-expect-error -- TODO: remove this and refactor to use CSS */}
-        <H4 className="mt-0" linkClassName={iconClassName}>
-          {title}
-        </H4>
-        <Icon className={iconClassName} />
-      </span>
       {children}
+      {title === "" && (
+        <data.icon
+          className={`absolute right-4 top-4 md:right-8 md:top-8 ${data.iconClassName}`}
+        />
+      )}
     </aside>
-  );
-}
-// I could place Danger, Alert and Note components' functionality straight into Admonition, but I didn't because this provides for a nicer authoring experience instead of having to type <Admonition variant="note"> I just write <Note>
-
-export function Note({ children, title }: HTMLAttributes<HTMLElement>) {
-  return (
-    <Admonition
-      Icon={Info}
-      iconClassName="text-blue"
-      className="border-l-blue bg-blue/5"
-      title={title}
-    >
-      {children}
-    </Admonition>
-  );
-}
-
-export function Alert({ children, title }: HTMLAttributes<HTMLElement>) {
-  return (
-    <Admonition
-      Icon={TriangleAlert}
-      iconClassName="text-yellow"
-      className="border-l-yellow bg-yellow/5"
-      title={title}
-    >
-      {children}
-    </Admonition>
-  );
-}
-
-export function Warning({ children, title }: HTMLAttributes<HTMLElement>) {
-  return (
-    <Admonition
-      Icon={Flame}
-      iconClassName="text-red"
-      className="border-l-red bg-red/5"
-      title={title}
-    >
-      {children}
-    </Admonition>
   );
 }

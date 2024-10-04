@@ -1,12 +1,13 @@
 import { type MDXComponents } from "mdx/types";
 import Image, { type ImageProps } from "next/image";
-import { type HTMLAttributes } from "react";
+import { Children, type HTMLAttributes } from "react";
 
 import { langIcons } from "@/lib/filetypes-icons";
 
 import { Separator } from "../ui/separator";
-import { Alert, Note, Warning } from "./admonition";
+import { Admonition, isValidAdmonitionType } from "./admonition";
 import { CodeBlock, InlineCode } from "./code";
+import { H1, H2, H3, H4 } from "./heading";
 import {
   Table,
   TableBody,
@@ -15,24 +16,9 @@ import {
   TableHeader,
   TableRow,
 } from "./table";
-import {
-  A,
-  Blockquote as BlockQuote,
-  H1,
-  H2,
-  H3,
-  H4,
-  Li,
-  Ol,
-  P,
-  Ul,
-} from "./typography";
+import { A, Blockquote as BlockQuote, Li, Ol, P, Ul } from "./typography";
 
 export const mdxComponents: MDXComponents = {
-  /* eslint ts/naming-convention: "off" -- We have to use PascalCase in order for our custom components to work */
-  Alert,
-  Warning,
-  Note,
   h1: H1,
   h2: H2,
   h3: H3,
@@ -60,20 +46,23 @@ export const mdxComponents: MDXComponents = {
     ["data-alert-container"]: string;
     ["data-alert-title"]: string;
   }) => {
-    switch (rest["data-alert-container"]) {
-      case "NOTE": {
-        return <Note title={rest["data-alert-title"]}>{children}</Note>;
-      }
-      case "WARNING": {
-        return <Warning title={rest["data-alert-title"]}>{children}</Warning>;
-      }
-      case "ALERT": {
-        return <Alert title={rest["data-alert-title"]}>{children}</Alert>;
-      }
-      default: {
-        return <aside {...rest}>{children}</aside>;
-      }
+    const alertType = rest["data-alert-container"];
+    const title = rest["data-alert-title"];
+
+    if (!isValidAdmonitionType(alertType)) {
+      return <aside {...rest}>{children}</aside>;
     }
+
+    const childrenArray = Children.toArray(children);
+
+    const firstNewlineIndex = childrenArray.indexOf("\n");
+    const childrenWithoutTitle = childrenArray.slice(firstNewlineIndex + 1);
+
+    return (
+      <Admonition title={title} alertType={alertType}>
+        {childrenWithoutTitle}
+      </Admonition>
+    );
   },
   img: (props) => (
     <Image

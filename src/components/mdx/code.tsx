@@ -41,7 +41,7 @@ export function CodeBlock({ children }: HTMLAttributes<HTMLPreElement>) {
       <button
         type="button"
         onClick={handleCopy}
-        className={`absolute right-0 top-4 scale-90 bg-transparent text-subtext0 opacity-0 transition-colors transition-transform hover:text-text group-hover:scale-100 ${isCopying ? "scale-100 opacity-100" : "hover:scale-90 group-hover:opacity-100"} max-md:hidden md:right-0 md:top-8`}
+        className={`absolute right-0 top-4 scale-90 bg-transparent text-subtext0 opacity-0 transition-colors [transition-property:transform] hover:text-text group-hover:scale-100 ${isCopying ? "scale-100 opacity-100" : "hover:scale-90 group-hover:opacity-100"} max-md:hidden md:right-0 md:top-8`}
       >
         {isCopying ? <Check className="text-green" /> : <Copy />}
       </button>
