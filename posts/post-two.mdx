@@ -8,20 +8,6 @@ tags: [next.js, blog, static blog, tailwind, mdx]
 keywords: [next.js, blog, static blog, tailwind, mdx]
 ---
 
-### Alerts
-
-> [!note] This is a note
->
-> An example note
-
-> [!warning]
->
-> An example alert
-
-> [!danger] This is a warning
->
-> An example warning
-
 ## Code Blocks
 
 Showcases basic code blocks usage
@@ -102,6 +88,8 @@ _Italic text._
 
 ### Blocks
 
+Here is a basic blockquote:
+
 > This is my basic blockquote
 > hello world
 
@@ -110,6 +98,20 @@ Next example is possible because of a custom plugin I wrote: [`rehype-semantic-b
 > This blockquote mentions someone
 >
 > @ someone
+
+For the next 3 examples, possible due to another custom plugin I wrote: [`rehype-alerts`](https://github.com/nikitarevenco/rehype-alerts)
+
+> [!note] This is a note
+>
+> An example note
+
+> [!warning] This is a warning
+>
+> An example warning
+
+> [!danger] This is a danger
+>
+> An example warning
 
 ### Lists
 
@@ -126,6 +128,12 @@ Numbered list:
 1. Then that
 1. Then another
 1. Finally, do this
+
+You can create task lists with checkboxes:
+
+- [x] Write the blog post
+- [ ] Add more content
+- [ ] Publish it
 
 ### Tables
 

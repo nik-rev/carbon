@@ -1,11 +1,17 @@
 import { type MDXComponents } from "mdx/types";
 import Image, { type ImageProps } from "next/image";
-import { Children, type HTMLAttributes } from "react";
+import {
+  Children,
+  type HTMLAttributes,
+  isValidElement,
+  type ReactElement,
+} from "react";
 
 import { langIcons } from "@/lib/filetypes-icons";
 
 import { Separator } from "../ui/separator";
 import { Admonition, isValidAdmonitionType } from "./admonition";
+import { BlockQuote } from "./blockquote";
 import { CodeBlock, InlineCode } from "./code";
 import { H1, H2, H3, H4 } from "./heading";
 import {
@@ -16,7 +22,7 @@ import {
   TableHeader,
   TableRow,
 } from "./table";
-import { A, Blockquote as BlockQuote, Li, Ol, P, Ul } from "./typography";
+import { A, Li, Ol, P, Ul } from "./typography";
 
 export const mdxComponents: MDXComponents = {
   h1: H1,
@@ -24,6 +30,27 @@ export const mdxComponents: MDXComponents = {
   h3: H3,
   h4: H4,
   p: P,
+  // @ts-expect-error -- due to rehype-semantic-blockquotes plugin, figure may have these attributes
+  figure: ({
+    children,
+    ...props
+  }: HTMLAttributes<HTMLElement> & {
+    ["data-blockquote-container"]: string;
+  }) => {
+    const isBlockquoteContainer = props["data-blockquote-container"] === "";
+    if (!isBlockquoteContainer) {
+      return <figure {...props}>{children}</figure>;
+    }
+
+    /* eslint @typescript-eslint/no-unsafe-call: off, @typescript-eslint/no-unsafe-member-access: off -- children will be an array and we know exactly that the last child will be a paragraph text node, the first child will be a blockcaption element due to the fact that we are using rehype-semantic-blockquotes plugin */
+    // @ts-expect-error -- see eslint comment above
+    const content = children.at(0).props.children as ReactElement<HTMLElement>;
+    // @ts-expect-error -- see eslint comment above
+    const credit = children.at(-1).props.children.props
+      .children as ReactElement<HTMLParagraphElement>;
+
+    return <BlockQuote credit={credit}>{content}</BlockQuote>;
+  },
   blockquote: BlockQuote,
   ul: Ul,
   ol: Ol,

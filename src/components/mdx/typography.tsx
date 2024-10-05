@@ -1,4 +1,3 @@
-import { Quote } from "lucide-react";
 import Link from "next/link";
 import { type HTMLAttributes } from "react";
 
@@ -23,21 +22,6 @@ export function A({
     <Link href={href} className="text-accent hover:text-accent/90">
       {children}
     </Link>
-  );
-}
-
-export function Blockquote({
-  children,
-  ...props
-}: HTMLAttributes<HTMLQuoteElement>) {
-  return (
-    <blockquote
-      className="mt-6 w-[73ch] translate-x-[-2.4ch] border-l-2 border-slate-300 px-[4ch] pl-6 italic text-slate-800 dark:border-slate-600 dark:text-slate-200"
-      {...props}
-    >
-      <Quote className="-mb-4 fill-slate-300 stroke-slate-300" />
-      {children}
-    </blockquote>
   );
 }
 
