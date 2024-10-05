@@ -59,7 +59,7 @@ export function InlineCode({
   return isInCodeBlock ? (
     <code {...rest}>{children}</code>
   ) : (
-    <code className="select-all rounded-md border-[1.5px] border-surface0 bg-mantle px-[0.3rem] py-[0.2rem] align-middle font-mono text-sm">
+    <code className="INLINE-CODE select-all rounded-md border-[1.5px] border-surface0 bg-mantle px-[0.3rem] py-[0.2rem] align-middle font-mono text-sm transition-colors group-hover/link:border-b-accent group-[.BLUE]:group-hover/link:border-b-blue group-[.GREEN]:group-hover/link:border-b-green group-[.RED]:group-hover/link:border-b-red group-[.YELLOW]:group-hover/link:border-b-yellow">
       {children}
     </code>
   );
