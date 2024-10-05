@@ -4,7 +4,7 @@ import { Check, Copy } from "lucide-react";
 import { cloneElement, useRef, useState } from "react";
 import { type HTMLAttributes } from "react";
 
-import { cn, extractTextFromChildren } from "@/lib/utils";
+import { extractTextFromChildren } from "@/lib/utils";
 
 export function CodeBlock({ children }: HTMLAttributes<HTMLPreElement>) {
   const [isCopying, setIsCopying] = useState(false);

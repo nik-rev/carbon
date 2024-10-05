@@ -24,27 +24,3 @@ export function A({
     </Link>
   );
 }
-
-export function Ul({ children, ...props }: HTMLAttributes<HTMLUListElement>) {
-  return (
-    <ul className="my-6 ml-6 list-disc [&>li]:mt-2" {...props}>
-      {children}
-    </ul>
-  );
-}
-
-export function Ol({ children, ...props }: HTMLAttributes<HTMLOListElement>) {
-  return (
-    <ol className="my-6 ml-6 list-decimal [&>li]:mt-2" {...props}>
-      {children}
-    </ol>
-  );
-}
-
-export function Li({ children, ...props }: HTMLAttributes<HTMLLIElement>) {
-  return (
-    <li className="pl-2 leading-7" {...props}>
-      {children}
-    </li>
-  );
-}

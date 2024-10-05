@@ -1,11 +1,6 @@
 import { type MDXComponents } from "mdx/types";
 import Image, { type ImageProps } from "next/image";
-import {
-  Children,
-  type HTMLAttributes,
-  isValidElement,
-  type ReactElement,
-} from "react";
+import { Children, type HTMLAttributes, type ReactElement } from "react";
 
 import { langIcons } from "@/lib/filetypes-icons";
 
@@ -14,6 +9,7 @@ import { Admonition, isValidAdmonitionType } from "./admonition";
 import { BlockQuote } from "./blockquote";
 import { CodeBlock, InlineCode } from "./code";
 import { H1, H2, H3, H4 } from "./heading";
+import { Li, Ol, Ul } from "./lists";
 import {
   Table,
   TableBody,
@@ -22,7 +18,7 @@ import {
   TableHeader,
   TableRow,
 } from "./table";
-import { A, Li, Ol, P, Ul } from "./typography";
+import { A, P } from "./typography";
 
 export const mdxComponents: MDXComponents = {
   h1: H1,
