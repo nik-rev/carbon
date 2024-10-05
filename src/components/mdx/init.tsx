@@ -50,6 +50,7 @@ export const mdxComponents: MDXComponents = {
   blockquote: BlockQuote,
   ul: Ul,
   ol: Ol,
+  // @ts-expect-error -- <Li> will have listType because we use cloneElement to "inject" that attribute based on whether the list item is in an Ol or Ul. Using Context API is out of the question since that would require the list elements to be client components
   li: Li,
   pre: CodeBlock,
   // @ts-expect-error -- need variable to know if we should style it as an inline <code> or as a code block
