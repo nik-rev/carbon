@@ -29,7 +29,7 @@ export function CodeBlock({ children }: HTMLAttributes<HTMLPreElement>) {
 
   return (
     <pre
-      className={`group relative after:pointer-events-none after:absolute after:-inset-x-4 after:inset-y-0 md:after:-inset-x-8 ${isAfterVisible ? "after:bg-text/20" : "after:bg-text/0"} after:transition-colors`}
+      className={`group/code relative before:pointer-events-none before:absolute before:-inset-x-4 before:inset-y-0 after:pointer-events-none after:absolute after:-inset-x-4 after:inset-y-0 group-[.BLUE]:before:bg-blue/5 group-[.GREEN]:before:bg-green/5 group-[.RED]:before:bg-red/5 group-[.YELLOW]:before:bg-yellow/5 md:before:-inset-x-8 md:after:-inset-x-8 ${isAfterVisible ? "after:bg-text/20" : "after:bg-text/0"} after:transition-colors`}
       ref={preRef}
     >
       <div className="-mx-4 my-4 overflow-x-auto bg-mantle p-4 md:-mx-8 md:my-8 md:p-8">
@@ -41,7 +41,7 @@ export function CodeBlock({ children }: HTMLAttributes<HTMLPreElement>) {
       <button
         type="button"
         onClick={handleCopy}
-        className={`absolute right-0 top-4 scale-90 bg-transparent text-subtext0 opacity-0 transition-colors [transition-property:transform] hover:text-text group-hover:scale-100 ${isCopying ? "scale-100 opacity-100" : "hover:scale-90 group-hover:opacity-100"} max-md:hidden md:right-0 md:top-8`}
+        className={`absolute right-0 top-4 scale-90 bg-transparent text-subtext0 opacity-0 transition-colors [transition-property:transform] hover:text-text group-hover/code:scale-100 ${isCopying ? "scale-100 opacity-100" : "hover:scale-90 group-hover/code:opacity-100"} max-md:hidden md:right-0 md:top-8`}
       >
         {isCopying ? <Check className="text-green" /> : <Copy />}
       </button>

@@ -1,8 +1,8 @@
-import { Flame, Info, TriangleAlert } from "lucide-react";
+import { Flame, Info, Lightbulb, TriangleAlert } from "lucide-react";
 
 import { H4 } from "./heading";
 
-const alertTypes = ["note", "warning", "danger"] as const;
+const alertTypes = ["note", "tip", "warning", "danger"] as const;
 
 export const isValidAdmonitionType = (str: string): str is AlertType =>
   alertTypes.includes(str);
@@ -22,24 +22,30 @@ export function Admonition({
     alertType === "note"
       ? ({
           icon: Info,
-          className: "border-l-blue bg-blue/5",
+          className: "border-l-blue bg-blue/5 BLUE",
           iconClassName: "text-blue",
         } as const)
       : alertType === "warning"
         ? ({
             icon: TriangleAlert,
-            className: "border-l-yellow bg-yellow/5",
+            className: "border-l-yellow bg-yellow/5 YELLOW",
             iconClassName: "text-yellow",
           } as const)
-        : ({
-            icon: Flame,
-            className: "border-l-red bg-red/5",
-            iconClassName: "text-red",
-          } as const);
+        : alertType === "tip"
+          ? ({
+              icon: Lightbulb,
+              className: "border-l-green bg-green/5 GREEN",
+              iconClassName: "text-green",
+            } as const)
+          : ({
+              icon: Flame,
+              className: "border-l-red bg-red/5 RED",
+              iconClassName: "text-red",
+            } as const);
 
   return (
     <aside
-      className={`relative -mx-4 my-4 block overflow-x-auto border-l-4 p-4 max-sm:text-sm md:-mx-8 md:my-8 md:p-8 ${data.className}`}
+      className={`group relative -mx-4 my-4 block overflow-x-auto border-l-4 p-4 max-sm:text-sm md:-mx-8 md:my-8 md:p-8 ${data.className}`}
     >
       {title !== "" && (
         <span className="align-center -mb-2 mt-0 flex justify-between">
@@ -48,14 +54,20 @@ export function Admonition({
               {title}
             </H4>
           )}
-          <data.icon className={data.iconClassName} />
+          <span className={`flex gap-x-2 ${data.iconClassName}`}>
+            <span className="font-bold uppercase">{alertType}</span>
+            <data.icon strokeWidth={2.4} />
+          </span>
         </span>
       )}
       {children}
       {title === "" && (
-        <data.icon
+        <span
           className={`absolute right-4 top-4 md:right-8 md:top-8 ${data.iconClassName}`}
-        />
+        >
+          hello
+          <data.icon />
+        </span>
       )}
     </aside>
   );

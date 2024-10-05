@@ -30,7 +30,7 @@ const createHeading = (level: 1 | 2 | 3 | 4) =>
     ];
 
     return (
-      <a href={`#${id}`} className="group">
+      <a href={`#${id}`} className="group/heading">
         <HeadingElement
           className={cn(
             `scroll-m-20 font-semibold tracking-tight transition-colors ${classNames[level - 1]}`,
@@ -41,7 +41,7 @@ const createHeading = (level: 1 | 2 | 3 | 4) =>
           {children}
           <SvgLink
             className={cn(
-              `mb-1 ml-2.5 inline text-accent opacity-0 transition-opacity group-hover:opacity-100`,
+              `mb-1 ml-2.5 inline text-accent opacity-0 transition-opacity group-hover/heading:opacity-100`,
               linkClassName,
             )}
             size={iconSizes[level - 1]}
