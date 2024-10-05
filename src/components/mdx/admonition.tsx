@@ -34,8 +34,8 @@ export function Admonition({
         : alertType === "tip"
           ? ({
               icon: Lightbulb,
-              className: "border-l-green bg-green/5 GREEN",
-              iconClassName: "text-green",
+              className: "border-l-teal bg-teal/5 TEAL",
+              iconClassName: "text-teal",
             } as const)
           : ({
               icon: Flame,

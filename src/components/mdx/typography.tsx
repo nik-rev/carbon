@@ -21,7 +21,7 @@ export function A({
   return (
     <Link
       href={href}
-      className="group/link text-accent underline decoration-transparent transition-colors hover:decoration-accent group-[.BLUE]:text-blue group-[.RED]:text-red group-[.YELLOW]:text-yellow group-[.bg-GREEN]:text-green group-[.BLUE]:hover:decoration-blue group-[.RED]:hover:decoration-red group-[.YELLOW]:hover:decoration-yellow group-[.bg-GREEN]:hover:decoration-green has-[.INLINE-CODE]:no-underline"
+      className="group/link text-accent underline decoration-transparent transition-colors hover:decoration-accent group-[.BLUE]:text-blue group-[.RED]:text-red group-[.TEAL]:text-teal group-[.YELLOW]:text-yellow group-[.BLUE]:hover:decoration-blue group-[.RED]:hover:decoration-red group-[.TEAL]:hover:decoration-teal group-[.YELLOW]:hover:decoration-yellow has-[.INLINE-CODE]:no-underline"
     >
       {children}
     </Link>

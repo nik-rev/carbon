@@ -29,7 +29,7 @@ export function CodeBlock({ children }: HTMLAttributes<HTMLPreElement>) {
 
   return (
     <pre
-      className={`group/code relative before:pointer-events-none before:absolute before:-inset-x-4 before:inset-y-0 after:pointer-events-none after:absolute after:-inset-x-4 after:inset-y-0 group-[.BLUE]:before:bg-blue/5 group-[.GREEN]:before:bg-green/5 group-[.RED]:before:bg-red/5 group-[.YELLOW]:before:bg-yellow/5 md:before:-inset-x-8 md:after:-inset-x-8 ${isAfterVisible ? "after:bg-text/20" : "after:bg-text/0"} after:transition-colors`}
+      className={`group/code relative before:pointer-events-none before:absolute before:-inset-x-4 before:inset-y-0 after:pointer-events-none after:absolute after:-inset-x-4 after:inset-y-0 group-[.BLUE]:before:bg-blue/5 group-[.TEAL]:before:bg-teal/5 group-[.RED]:before:bg-red/5 group-[.YELLOW]:before:bg-yellow/5 md:before:-inset-x-8 md:after:-inset-x-8 ${isAfterVisible ? "after:bg-text/20" : "after:bg-text/0"} after:transition-colors`}
       ref={preRef}
     >
       <div className="-mx-4 my-4 overflow-x-auto bg-mantle p-4 md:-mx-8 md:my-8 md:p-8">
@@ -59,7 +59,7 @@ export function InlineCode({
   return isInCodeBlock ? (
     <code {...rest}>{children}</code>
   ) : (
-    <code className="INLINE-CODE select-all rounded-md border-[1.5px] border-surface0 bg-mantle px-[0.3rem] py-[0.2rem] align-middle font-mono text-sm transition-colors group-hover/link:border-b-accent group-[.BLUE]:group-hover/link:border-b-blue group-[.GREEN]:group-hover/link:border-b-green group-[.RED]:group-hover/link:border-b-red group-[.YELLOW]:group-hover/link:border-b-yellow">
+    <code className="INLINE-CODE select-all rounded-md border-[1.5px] border-surface0 bg-mantle px-[0.3rem] py-[0.2rem] align-middle font-mono text-sm transition-colors group-hover/link:border-b-accent group-[.BLUE]:group-hover/link:border-b-blue group-[.TEAL]:group-hover/link:border-b-teal group-[.RED]:group-hover/link:border-b-red group-[.YELLOW]:group-hover/link:border-b-yellow">
       {children}
     </code>
   );

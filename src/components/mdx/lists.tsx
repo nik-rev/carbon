@@ -39,12 +39,12 @@ export function Li({
 }: HTMLAttributes<HTMLLIElement> & { listType: "ol" | "ul" }) {
   return (
     <li
-      className={`relative pl-2 leading-7 ${listType === "ol" ? "marker:font-bold marker:text-accent group-[.BLUE]:marker:text-blue group-[.GREEN]:marker:text-green group-[.RED]:marker:text-red group-[.YELLOW]:marker:text-yellow" : ""}`}
+      className={`relative pl-2 leading-7 ${listType === "ol" ? "marker:font-bold marker:text-accent group-[.BLUE]:marker:text-blue group-[.TEAL]:marker:text-teal group-[.RED]:marker:text-red group-[.YELLOW]:marker:text-yellow" : ""}`}
       {...props}
     >
       {children}
       {listType === "ul" && (
-        <FaArrowRight className="absolute -left-5 top-[0.4rem] text-accent group-[.BLUE]:text-blue group-[.GREEN]:text-green group-[.RED]:text-red group-[.YELLOW]:text-yellow" />
+        <FaArrowRight className="absolute -left-5 top-[0.4rem] text-accent group-[.BLUE]:text-blue group-[.TEAL]:text-teal group-[.RED]:text-red group-[.YELLOW]:text-yellow" />
       )}
     </li>
   );
