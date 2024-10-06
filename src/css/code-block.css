@@ -88,7 +88,7 @@ code:has(span.diff.remove) > span::before {
   bottom: 0;
   width: 100%;
   border-left: 4px solid hsl(var(--blue));
-  @apply bg-blue/5;
+  @apply bg-blue/5 group-[.TEAL]:bg-teal/5 group-[.RED]:bg-red/5 group-[.BLUE]:bg-blue/5 group-[.YELLOW]:bg-yellow/5;
 }
 
 /* In a <Note> component and similar, their border takes priority */
