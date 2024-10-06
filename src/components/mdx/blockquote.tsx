@@ -32,7 +32,7 @@ export function BlockQuote({
         {/* eslint @typescript-eslint/no-unsafe-member-access: off -- props is expected to contain children */}
         {lastChild.props.children}{" "}
         <span className="relative">
-          <RiDoubleQuotesR className="absolute -top-2 left-1 inline align-baseline text-2xl text-overlay2" />
+          <RiDoubleQuotesR className="absolute -top-2 left-1 inline align-baseline text-2xl text-green group-[.BLUE]:text-blue group-[.RED]:text-red group-[.TEAL]:text-teal group-[.YELLOW]:text-yellow" />
         </span>
       </>
     ),
@@ -46,7 +46,7 @@ export function BlockQuote({
   const quoteContent = (
     <div className="relative ml-4">
       {childrenWithIcon}
-      <RiDoubleQuotesL className="absolute -left-6 top-[-0.2rem] text-2xl text-overlay2" />
+      <RiDoubleQuotesL className="absolute -left-6 top-[-0.2rem] text-2xl text-green group-[.BLUE]:text-blue group-[.RED]:text-red group-[.TEAL]:text-teal group-[.YELLOW]:text-yellow" />
     </div>
   );
 
