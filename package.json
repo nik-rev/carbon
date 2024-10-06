@@ -9,7 +9,8 @@
     "tsc:check": "tsc --noEmit",
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
     "lint:check": "eslint",
-    "fix": "eslint --fix && prettier --write \"**/*.{ts,tsx,mdx}\" --cache"
+    "fix": "eslint --fix && prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
+    "check": "pnpm fix && pnpm tsc"
   },
   "dependencies": {
     "@fec/remark-a11y-emoji": "^4.0.2",

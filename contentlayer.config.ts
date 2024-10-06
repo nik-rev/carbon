@@ -16,6 +16,7 @@ export const Post = defineDocumentType(() => ({
   contentType: "mdx",
   fields: {
     title: { type: "string", required: true },
+    seoTitle: { type: "string", required: true },
     date: { type: "date", required: true },
     updatedAt: { type: "date", required: true },
     /** displayed on preview card */
@@ -31,6 +32,7 @@ export const Post = defineDocumentType(() => ({
     tags: { type: "list", of: { type: "string" }, required: true },
     /** for SEO */
     keywords: { type: "list", of: { type: "string" }, required: true },
+    published: { type: "boolean", required: true, default: false },
   },
   computedFields: {
     url: {

@@ -23,10 +23,10 @@ export const generateMetadata = ({
 
   if (!post) throw new Error(`Post not found for slug: ${params.slug}`);
 
-  const { title, description, keywords, date, updatedAt } = post;
+  const { seoTitle, title, description, keywords, date, updatedAt } = post;
 
   return {
-    title,
+    title: seoTitle,
     description,
     openGraph: {
       type: "article",
@@ -89,7 +89,7 @@ function PostLayout({ params }: { readonly params: { slug: string } }) {
     (mdxPost) => mdxPost._raw.flattenedPath === params.slug,
   );
 
-  if (!post) {
+  if (!post?.published) {
     notFound();
   }
 

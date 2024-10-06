@@ -62,7 +62,7 @@ export function BlockQuote({
   const blockQuoteWithCredit = (
     <figure className={cn(className, "space-y-2 md:space-y-6")}>
       <blockquote {...props}>{quoteContent}</blockquote>
-      <figcaption className="not-italic text-subtext0 flex items-center">
+      <figcaption className="flex items-center not-italic text-subtext0">
         <GoDash className="mr-2 inline" strokeWidth={1} />
         {credit}
       </figcaption>
