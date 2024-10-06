@@ -51,7 +51,7 @@ export function BlockQuote({
   );
 
   const className =
-    "-mx-4 my-4 block overflow-x-auto bg-lavender/5 p-4 italic max-sm:text-sm md:-mx-8 md:my-8 md:p-8";
+    "block overflow-x-auto bg-lavender/5 italic max-sm:text-sm bleed";
 
   const blockQuote = (
     <blockquote className={className} {...props}>

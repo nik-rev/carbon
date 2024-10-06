@@ -45,7 +45,7 @@ export function Admonition({
 
   return (
     <aside
-      className={`group relative -mx-4 my-4 block overflow-x-auto border-l-4 p-4 max-sm:text-sm md:-mx-8 md:my-8 md:p-8 ${data.className}`}
+      className={`bleed group relative block overflow-x-auto border-l-4 max-sm:text-sm ${data.className}`}
     >
       {title !== "" && (
         <span className="align-center -mb-2 mt-0 flex justify-between">

@@ -110,7 +110,7 @@ aside [data-highlighted-line]::after {
 /* Code blocks file name */
 
 [data-rehype-pretty-code-title] {
-  @apply left-0 -mb-4 mt-4 flex w-max items-center justify-between gap-2 bg-mantle px-4 py-1 font-mono text-sm text-text md:-mb-8 md:mt-8 md:px-6 md:py-2 md:text-[1rem];
+  @apply left-0 -mb-6 mt-4 flex w-max items-center justify-between gap-2 bg-mantle px-4 py-1 font-mono text-sm text-text md:-mb-8 md:mt-8 md:px-6 md:py-2 md:text-[1rem];
 }
 
 /* light and dark mode for code blocks */

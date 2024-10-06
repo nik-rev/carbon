@@ -14,8 +14,8 @@ export function Logo() {
 
 export function Header() {
   return (
-    <header className="sticky flex justify-center bg-mantle p-12">
-      <span className="align-center flex w-full max-w-[1000px] justify-between">
+    <header className="flex justify-center bg-mantle px-4 py-12">
+      <span className="align-center max-w-article flex w-full justify-between">
         <Link href="/">
           <Logo />
         </Link>

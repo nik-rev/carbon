@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 import tailwindAnimate from "tailwindcss-animate";
 
 const config = {
@@ -19,6 +20,9 @@ const config = {
       },
     },
     extend: {
+      maxWidth: {
+        article: "656.5px",
+      },
       fontSize: {
         "2xs": ["0.625rem", { lineHeight: "1rem" }],
       },
@@ -107,7 +111,16 @@ const config = {
       },
     },
   },
-  plugins: [tailwindAnimate],
+  plugins: [
+    tailwindAnimate,
+    plugin((p) => {
+      p.addUtilities({
+        ".bleed": {
+          "@apply -mx-4 my-6 p-4 md:-mx-8 md:my-8 md:p-8": {},
+        },
+      });
+    }),
+  ],
 } satisfies Config;
 
 export default config;

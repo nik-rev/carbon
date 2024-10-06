@@ -32,7 +32,7 @@ export function CodeBlock({ children }: HTMLAttributes<HTMLPreElement>) {
       className={`group/code relative before:pointer-events-none before:absolute before:-inset-x-4 before:inset-y-0 after:pointer-events-none after:absolute after:-inset-x-4 after:inset-y-0 group-[.BLUE]:before:bg-blue/5 group-[.RED]:before:bg-red/5 group-[.TEAL]:before:bg-teal/5 group-[.YELLOW]:before:bg-yellow/5 md:before:-inset-x-8 md:after:-inset-x-8 ${isAfterVisible ? "after:bg-text/20" : "after:bg-text/0"} after:transition-colors`}
       ref={preRef}
     >
-      <div className="-mx-4 my-4 overflow-x-auto bg-mantle p-4 md:-mx-8 md:my-8 md:p-8">
+      <div className="bleed overflow-x-auto bg-mantle">
         {
           // @ts-expect-error -- will always be <code> element
           cloneElement(children, { isInCodeBlock: true })

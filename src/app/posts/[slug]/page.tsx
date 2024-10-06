@@ -49,8 +49,8 @@ function Hero({ post }: { post: Post }) {
   return (
     <div className="relative flex w-full flex-col justify-start">
       <span className="flex w-full flex-col items-center justify-center gap-12 bg-mantle">
-        <span className="m-8 flex max-w-[656.5px] flex-col">
-          <h1 className="scroll-m-20 bg-gradient-to-b from-text to-subtext1 bg-clip-text pt-10 text-left text-4xl font-extrabold tracking-tight text-transparent lg:py-16 lg:text-5xl">
+        <span className="max-w-article flex w-full flex-col p-8 sm:p-8">
+          <h1 className="scroll-m-20 bg-gradient-to-b from-text to-subtext1 bg-clip-text pt-10 text-left text-4xl font-extrabold tracking-tight text-transparent lg:pb-4 lg:pt-16 lg:text-5xl">
             {titleCase(post.title)}
           </h1>
           <div className="mt-4 space-x-2">
@@ -66,7 +66,7 @@ function Hero({ post }: { post: Post }) {
         </span>
       </span>
 
-      <div className="mb-8 w-full overflow-hidden">
+      <div className="-mb-8 w-full overflow-hidden sm:mb-0 md:mb-8">
         <svg
           data-name="Layer 1"
           className="block h-[100px] max-h-[10vw] w-full"
@@ -89,16 +89,15 @@ function PostLayout({ params }: { readonly params: { slug: string } }) {
     (mdxPost) => mdxPost._raw.flattenedPath === params.slug,
   );
 
-  if (!post?.published) {
+  if (!post || (!post.published && process.env.NODE_ENV === "production")) {
     notFound();
   }
 
   const MDXContent = useMDXComponent(post.body.code);
-
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex max-w-[100vw] flex-col items-center">
       <Hero post={post} />
-      <main className="z-10 flex max-w-[100vw] flex-col max-md:px-4 sm:max-w-prose">
+      <main className="z-10 flex max-w-full flex-col max-md:px-4 sm:max-w-prose">
         <MDXContent components={mdxComponents} />
       </main>
     </div>
