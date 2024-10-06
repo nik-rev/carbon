@@ -8,8 +8,9 @@ import { Separator } from "../ui/separator";
 import { Admonition, isValidAdmonitionType } from "./admonition";
 import { BlockQuote } from "./blockquote";
 import { CodeBlock, InlineCode } from "./code";
-import { H1, H2, H3, H4 } from "./heading";
+import { H2, H3, H4 } from "./heading";
 import { Li, Ol, Ul } from "./lists";
+import * as oneOffComponents from "./one-off";
 import {
   Table,
   TableBody,
@@ -21,10 +22,10 @@ import {
 import { A, P } from "./typography";
 
 export const mdxComponents: MDXComponents = {
-  h1: H1,
-  h2: H2,
-  h3: H3,
-  h4: H4,
+  ...oneOffComponents,
+  h1: H2,
+  h2: H3,
+  h3: H4,
   p: P,
   // @ts-expect-error -- due to rehype-semantic-blockquotes plugin, figure may have these attributes
   figure: ({
@@ -97,15 +98,18 @@ export const mdxComponents: MDXComponents = {
   ),
   hr: () => <Separator className="my-10" />,
   figcaption: ({ children, ...rest }) => {
+    if (typeof children !== "string") {
+      return <figcaption {...rest}>{children}</figcaption>;
+    }
+
     // @ts-expect-error -- data-language type may be passed, not in our control
-    const lang = rest["data-language"] as string;
-    const LangIcon = langIcons.get(lang);
+    const extension = rest["data-language"] as string;
+    const LangIcon = langIcons.get(extension);
 
     return (
       <figcaption {...rest}>
         {LangIcon && <LangIcon className="inline" />}
         {children}
-        {lang ? `.${lang}` : ""}
       </figcaption>
     );
   },

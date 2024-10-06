@@ -8,6 +8,7 @@ import rehypeSemanticBlockquotes from "rehype-semantic-blockquotes";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import remarkSectionize from "remark-sectionize";
+import remarkSmartypants from "remark-smartypants";
 import { transformerNotationDiff } from "shikiji-transformers";
 
 export const Post = defineDocumentType(() => ({
@@ -16,7 +17,6 @@ export const Post = defineDocumentType(() => ({
   contentType: "mdx",
   fields: {
     title: { type: "string", required: true },
-    seoTitle: { type: "string", required: true },
     date: { type: "date", required: true },
     updatedAt: { type: "date", required: true },
     /** displayed on preview card */
@@ -76,6 +76,7 @@ export default makeSource({
       remarkA11yEmoji,
       // Add many <section> elements
       remarkSectionize,
+      remarkSmartypants,
     ],
     rehypePlugins: [
       rehypeSlug,

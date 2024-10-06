@@ -120,10 +120,18 @@ code[data-theme*=" "] span {
   background-color: var(--shiki-dark-bg);
 }
 
+.INLINE-CODE span {
+  color: var(--shiki-dark);
+}
+
 [data-theme="light"] {
   code[data-theme*=" "],
   code[data-theme*=" "] span {
     color: var(--shiki-light);
     background-color: var(--shiki-light-bg);
   }
+  .INLINE-CODE span {
+    color: var(--shiki-light);
+  }
 }
+

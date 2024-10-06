@@ -23,14 +23,16 @@ export const generateMetadata = ({
 
   if (!post) throw new Error(`Post not found for slug: ${params.slug}`);
 
-  const { seoTitle, title, description, keywords, date, updatedAt } = post;
+  const { title, description, keywords, date, updatedAt } = post;
+
+  const titleWithName = `${title} • Nikita Revenco`;
 
   return {
-    title: seoTitle,
+    title: titleWithName,
     description,
     openGraph: {
       type: "article",
-      title,
+      title: titleWithName,
       description,
       authors: "Nikita Revenco",
       tags: keywords,
@@ -39,7 +41,7 @@ export const generateMetadata = ({
     },
     keywords,
     twitter: {
-      title,
+      title: titleWithName,
       description,
     },
   };
@@ -49,7 +51,7 @@ function Hero({ post }: { post: Post }) {
   return (
     <div className="relative flex w-full flex-col justify-start">
       <span className="flex w-full flex-col items-center justify-center gap-12 bg-mantle">
-        <span className="max-w-article flex w-full flex-col p-8 sm:p-8">
+        <span className="flex w-full max-w-article flex-col p-8 sm:p-8">
           <h1 className="scroll-m-20 bg-gradient-to-b from-text to-subtext1 bg-clip-text pt-10 text-left text-4xl font-extrabold tracking-tight text-transparent lg:pb-4 lg:pt-16 lg:text-5xl">
             {titleCase(post.title)}
           </h1>
@@ -97,7 +99,7 @@ function PostLayout({ params }: { readonly params: { slug: string } }) {
   return (
     <div className="flex max-w-[100vw] flex-col items-center">
       <Hero post={post} />
-      <main className="z-10 flex max-w-full flex-col max-md:px-4 sm:max-w-prose">
+      <main className="z-10 flex max-w-full flex-col pb-20 max-md:px-4 sm:max-w-prose">
         <MDXContent components={mdxComponents} />
       </main>
     </div>

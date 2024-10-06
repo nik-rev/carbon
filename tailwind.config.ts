@@ -4,12 +4,7 @@ import tailwindAnimate from "tailwindcss-animate";
 
 const config = {
   darkMode: ["class"],
-  content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
-  ],
+  content: ["./posts/**/*.mdx", "./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
     container: {
@@ -20,6 +15,9 @@ const config = {
       },
     },
     extend: {
+      screens: {
+        tiny: "480px",
+      },
       maxWidth: {
         article: "656.5px",
       },
