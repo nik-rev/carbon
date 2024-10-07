@@ -13,17 +13,38 @@ import { type AlertColor } from "@/lib/admonition-accent";
 
 import { H4 } from "./heading";
 
-const alertTypes = ["note", "tip", "warning", "danger", "fact"] as const;
-
-export const isValidAdmonitionType = (str: string): str is AlertType =>
-  alertTypes.includes(str);
-
-export type AlertType = (typeof alertTypes)[number];
-
 type AlertData = {
   icon: LucideIcon;
   accent: Lowercase<AlertColor>;
 };
+
+const alertTypes = {
+  note: {
+    icon: Info,
+    accent: "blue",
+  },
+  tip: {
+    icon: Lightbulb,
+    accent: "teal",
+  },
+  warning: {
+    icon: TriangleAlert,
+    accent: "yellow",
+  },
+  danger: {
+    icon: Flame,
+    accent: "red",
+  },
+  fact: {
+    icon: PartyPopper,
+    accent: "pink",
+  },
+} as const satisfies Record<string, AlertData>;
+
+type AlertType = keyof typeof alertTypes;
+
+export const isValidAdmonitionType = (str: string): str is AlertType =>
+  Object.keys(alertTypes).includes(str);
 
 export function Admonition({
   alertType,
