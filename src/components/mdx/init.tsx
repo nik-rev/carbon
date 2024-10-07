@@ -3,6 +3,7 @@ import Image, { type ImageProps } from "next/image";
 import Link from "next/link";
 import { Children, type HTMLAttributes, type ReactElement } from "react";
 
+import { coloredText, hoverDecoration } from "@/lib/admonition-accent";
 import { langIcons } from "@/lib/filetypes-icons";
 
 import { Admonition, isValidAdmonitionType } from "./admonition";
@@ -74,7 +75,7 @@ export const mdxComponents: MDXComponents = {
     return (
       <Link
         href={href}
-        className="group/link text-accent underline decoration-transparent transition-colors hover:decoration-accent group-[.BLUE]:text-blue group-[.RED]:text-red group-[.TEAL]:text-teal group-[.YELLOW]:text-yellow group-[.BLUE]:hover:decoration-blue group-[.RED]:hover:decoration-red group-[.TEAL]:hover:decoration-teal group-[.YELLOW]:hover:decoration-yellow has-[.INLINE-CODE]:no-underline"
+        className={`group/link text-accent underline decoration-transparent transition-colors hover:decoration-accent ${coloredText} ${hoverDecoration} has-[.INLINE-CODE]:no-underline`}
       >
         {children}
       </Link>

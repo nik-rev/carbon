@@ -7,8 +7,8 @@ import {
 } from "react";
 import { GoDash } from "react-icons/go";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
-import { coloredText } from "tailwind.config";
 
+import { coloredText } from "@/lib/admonition-accent";
 import { cn } from "@/lib/utils";
 
 export function BlockQuote({

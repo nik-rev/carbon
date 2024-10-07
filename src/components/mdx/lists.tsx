@@ -5,7 +5,8 @@ import {
   isValidElement,
 } from "react";
 import { FaArrowRight } from "react-icons/fa";
-import { coloredText, orderedListItem } from "tailwind.config";
+
+import { coloredText, orderedListItem } from "@/lib/admonition-accent";
 
 export function Ul({ children, ...props }: HTMLAttributes<HTMLUListElement>) {
   const childrenWithContext = Children.toArray(children).map(async (el) =>

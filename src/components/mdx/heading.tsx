@@ -1,23 +1,16 @@
 import { Link as SvgLink } from "lucide-react";
 import { type HTMLAttributes } from "react";
-import { type ClassNameValue } from "tailwind-merge";
 
+import { coloredText } from "@/lib/admonition-accent";
 import { cn } from "@/lib/utils";
 
 type HeadingProps = HTMLAttributes<HTMLHeadingElement> & {
   id?: string;
   children?: React.ReactNode;
-  linkClassName?: ClassNameValue;
 };
 
 const createHeading = (level: 2 | 3 | 4) =>
-  function Heading({
-    className,
-    linkClassName,
-    children,
-    id,
-    ...props
-  }: HeadingProps) {
+  function Heading({ className, children, id, ...props }: HeadingProps) {
     const HeadingElement = `h${level}` as const;
 
     const iconSizes = [22, 20, 16];
@@ -40,8 +33,7 @@ const createHeading = (level: 2 | 3 | 4) =>
           {children}
           <SvgLink
             className={cn(
-              `mb-1 ml-2.5 inline text-accent opacity-0 transition-opacity group-hover/heading:opacity-100`,
-              linkClassName,
+              `mb-1 ml-2.5 inline text-accent opacity-0 transition-opacity group-hover/heading:opacity-100 ${coloredText}`,
             )}
             size={iconSizes[level - 2]}
           />

@@ -71,7 +71,7 @@ export function Admonition({
       {title !== "" && (
         <span className="align-center -mb-2 mt-0 flex justify-between">
           {title !== "" && (
-            <H4 className="mt-0" linkClassName={data.iconClassName}>
+            <H4 className="mt-0">
               {title}
             </H4>
           )}

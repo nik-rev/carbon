@@ -3,8 +3,8 @@
 import { Check, Copy } from "lucide-react";
 import { cloneElement, useRef, useState } from "react";
 import { type HTMLAttributes } from "react";
-import { inlineCode, overlay } from "tailwind.config";
 
+import { inlineCode, overlay } from "@/lib/admonition-accent";
 import { extractTextFromChildren } from "@/lib/utils";
 
 export function CodeBlock({ children }: HTMLAttributes<HTMLPreElement>) {
