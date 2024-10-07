@@ -2,7 +2,7 @@ import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
 import tailwindAnimate from "tailwindcss-animate";
 
-import { alertAccent, alertStylesArray } from "./src/lib/admonition-accent";
+import { alertAccent, alertStylesArray } from "./src/lib/callout-accent";
 
 const config = {
   safelist: [...Object.values(alertStylesArray).flat(), ...alertAccent],

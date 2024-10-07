@@ -8,7 +8,7 @@ import {
 import { GoDash } from "react-icons/go";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
 
-import { coloredText } from "@/lib/admonition-accent";
+import { coloredText } from "@/lib/callout-accent";
 import { cn } from "@/lib/utils";
 
 export function BlockQuote({

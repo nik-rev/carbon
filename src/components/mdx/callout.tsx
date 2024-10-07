@@ -1,4 +1,4 @@
-// INFO: Classes that style items inside of admonitions are placed within tailwind.config
+// INFO: Classes that style items inside of callouts are placed within tailwind.config
 
 import {
   Flame,
@@ -9,7 +9,7 @@ import {
   TriangleAlert,
 } from "lucide-react";
 
-import { type AlertColor } from "@/lib/admonition-accent";
+import { type AlertColor } from "@/lib/callout-accent";
 
 import { H4 } from "./heading";
 
@@ -43,10 +43,10 @@ const alertTypes = {
 
 type AlertType = keyof typeof alertTypes;
 
-export const isValidAdmonitionType = (str: string): str is AlertType =>
+export const isValidCalloutType = (str: string): str is AlertType =>
   Object.keys(alertTypes).includes(str);
 
-export function Admonition({
+export function Callout({
   alertType,
   title,
   children,
@@ -56,30 +56,7 @@ export function Admonition({
   children: React.ReactNode;
 }) {
   /* eslint security/detect-object-injection: off -- No user input here */
-  const data: AlertData = (
-    {
-      note: {
-        icon: Info,
-        accent: "blue",
-      },
-      tip: {
-        icon: Lightbulb,
-        accent: "teal",
-      },
-      warning: {
-        icon: TriangleAlert,
-        accent: "yellow",
-      },
-      danger: {
-        icon: Flame,
-        accent: "red",
-      },
-      fact: {
-        icon: PartyPopper,
-        accent: "pink",
-      },
-    } as const
-  )[alertType];
+  const data = alertTypes[alertType];
 
   const icon = (
     <span className={`flex gap-x-2 text-${data.accent}`}>

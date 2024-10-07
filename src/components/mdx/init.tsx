@@ -3,11 +3,11 @@ import Image, { type ImageProps } from "next/image";
 import Link from "next/link";
 import { Children, type HTMLAttributes, type ReactElement } from "react";
 
-import { coloredText, hoverDecoration } from "@/lib/admonition-accent";
+import { coloredText, hoverDecoration } from "@/lib/callout-accent";
 import { langIcons } from "@/lib/filetypes-icons";
 
-import { Admonition, isValidAdmonitionType } from "./admonition";
 import { BlockQuote } from "./blockquote";
+import { Callout, isValidCalloutType } from "./callout";
 import { CodeBlock, InlineCode } from "./code";
 import { H2, H3, H4 } from "./heading";
 import { Li, Ol, Ul } from "./lists";
@@ -92,7 +92,7 @@ export const mdxComponents: MDXComponents = {
     const alertType = rest["data-alert-container"];
     const title = rest["data-alert-title"];
 
-    if (!isValidAdmonitionType(alertType)) {
+    if (!isValidCalloutType(alertType)) {
       return <aside {...rest}>{children}</aside>;
     }
 
@@ -102,9 +102,9 @@ export const mdxComponents: MDXComponents = {
     const childrenWithoutTitle = childrenArray.slice(firstNewlineIndex + 1);
 
     return (
-      <Admonition title={title} alertType={alertType}>
+      <Callout title={title} alertType={alertType}>
         {childrenWithoutTitle}
-      </Admonition>
+      </Callout>
     );
   },
   img: (props) => (

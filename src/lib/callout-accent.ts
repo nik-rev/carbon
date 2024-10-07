@@ -33,7 +33,7 @@ const alertStylesFunctions: Record<string, AlertStyleGenerator> = {
     `group-[.${color}]:marker:text-${color.toLowerCase()}`,
 
   /**
-   * Text within an admonition, such as text within links
+   * Text within an callout, such as text within links
    */
   coloredText: (color) => `group-[.${color}]:text-${color.toLowerCase()}`,
 
@@ -46,7 +46,7 @@ const alertStylesFunctions: Record<string, AlertStyleGenerator> = {
 
 /**
  * Values is array of tailwind classes corresponding to a particular purpose
- * For example, to make some text within an admonition inherit its accent color, we have something like:
+ * For example, to make some text within a callout inherit its accent color, we have something like:
  *
  * ["group-[.BLUE]:text-blue", "group-[.RED]:text-red", ...]
  */

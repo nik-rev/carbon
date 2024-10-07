@@ -4,7 +4,7 @@ import { Check, Copy } from "lucide-react";
 import { cloneElement, useRef, useState } from "react";
 import { type HTMLAttributes } from "react";
 
-import { inlineCode, overlay } from "@/lib/admonition-accent";
+import { inlineCode, overlay } from "@/lib/callout-accent";
 import { extractTextFromChildren } from "@/lib/utils";
 
 export function CodeBlock({ children }: HTMLAttributes<HTMLPreElement>) {
