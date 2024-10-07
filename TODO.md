@@ -9,3 +9,7 @@ Articles to write
 - correct way to create semantic blockquotes where we cite the author
 - what about <div> that acts like an image?
 - definition lists, 
+
+## tailwind's safelist feature is overpowered
+
+- talk about how i use it in my blog to create callouts that have awesome accent color
