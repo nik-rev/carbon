@@ -89,10 +89,10 @@ export const mdxComponents: MDXComponents = {
     ["data-alert-container"]: string;
     ["data-alert-title"]: string;
   }) => {
-    const alertType = rest["data-alert-container"];
+    const calloutType = rest["data-alert-container"];
     const title = rest["data-alert-title"];
 
-    if (!isValidCalloutType(alertType)) {
+    if (!isValidCalloutType(calloutType)) {
       return <aside {...rest}>{children}</aside>;
     }
 
@@ -102,7 +102,7 @@ export const mdxComponents: MDXComponents = {
     const childrenWithoutTitle = childrenArray.slice(firstNewlineIndex + 1);
 
     return (
-      <Callout title={title} alertType={alertType}>
+      <Callout title={title} calloutType={calloutType}>
         {childrenWithoutTitle}
       </Callout>
     );

@@ -1,6 +1,6 @@
-const alertColors = ["BLUE", "YELLOW", "TEAL", "PINK", "RED"] as const;
+const calloutColors = ["BLUE", "YELLOW", "TEAL", "PINK", "RED"] as const;
 
-export const alertAccent = alertColors.flatMap((color) => {
+export const calloutAccent = calloutColors.flatMap((color) => {
   const lowerColor = color.toLowerCase();
   return [
     color,
@@ -10,11 +10,11 @@ export const alertAccent = alertColors.flatMap((color) => {
   ];
 });
 
-export type AlertColor = (typeof alertColors)[number];
+export type CalloutColor = (typeof calloutColors)[number];
 
-type AlertStyleGenerator = (color: AlertColor) => string;
+type CalloutStyleGenerator = (color: CalloutColor) => string;
 
-const alertStylesFunctions: Record<string, AlertStyleGenerator> = {
+const calloutStylesFunctions: Record<string, CalloutStyleGenerator> = {
   /**
    * Tinted background color, e.g. in code blocks
    */
@@ -50,19 +50,19 @@ const alertStylesFunctions: Record<string, AlertStyleGenerator> = {
  *
  * ["group-[.BLUE]:text-blue", "group-[.RED]:text-red", ...]
  */
-export const alertStylesArray: Record<
-  keyof typeof alertStylesFunctions,
+export const calloutStylesArray: Record<
+  keyof typeof calloutStylesFunctions,
   string[]
 > = Object.fromEntries(
-  Object.entries(alertStylesFunctions).map(([styleName, styleGenerator]) => [
+  Object.entries(calloutStylesFunctions).map(([styleName, styleGenerator]) => [
     styleName,
-    alertColors.map((color) => styleGenerator(color)),
+    calloutColors.map((color) => styleGenerator(color)),
   ]),
 );
 
-const alertStyles: Record<keyof typeof alertStylesFunctions, string> =
+const calloutStyles: Record<keyof typeof calloutStylesFunctions, string> =
   Object.fromEntries(
-    Object.entries(alertStylesArray).map(([styleName, styles]) => [
+    Object.entries(calloutStylesArray).map(([styleName, styles]) => [
       styleName,
       styles.join(" "),
     ]),
@@ -74,4 +74,4 @@ export const {
   orderedListItem,
   coloredText,
   hoverDecoration,
-} = alertStyles;
+} = calloutStyles;

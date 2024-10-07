@@ -9,16 +9,16 @@ import {
   TriangleAlert,
 } from "lucide-react";
 
-import { type AlertColor } from "@/lib/callout-accent";
+import { type CalloutColor } from "@/lib/callout-accent";
 
 import { H4 } from "./heading";
 
-type AlertData = {
+type CalloutData = {
   icon: LucideIcon;
-  accent: Lowercase<AlertColor>;
+  accent: Lowercase<CalloutColor>;
 };
 
-const alertTypes = {
+const calloutTypes = {
   note: {
     icon: Info,
     accent: "blue",
@@ -39,28 +39,28 @@ const alertTypes = {
     icon: PartyPopper,
     accent: "pink",
   },
-} as const satisfies Record<string, AlertData>;
+} as const satisfies Record<string, CalloutData>;
 
-type AlertType = keyof typeof alertTypes;
+type CalloutType = keyof typeof calloutTypes;
 
-export const isValidCalloutType = (str: string): str is AlertType =>
-  Object.keys(alertTypes).includes(str);
+export const isValidCalloutType = (str: string): str is CalloutType =>
+  Object.keys(calloutTypes).includes(str);
 
 export function Callout({
-  alertType,
+  calloutType,
   title,
   children,
 }: {
-  alertType: AlertType;
+  calloutType: CalloutType;
   title: string;
   children: React.ReactNode;
 }) {
   /* eslint security/detect-object-injection: off -- No user input here */
-  const data = alertTypes[alertType];
+  const data = calloutTypes[calloutType];
 
   const icon = (
     <span className={`flex gap-x-2 text-${data.accent}`}>
-      <span className="font-bold uppercase">{alertType}</span>
+      <span className="font-bold uppercase">{calloutType}</span>
       <data.icon strokeWidth={2.4} />
     </span>
   );
