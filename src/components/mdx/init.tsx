@@ -1,10 +1,10 @@
 import { type MDXComponents } from "mdx/types";
 import Image, { type ImageProps } from "next/image";
+import Link from "next/link";
 import { Children, type HTMLAttributes, type ReactElement } from "react";
 
 import { langIcons } from "@/lib/filetypes-icons";
 
-import { Separator } from "../ui/separator";
 import { Admonition, isValidAdmonitionType } from "./admonition";
 import { BlockQuote } from "./blockquote";
 import { CodeBlock, InlineCode } from "./code";
@@ -19,14 +19,17 @@ import {
   TableHeader,
   TableRow,
 } from "./table";
-import { A, P } from "./typography";
 
 export const mdxComponents: MDXComponents = {
   ...oneOffComponents,
   h1: H2,
   h2: H3,
   h3: H4,
-  p: P,
+  p: ({ children, ...props }: HTMLAttributes<HTMLParagraphElement>) => (
+    <p className="leading-7 [&:not(:first-child)]:mt-6" {...props}>
+      {children}
+    </p>
+  ),
   // @ts-expect-error -- due to rehype-semantic-blockquotes plugin, figure may have these attributes
   figure: ({
     children,
@@ -62,7 +65,21 @@ export const mdxComponents: MDXComponents = {
   tr: TableRow,
   th: TableHeader,
   td: TableData,
-  a: A,
+  a: ({
+    children,
+    href,
+  }: HTMLAttributes<HTMLAnchorElement> & { href?: string }) => {
+    if (!href) throw new Error("no href specified");
+
+    return (
+      <Link
+        href={href}
+        className="group/link text-accent underline decoration-transparent transition-colors hover:decoration-accent group-[.BLUE]:text-blue group-[.RED]:text-red group-[.TEAL]:text-teal group-[.YELLOW]:text-yellow group-[.BLUE]:hover:decoration-blue group-[.RED]:hover:decoration-red group-[.TEAL]:hover:decoration-teal group-[.YELLOW]:hover:decoration-yellow has-[.INLINE-CODE]:no-underline"
+      >
+        {children}
+      </Link>
+    );
+  },
   // @ts-expect-error -- due to rehype-alerts plugin, aside may have these attributes
   aside: ({
     children,
@@ -96,7 +113,9 @@ export const mdxComponents: MDXComponents = {
       {...(props as ImageProps)}
     />
   ),
-  hr: () => <Separator className="my-10" />,
+  hr: () => (
+    <div className="my-10 h-px w-full shrink-0 bg-surface0" role="none" />
+  ),
   figcaption: ({ children, ...rest }) => {
     if (typeof children !== "string") {
       return <figcaption {...rest}>{children}</figcaption>;
@@ -109,7 +128,7 @@ export const mdxComponents: MDXComponents = {
     return (
       <figcaption {...rest}>
         {LangIcon && <LangIcon className="inline" />}
-        {children}
+        <span className="relative top-px">{children}</span>
       </figcaption>
     );
   },

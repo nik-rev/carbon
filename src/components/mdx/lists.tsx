@@ -6,6 +6,8 @@ import {
 } from "react";
 import { FaArrowRight } from "react-icons/fa";
 
+import { alertColoredText, alertOlLi } from "./admonition";
+
 export function Ul({ children, ...props }: HTMLAttributes<HTMLUListElement>) {
   const childrenWithContext = Children.toArray(children).map(async (el) =>
     // @ts-expect-error -- Expecting only <Li> as children
@@ -38,13 +40,16 @@ export function Li({
   ...props
 }: HTMLAttributes<HTMLLIElement> & { listType: "ol" | "ul" }) {
   return (
+    /* eslint sonarjs/no-nested-template-literals: off -- is cleaner this way */
     <li
-      className={`relative pl-2 leading-7 ${listType === "ol" ? "marker:font-bold marker:text-accent group-[.BLUE]:marker:text-blue group-[.RED]:marker:text-red group-[.TEAL]:marker:text-teal group-[.YELLOW]:marker:text-yellow" : ""}`}
+      className={`relative pl-2 leading-7 ${listType === "ol" ? `marker:font-bold marker:text-accent ${alertOlLi}` : ""}`}
       {...props}
     >
       {children}
       {listType === "ul" && (
-        <FaArrowRight className="absolute -left-5 top-[0.4rem] text-accent group-[.BLUE]:text-blue group-[.RED]:text-red group-[.TEAL]:text-teal group-[.YELLOW]:text-yellow" />
+        <FaArrowRight
+          className={`absolute -left-5 top-[0.4rem] text-accent ${alertColoredText}`}
+        />
       )}
     </li>
   );

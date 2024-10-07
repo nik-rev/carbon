@@ -6,6 +6,8 @@ import { type HTMLAttributes } from "react";
 
 import { extractTextFromChildren } from "@/lib/utils";
 
+import { alertInlineCode, tintedOverlay } from "./admonition";
+
 export function CodeBlock({ children }: HTMLAttributes<HTMLPreElement>) {
   const [isCopying, setIsCopying] = useState(false);
   const [isAfterVisible, setIsAfterVisible] = useState(false);
@@ -29,10 +31,10 @@ export function CodeBlock({ children }: HTMLAttributes<HTMLPreElement>) {
 
   return (
     <pre
-      className={`group/code relative before:pointer-events-none before:absolute before:-inset-x-4 before:inset-y-0 after:pointer-events-none after:absolute after:-inset-x-4 after:inset-y-0 group-[.BLUE]:before:bg-blue/5 group-[.RED]:before:bg-red/5 group-[.TEAL]:before:bg-teal/5 group-[.YELLOW]:before:bg-yellow/5 md:before:-inset-x-8 md:after:-inset-x-8 ${isAfterVisible ? "after:bg-text/20" : "after:bg-text/0"} after:transition-colors`}
+      className={`group/code relative before:pointer-events-none before:absolute before:-inset-x-4 before:inset-y-0 after:pointer-events-none after:absolute after:-inset-x-4 after:inset-y-0 ${tintedOverlay} md:before:-inset-x-8 md:after:-inset-x-8 ${isAfterVisible ? "after:bg-text/20" : "after:bg-text/0"} after:transition-colors`}
       ref={preRef}
     >
-      <div className="bleed overflow-x-auto bg-mantle">
+      <div className="overflow-x-auto bg-mantle bleed">
         {
           // @ts-expect-error -- will always be <code> element
           cloneElement(children, { isInCodeBlock: true })
@@ -59,7 +61,9 @@ export function InlineCode({
   return isInCodeBlock ? (
     <code {...rest}>{children}</code>
   ) : (
-    <code className="INLINE-CODE select-all rounded-md border-[1.5px] border-surface0 bg-mantle px-[0.3rem] py-[0.2rem] align-middle font-mono text-sm transition-colors group-hover/link:border-b-accent group-[.BLUE]:group-hover/link:border-b-blue group-[.RED]:group-hover/link:border-b-red group-[.TEAL]:group-hover/link:border-b-teal group-[.YELLOW]:group-hover/link:border-b-yellow">
+    <code
+      className={`INLINE-CODE select-all rounded-md border-[1.5px] border-surface0 bg-mantle px-[0.3rem] py-[0.2rem] align-middle font-mono text-sm transition-colors group-hover/link:border-b-accent ${alertInlineCode}`}
+    >
       {children}
     </code>
   );

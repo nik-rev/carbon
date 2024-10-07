@@ -10,7 +10,7 @@ type HeadingProps = HTMLAttributes<HTMLHeadingElement> & {
   linkClassName?: ClassNameValue;
 };
 
-const createHeading = (level: 1 | 2 | 3 | 4) =>
+const createHeading = (level: 2 | 3 | 4) =>
   function Heading({
     className,
     linkClassName,
@@ -20,11 +20,10 @@ const createHeading = (level: 1 | 2 | 3 | 4) =>
   }: HeadingProps) {
     const HeadingElement = `h${level}` as const;
 
-    const iconSizes = [32, 24, 20, 16];
+    const iconSizes = [22, 20, 16];
 
     const classNames = [
-      "text-4xl font-extrabold lg:text-5xl",
-      "mt-24 pb-2 text-4xl text-green bg-gradient-to-b from-green to-subtext1/80 bg-clip-text",
+      "mt-24 pb-2 text-3xl text-green bg-gradient-to-b from-green to-subtext1/80 bg-clip-text",
       "relative mt-16 text-2xl",
       "mt-8 text-xl",
     ];
@@ -33,7 +32,7 @@ const createHeading = (level: 1 | 2 | 3 | 4) =>
       <a href={`#${id}`} className="group/heading">
         <HeadingElement
           className={cn(
-            `scroll-m-20 font-semibold tracking-tight transition-colors ${classNames[level - 1]}`,
+            `scroll-m-20 font-semibold tracking-tight transition-colors ${classNames[level - 2]}`,
             className,
           )}
           {...props}
@@ -44,7 +43,7 @@ const createHeading = (level: 1 | 2 | 3 | 4) =>
               `mb-1 ml-2.5 inline text-accent opacity-0 transition-opacity group-hover/heading:opacity-100`,
               linkClassName,
             )}
-            size={iconSizes[level - 1]}
+            size={iconSizes[level - 2]}
           />
         </HeadingElement>
       </a>

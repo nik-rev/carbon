@@ -114,7 +114,7 @@ const config = {
     plugin((p) => {
       p.addUtilities({
         ".bleed": {
-          "@apply -mx-4 my-6 p-4 md:-mx-8 md:my-8 md:p-8": {},
+          "@apply -mx-4 mt-6 mb-1 md:mb-2 p-4 md:-mx-8 md:mt-8 md:p-8": {},
         },
       });
     }),

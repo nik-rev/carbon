@@ -10,6 +10,8 @@ import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
 
 import { cn } from "@/lib/utils";
 
+import { alertColoredText, tintedOverlay } from "./admonition";
+
 export function BlockQuote({
   children,
   credit,
@@ -32,7 +34,9 @@ export function BlockQuote({
         {/* eslint @typescript-eslint/no-unsafe-member-access: off -- props is expected to contain children */}
         {lastChild.props.children}{" "}
         <span className="relative">
-          <RiDoubleQuotesR className="absolute -top-2 left-1 inline align-baseline text-2xl text-green group-[.BLUE]:text-blue group-[.RED]:text-red group-[.TEAL]:text-teal group-[.YELLOW]:text-yellow" />
+          <RiDoubleQuotesR
+            className={`absolute -top-2 left-1 inline align-baseline text-2xl text-green ${alertColoredText}`}
+          />
         </span>
       </>
     ),
@@ -46,12 +50,13 @@ export function BlockQuote({
   const quoteContent = (
     <div className="relative ml-4">
       {childrenWithIcon}
-      <RiDoubleQuotesL className="absolute -left-6 top-[-0.2rem] text-2xl text-green group-[.BLUE]:text-blue group-[.RED]:text-red group-[.TEAL]:text-teal group-[.YELLOW]:text-yellow" />
+      <RiDoubleQuotesL
+        className={`absolute -left-6 top-[-0.2rem] text-2xl text-green ${alertColoredText}`}
+      />
     </div>
   );
 
-  const className =
-    "block overflow-x-auto bg-lavender/5 italic max-sm:text-sm bleed";
+  const className = `block overflow-x-auto bg-lavender/5 italic max-sm:text-sm bleed`;
 
   const blockQuote = (
     <blockquote className={className} {...props}>
