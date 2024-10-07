@@ -1,6 +1,8 @@
 const alertColors = ["BLUE", "YELLOW", "TEAL", "PINK", "RED"] as const;
 
-type AlertStyleGenerator = (color: (typeof alertColors)[number]) => string;
+export type AlertColor = (typeof alertColors)[number];
+
+type AlertStyleGenerator = (color: AlertColor) => string;
 
 const alertStylesFunctions: Record<string, AlertStyleGenerator> = {
   /**

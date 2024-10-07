@@ -4,9 +4,12 @@ import {
   Flame,
   Info,
   Lightbulb,
+  type LucideIcon,
   PartyPopper,
   TriangleAlert,
 } from "lucide-react";
+
+import { type AlertColor } from "@/lib/admonition-accent";
 
 import { H4 } from "./heading";
 
@@ -17,6 +20,13 @@ export const isValidAdmonitionType = (str: string): str is AlertType =>
 
 export type AlertType = (typeof alertTypes)[number];
 
+type AlertData = {
+  icon: LucideIcon;
+  className: string;
+  accent: AlertColor;
+  iconClassName: string;
+};
+
 export function Admonition({
   alertType,
   title,
@@ -26,34 +36,39 @@ export function Admonition({
   title: string;
   children: React.ReactNode;
 }) {
-  const data =
+  const data: AlertData =
     alertType === "note"
       ? ({
           icon: Info,
-          className: "border-l-blue bg-blue/5 BLUE",
+          className: "border-l-blue bg-blue/5",
+          accent: "BLUE",
           iconClassName: "text-blue",
         } as const)
       : alertType === "warning"
         ? ({
             icon: TriangleAlert,
-            className: "border-l-yellow bg-yellow/5 YELLOW",
+            className: "border-l-yellow bg-yellow/5",
+            accent: "YELLOW",
             iconClassName: "text-yellow",
           } as const)
         : alertType === "tip"
           ? ({
               icon: Lightbulb,
-              className: "border-l-teal bg-teal/5 TEAL",
+              className: "border-l-teal bg-teal/5",
+              accent: "TEAL",
               iconClassName: "text-teal",
             } as const)
           : alertType === "fun fact"
             ? ({
                 icon: PartyPopper,
-                className: "border-l-pink bg-pink/5 PINK",
+                className: "border-l-pink bg-pink/5",
+                accent: "PINK",
                 iconClassName: "text-pink",
               } as const)
             : ({
                 icon: Flame,
-                className: "border-l-red bg-red/5 RED",
+                className: "border-l-red bg-red/5",
+                accent: "RED",
                 iconClassName: "text-red",
               } as const);
 
@@ -66,15 +81,11 @@ export function Admonition({
 
   return (
     <aside
-      className={`group relative block overflow-x-auto border-l-4 bleed max-sm:text-sm ${data.className}`}
+      className={`group relative block overflow-x-auto border-l-4 bleed max-sm:text-sm ${data.className} ${data.accent}`}
     >
       {title !== "" && (
         <span className="align-center -mb-2 mt-0 flex justify-between">
-          {title !== "" && (
-            <H4 className="mt-0">
-              {title}
-            </H4>
-          )}
+          {title !== "" && <H4 className="mt-0">{title}</H4>}
           {icon}
         </span>
       )}
