@@ -2,10 +2,10 @@ import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
 import tailwindAnimate from "tailwindcss-animate";
 
-import { alertStylesArray } from "./src/lib/admonition-accent";
+import { alertAccent, alertStylesArray } from "./src/lib/admonition-accent";
 
 const config = {
-  safelist: Object.values(alertStylesArray).flat(),
+  safelist: [...Object.values(alertStylesArray).flat(), ...alertAccent],
   darkMode: ["class"],
   content: ["./posts/**/*.mdx", "./src/**/*.{ts,tsx}"],
   prefix: "",

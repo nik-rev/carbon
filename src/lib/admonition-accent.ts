@@ -1,5 +1,15 @@
 const alertColors = ["BLUE", "YELLOW", "TEAL", "PINK", "RED"] as const;
 
+export const alertAccent = alertColors.flatMap((color) => {
+  const lowerColor = color.toLowerCase();
+  return [
+    color,
+    `border-l-${lowerColor}`,
+    `text-${lowerColor}`,
+    `bg-${lowerColor}/5`,
+  ];
+});
+
 export type AlertColor = (typeof alertColors)[number];
 
 type AlertStyleGenerator = (color: AlertColor) => string;
