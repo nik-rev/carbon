@@ -1,4 +1,42 @@
-const calloutColors = ["BLUE", "YELLOW", "TEAL", "PINK", "RED"] as const;
+import {
+  Flame,
+  Info,
+  Lightbulb,
+  PartyPopper,
+  TriangleAlert,
+} from "lucide-react";
+
+export const calloutTypes = {
+  note: {
+    icon: Info,
+    accent: "blue",
+  },
+  tip: {
+    icon: Lightbulb,
+    accent: "teal",
+  },
+  warning: {
+    icon: TriangleAlert,
+    accent: "yellow",
+  },
+  danger: {
+    icon: Flame,
+    accent: "red",
+  },
+  fact: {
+    icon: PartyPopper,
+    accent: "pink",
+  },
+} as const;
+
+export type CalloutType = keyof typeof calloutTypes;
+
+export const isValidCalloutType = (str: string): str is CalloutType =>
+  Object.keys(calloutTypes).includes(str);
+
+const calloutColors = Object.values(calloutTypes).map(({ accent }) =>
+  accent.toUpperCase(),
+);
 
 export const calloutAccent = calloutColors.flatMap((color) => {
   const lowerColor = color.toLowerCase();
@@ -47,7 +85,6 @@ const calloutStylesFunctions: Record<string, CalloutStyleGenerator> = {
 /**
  * Values is array of tailwind classes corresponding to a particular purpose
  * For example, to make some text within a callout inherit its accent color, we have something like:
- *
  * ["group-[.BLUE]:text-blue", "group-[.RED]:text-red", ...]
  */
 export const calloutStylesArray: Record<

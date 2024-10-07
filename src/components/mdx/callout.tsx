@@ -1,50 +1,6 @@
-// INFO: Classes that style items inside of callouts are placed within tailwind.config
-
-import {
-  Flame,
-  Info,
-  Lightbulb,
-  type LucideIcon,
-  PartyPopper,
-  TriangleAlert,
-} from "lucide-react";
-
-import { type CalloutColor } from "@/lib/callout-accent";
+import { type CalloutType, calloutTypes } from "@/lib/callout-accent";
 
 import { H4 } from "./heading";
-
-type CalloutData = {
-  icon: LucideIcon;
-  accent: Lowercase<CalloutColor>;
-};
-
-const calloutTypes = {
-  note: {
-    icon: Info,
-    accent: "blue",
-  },
-  tip: {
-    icon: Lightbulb,
-    accent: "teal",
-  },
-  warning: {
-    icon: TriangleAlert,
-    accent: "yellow",
-  },
-  danger: {
-    icon: Flame,
-    accent: "red",
-  },
-  fact: {
-    icon: PartyPopper,
-    accent: "pink",
-  },
-} as const satisfies Record<string, CalloutData>;
-
-type CalloutType = keyof typeof calloutTypes;
-
-export const isValidCalloutType = (str: string): str is CalloutType =>
-  Object.keys(calloutTypes).includes(str);
 
 export function Callout({
   calloutType,

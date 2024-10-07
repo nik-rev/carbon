@@ -3,11 +3,15 @@ import Image, { type ImageProps } from "next/image";
 import Link from "next/link";
 import { Children, type HTMLAttributes, type ReactElement } from "react";
 
-import { coloredText, hoverDecoration } from "@/lib/callout-accent";
+import {
+  coloredText,
+  hoverDecoration,
+  isValidCalloutType,
+} from "@/lib/callout-accent";
 import { langIcons } from "@/lib/filetypes-icons";
 
 import { BlockQuote } from "./blockquote";
-import { Callout, isValidCalloutType } from "./callout";
+import { Callout } from "./callout";
 import { CodeBlock, InlineCode } from "./code";
 import { H2, H3, H4 } from "./heading";
 import { Li, Ol, Ul } from "./lists";
