@@ -50,7 +50,6 @@ const createHeading = (level: 2 | 3 | 4) =>
     );
   };
 
-export const H1 = createHeading(1);
 export const H2 = createHeading(2);
 export const H3 = createHeading(3);
 export const H4 = createHeading(4);

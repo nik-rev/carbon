@@ -7,10 +7,9 @@ import {
 } from "react";
 import { GoDash } from "react-icons/go";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
+import { coloredText } from "tailwind.config";
 
 import { cn } from "@/lib/utils";
-
-import { alertColoredText, tintedOverlay } from "./admonition";
 
 export function BlockQuote({
   children,
@@ -35,7 +34,7 @@ export function BlockQuote({
         {lastChild.props.children}{" "}
         <span className="relative">
           <RiDoubleQuotesR
-            className={`absolute -top-2 left-1 inline align-baseline text-2xl text-green ${alertColoredText}`}
+            className={`absolute -top-2 left-1 inline align-baseline text-2xl text-green ${coloredText}`}
           />
         </span>
       </>
@@ -51,7 +50,7 @@ export function BlockQuote({
     <div className="relative ml-4">
       {childrenWithIcon}
       <RiDoubleQuotesL
-        className={`absolute -left-6 top-[-0.2rem] text-2xl text-green ${alertColoredText}`}
+        className={`absolute -left-6 top-[-0.2rem] text-2xl text-green ${coloredText}`}
       />
     </div>
   );

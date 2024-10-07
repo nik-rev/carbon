@@ -1,3 +1,5 @@
+// INFO: Classes that style items inside of admonitions are placed within tailwind.config
+
 import {
   Flame,
   Info,
@@ -9,20 +11,6 @@ import {
 import { H4 } from "./heading";
 
 const alertTypes = ["note", "tip", "warning", "danger", "fun fact"] as const;
-
-// const alertColors = ["BLUE", "YELLOW", "TEAL", "PINK", "RED"];
-
-export const tintedOverlay =
-  "group-[.BLUE]:before:bg-blue/5 group-[.RED]:before:bg-red/5 group-[.TEAL]:before:bg-teal/5 group-[.YELLOW]:before:bg-yellow/5";
-
-export const alertInlineCode =
-  "group-[.BLUE]:group-hover/link:border-b-blue group-[.RED]:group-hover/link:border-b-red group-[.TEAL]:group-hover/link:border-b-teal group-[.YELLOW]:group-hover/link:border-b-yellow";
-
-export const alertOlLi =
-  "group-[.BLUE]:marker:text-blue group-[.RED]:marker:text-red group-[.TEAL]:marker:text-teal group-[.YELLOW]:marker:text-yellow";
-
-export const alertColoredText =
-  "group-[.BLUE]:text-blue group-[.RED]:text-red group-[.TEAL]:text-teal group-[.YELLOW]:text-yellow";
 
 export const isValidAdmonitionType = (str: string): str is AlertType =>
   alertTypes.includes(str);
