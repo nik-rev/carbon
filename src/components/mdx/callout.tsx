@@ -1,4 +1,4 @@
-import { type CalloutType, calloutTypes } from "@/lib/callout-accent";
+import { type CalloutType, calloutTypes } from "@/lib/callout";
 
 import { H4 } from "./heading";
 

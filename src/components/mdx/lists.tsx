@@ -6,7 +6,7 @@ import {
 } from "react";
 import { FaArrowRight } from "react-icons/fa";
 
-import { coloredText, orderedListItem } from "@/lib/callout-accent";
+import { coloredText, orderedListItem } from "@/lib/callout";
 
 export function Ul({ children, ...props }: HTMLAttributes<HTMLUListElement>) {
   const childrenWithContext = Children.toArray(children).map(async (el) =>

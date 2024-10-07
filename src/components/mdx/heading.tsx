@@ -1,7 +1,7 @@
 import { Link as SvgLink } from "lucide-react";
 import { type HTMLAttributes } from "react";
 
-import { coloredText } from "@/lib/callout-accent";
+import { coloredText } from "@/lib/callout";
 import { cn } from "@/lib/utils";
 
 type HeadingProps = HTMLAttributes<HTMLHeadingElement> & {

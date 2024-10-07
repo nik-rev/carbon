@@ -7,7 +7,7 @@ import {
   coloredText,
   hoverDecoration,
   isValidCalloutType,
-} from "@/lib/callout-accent";
+} from "@/lib/callout";
 import { langIcons } from "@/lib/filetypes-icons";
 
 import { BlockQuote } from "./blockquote";
