@@ -2,7 +2,7 @@
 title: What exactly is a "file" in Linux?
 published: false
 date: 2024-10-06
-description:
+description: When I first started using Linux, I didn't know the common trope that "everything is a file". I had to discover that myself.
 excerpt: When I first started using Linux, I didn't know the common trope that "everything is a file". I had to discover that myself.
 updatedAt: 2024-10-06
 tags: [Linux]
@@ -131,9 +131,9 @@ So we basically have:
 1. Primitive OS that can only perform basic tasks is loaded.
 1. Our actual system is loaded by the primitive OS.
 
----
-
-Of course, we are really simplifying here -- but it's nice to get a high level overview before [delving deeper](https://en.wikipedia.org/wiki/Booting_process_of_Linux) if you are interested.
+> [!note] Things are actually more complicated
+>
+> Of course, we are really simplifying here -- but it's nice to get a high level overview before [delving deeper](https://en.wikipedia.org/wiki/Booting_process_of_Linux) if you are interested.
 
 ## Opening Binary Files
 
@@ -194,18 +194,20 @@ Converting it to an image where each each number represents the lightness value 
   </div>
 </div>
 
-Interestingly enough though, we _can_ actually see the raw bits of files with a tool like [`xxd`](https://manpages.org/xxd)! If we open up the `ls` command with `xxd /bin/ls` we will get over 8000+ lines of code, with some of it even marking sense! (_maybe_...)
-
-```_ title="/bin/ls"
-00021250: 0100 0000 0000 0000 0000 0000 0000 0000  ................
-00021260: 0001 0000 0000 0000 4034 0200 0000 0000  ........@4......
-00021270: 6022 0200 0000 0000 4743 433a 2028 474e  `"......GCC: (GN
-00021280: 5529 2031 342e 322e 3120 3230 3234 3038  U) 14.2.1 202408
-00021290: 3035 0000 6c73 2e64 6562 7567 0000 0000  05..ls.debug....
-000212a0: cb7a 8112 002e 7368 7374 7274 6162 002e  .z....shstrtab..
-000212b0: 696e 7465 7270 002e 6e6f 7465 2e67 6e75  interp..note.gnu
-000212c0: 2e70 726f 7065 7274 7900 2e6e 6f74 652e  .property..note.
-```
+> [!fun fact] Seeing the raw bits
+>
+> Interestingly enough though, we _can_ actually see the raw bits of files with a tool like [`xxd`](https://manpages.org/xxd)! If we open up the `ls` command with `xxd /bin/ls` we will get over 8000+ lines of code, with some of it even marking sense! (_maybe_...)
+> 
+> ```_ title="/bin/ls"
+> 00021250: 0000 0000 0000 0000 0000 0000 0000  ................
+> 00021260: 0000 0000 0000 4034 0200 0000 0000  ........@4......
+> 00021270: 0200 0000 0000 4743 433a 2028 474e  `"......GCC: (GN
+> 00021280: 2031 342e 322e 3120 3230 3234 3038  U) 14.2.1 202408
+> 00021290: 0000 6c73 2e64 6562 7567 0000 0000  05..ls.debug....
+> 000212a0: 8112 002e 7368 7374 7274 6162 002e  .z....shstrtab..
+> 000212b0: 7465 7270 002e 6e6f 7465 2e67 6e75  interp..note.gnu
+> 000212c0: 726f 7065 7274 7900 2e6e 6f74 652e  .property..note.
+> ```
 
 ## Magic Numbers
 
