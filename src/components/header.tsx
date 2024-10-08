@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 
 import { ThemeSwitch } from "./theme-switch";
@@ -15,7 +13,7 @@ export function Logo() {
 export function Header() {
   return (
     <header className="flex justify-center bg-mantle px-4 py-12">
-      <span className="align-center max-w-article flex w-full justify-between">
+      <span className="align-center flex w-full max-w-article justify-between">
         <Link href="/">
           <Logo />
         </Link>

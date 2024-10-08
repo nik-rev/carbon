@@ -135,7 +135,4 @@ export const mdxComponents: MDXComponents = {
       </figcaption>
     );
   },
-  // sup: Asterisk,
-  // figcaption: Figcaption,
-  // br, a, em, hr, img, strong, del, input, section, sup
 };
