@@ -19,7 +19,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "nikitarevenco",
+  title: "Nikita Revenco",
   description: "Nikita Revenco's Blog",
   robots: {
     index: true,
