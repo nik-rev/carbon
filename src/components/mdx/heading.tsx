@@ -16,7 +16,7 @@ const createHeading = (level: 2 | 3 | 4) =>
     const iconSizes = [22, 20, 16];
 
     const classNames = [
-      "mt-24 pb-2 text-3xl text-green bg-gradient-to-b from-green to-subtext1/80 bg-clip-text",
+      "mt-24 pb-2 text-3xl text-accent bg-gradient-to-b from-accent to-subtext1/80 bg-clip-text",
       "relative mt-16 text-2xl",
       "mt-8 text-xl",
     ];

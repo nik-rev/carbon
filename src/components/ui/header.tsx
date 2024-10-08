@@ -6,7 +6,7 @@ import { ThemeSwitch } from "./theme-switch";
 
 export function Logo() {
   return (
-    <span className="text-2xl font-bold text-green [word-spacing:2px]">
+    <span className="text-2xl font-bold text-accent [word-spacing:2px]">
       Nikita Revenco
     </span>
   );

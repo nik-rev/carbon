@@ -8,7 +8,6 @@ import {
 import { GoDash } from "react-icons/go";
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
 
-import { coloredText } from "@/lib/callout";
 import { cn } from "@/lib/utils";
 
 export function BlockQuote({
@@ -18,11 +17,12 @@ export function BlockQuote({
 }: HTMLAttributes<HTMLQuoteElement> & { credit?: React.ReactNode }) {
   const childrenArray = Children.toArray(children);
 
-  const lastChildIndex = childrenArray.findLastIndex((el) =>
-    isValidElement(el),
-  );
+  const [firstChildIndex, lastChildIndex] = [
+    childrenArray.findIndex((el) => isValidElement(el)),
+    childrenArray.findLastIndex((el) => isValidElement(el)),
+  ];
 
-  if (lastChildIndex === -1) {
+  if (lastChildIndex === -1 || firstChildIndex === -1) {
     throw new Error("Expected an element to be contained within Blockquote");
   }
 
@@ -32,26 +32,38 @@ export function BlockQuote({
       <>
         {/* eslint @typescript-eslint/no-unsafe-member-access: off -- props is expected to contain children */}
         {lastChild.props.children}{" "}
-        <span className="relative">
-          <RiDoubleQuotesR
-            className={`absolute -top-2 left-1 inline align-baseline text-2xl text-green ${coloredText}`}
-          />
-        </span>
+        <RiDoubleQuotesR className="inline align-top text-2xl" />
       </>
     ),
   });
 
-  const childrenWithIcon = childrenArray.with(
+  const childrenLastIcon = childrenArray.with(
     lastChildIndex,
     lastChildWithIcon,
   );
 
+  if (firstChildIndex === -1) {
+    throw new Error("Expected an element to be contained within Blockquote");
+  }
+
+  const firstChild = childrenLastIcon.at(firstChildIndex) as ReactElement;
+  const firstChildWithIcon = cloneElement(firstChild, {
+    children: (
+      <>
+        <RiDoubleQuotesL className="inline align-top text-2xl" />
+        {firstChild.props.children}
+      </>
+    ),
+  });
+
+  const childrenFirstIcon = childrenLastIcon.with(
+    firstChildIndex,
+    firstChildWithIcon,
+  );
+
   const quoteContent = (
-    <div className="relative ml-4">
-      {childrenWithIcon}
-      <RiDoubleQuotesL
-        className={`absolute -left-6 top-[-0.2rem] text-2xl text-green ${coloredText}`}
-      />
+    <div className="relative ml-4 text-balance text-center">
+      {childrenFirstIcon}
     </div>
   );
 

@@ -15,7 +15,6 @@ import { Callout } from "./callout";
 import { CodeBlock, InlineCode } from "./code";
 import { H2, H3, H4 } from "./heading";
 import { Li, Ol, Ul } from "./lists";
-import * as oneOffComponents from "./one-off";
 import {
   Table,
   TableBody,
@@ -26,7 +25,6 @@ import {
 } from "./table";
 
 export const mdxComponents: MDXComponents = {
-  ...oneOffComponents,
   h1: H2,
   h2: H3,
   h3: H4,

@@ -23,7 +23,7 @@ export const calloutTypes = {
     icon: Flame,
     accent: "red",
   },
-  fact: {
+  "fun fact": {
     icon: PartyPopper,
     accent: "pink",
   },

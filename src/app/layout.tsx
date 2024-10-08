@@ -29,7 +29,14 @@ export const metadata: Metadata = {
     "max-video-preview": -1,
     googleBot: "index, follow",
   },
-  twitter: { creator: "@nikitarevenco1" },
+  openGraph: {
+    title: "Nikita Revenco",
+    description: "Hello, I'm Nikita Revenco",
+    url: "https://nikitarevenco.com/",
+    siteName: "Nikita Revenco's Blog",
+    type: "website",
+  },
+  twitter: { creator: "@nikitarevenco1", site: "@nikitarevenco1" },
   icons: {
     icon: [
       {

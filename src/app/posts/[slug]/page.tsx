@@ -5,8 +5,11 @@ import { notFound } from "next/navigation";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import { titleCase } from "title-case";
 
-import { mdxComponents } from "@/components/mdx/init";
+import { mdxComponents } from "@/components/mdx/mdx-components";
 import { Badge } from "@/components/ui/badge";
+import { DOMAIN, NAME, origin, TWITTER } from "@/lib/constants";
+
+import { OG_HEIGHT, OG_WIDTH } from "./og.png/route";
 
 export const generateStaticParams = () =>
   allPosts.map((post) => ({ slug: post._raw.flattenedPath }));
@@ -25,7 +28,9 @@ export const generateMetadata = ({
 
   const { title, description, keywords, date, updatedAt } = post;
 
-  const titleWithName = `${title} • Nikita Revenco`;
+  const titleWithName = `${title} • ${NAME}`;
+  const alt = `Preview image for ${titleWithName}`;
+  const previewUrl = `${origin}/posts/${params.slug}/og.png`;
 
   return {
     title: titleWithName,
@@ -34,15 +39,32 @@ export const generateMetadata = ({
       type: "article",
       title: titleWithName,
       description,
-      authors: "Nikita Revenco",
+      siteName: `${NAME}'s Blog`,
+      authors: NAME,
       tags: keywords,
       publishedTime: new Date(date).toISOString(),
       modifiedTime: new Date(updatedAt).toISOString(),
+      images: [
+        {
+          url: previewUrl,
+          secureUrl: previewUrl,
+          width: OG_WIDTH,
+          height: OG_HEIGHT,
+          alt,
+        },
+      ],
     },
     keywords,
     twitter: {
       title: titleWithName,
+      card: "summary_large_image",
+      site: TWITTER,
       description,
+      creator: TWITTER,
+      images: {
+        url: previewUrl,
+        alt,
+      },
     },
   };
 };
