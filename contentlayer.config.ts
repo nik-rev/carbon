@@ -7,7 +7,6 @@ import prettyCode from "rehype-pretty-code";
 import rehypeSemanticBlockquotes from "rehype-semantic-blockquotes";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
-import remarkSectionize from "remark-sectionize";
 import remarkSmartypants from "remark-smartypants";
 import { transformerNotationDiff } from "shikiji-transformers";
 
@@ -74,8 +73,6 @@ export default makeSource({
       remarkGfm,
       // wrap emojis in spans with aria-label description
       remarkA11yEmoji,
-      // Add many <section> elements
-      remarkSectionize,
       remarkSmartypants,
     ],
     rehypePlugins: [
