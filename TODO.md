@@ -22,4 +22,4 @@ Website improvements
 
 ## how to build an mdx developer blog
 
-- use this blog as an example
+- use this eblog as an example
