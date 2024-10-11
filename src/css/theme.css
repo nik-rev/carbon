@@ -62,21 +62,21 @@
 }
 
 ::selection {
-  @apply bg-accent/30
+  @apply bg-accent/30;
 }
 
 .BLUE ::selection {
-  @apply bg-blue/30
+  @apply bg-blue/30;
 }
 .YELLOW ::selection {
-  @apply bg-yellow/30
+  @apply bg-yellow/30;
 }
 .TEAL ::selection {
-  @apply bg-teal/30
+  @apply bg-teal/30;
 }
 .RED ::selection {
-  @apply bg-red/30
+  @apply bg-red/30;
 }
 .PINK ::selection {
-  @apply bg-pink/30
+  @apply bg-pink/30;
 }

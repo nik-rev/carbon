@@ -1,7 +1,9 @@
-Articles to write
+Website improvements
 
-- how to write a rehype plugin
-- what are files really
+- in the articles overview, add an indicator on the left that clearly shows which year the articles were written in
+- add a concise view toggle for all articles
+
+# Articles to write
 
 ## what they don't tell you about semantic HTML
 
@@ -13,3 +15,11 @@ Articles to write
 ## tailwind's safelist feature is overpowered
 
 - talk about how i use it in my blog to create callouts that have awesome accent color
+
+## how qr codes work
+
+- include some infographics
+
+## how to build an mdx developer blog
+
+- use this blog as an example
