@@ -7,7 +7,7 @@ import { ArticleHeader } from "@/components/article-header";
 import { mdxComponents } from "@/components/mdx/mdx-components";
 import { NAME, origin, TWITTER } from "@/lib/constants";
 
-import { OG_HEIGHT, OG_WIDTH } from "./og.png/route";
+import { OG_HEIGHT, OG_WIDTH } from "./og.png/data";
 
 export const generateStaticParams = () =>
   allPosts.map((post) => ({ slug: post._raw.flattenedPath }));

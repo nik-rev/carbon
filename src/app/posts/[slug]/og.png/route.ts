@@ -5,9 +5,6 @@ import { ImageResponse } from "next/og";
 
 import { OgImage, OgImageNotFound } from "./og-image";
 
-export const OG_WIDTH = 1280;
-export const OG_HEIGHT = 675;
-
 export const generateStaticParams = () =>
   allPosts.map((post) => ({ slug: post._raw.flattenedPath }));
 
