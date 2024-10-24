@@ -80,7 +80,7 @@ function PostLayout({ params }: { readonly params: { slug: string } }) {
   return (
     <article className="flex max-w-[100vw] flex-col items-center">
       <ArticleHeader post={post} />
-      <main className="z-10 flex max-w-full flex-col pb-20 max-md:px-4 sm:max-w-prose">
+      <main className="z-10 flex w-full flex-col pb-20 max-md:px-4 sm:max-w-prose">
         <MDXContent components={mdxComponents} />
       </main>
     </article>

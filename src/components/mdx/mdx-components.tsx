@@ -14,6 +14,7 @@ import { BlockQuote } from "./blockquote";
 import { Callout } from "./callout";
 import { CodeBlock, InlineCode } from "./code";
 import { H2, H3, H4 } from "./heading";
+import { Interactive } from "./interactive";
 import { Li, Ol, Ul } from "./lists";
 import {
   Table,
@@ -135,4 +136,5 @@ export const mdxComponents: MDXComponents = {
       </figcaption>
     );
   },
+  Interactive,
 };
