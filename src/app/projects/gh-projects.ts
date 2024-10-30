@@ -157,51 +157,6 @@ const projects = [
     ],
   },
   {
-    name: "recursion",
-    finishDate: "2024-02-03",
-    features: [
-      "Generates an array of fibonacci numbers iteratively and recursively.",
-      "Sorts an unsorted array using the merge sort.",
-    ],
-    learned: ["Learned how recursion works.", "Learned about merge sort."],
-  },
-  {
-    name: "linked-list",
-    finishDate: "2024-02-04",
-    features: [
-      "Create linked list and perform various operations with them such as adding new items, removing, etc.",
-    ],
-    learned: ["Learned about the linked list data structure."],
-  },
-  {
-    name: "hashmap",
-    finishDate: "2024-02-05",
-    features: [
-      "Hashmap has buckets that automatically scale as the size of the hashmap increases, to reduce collisions.",
-    ],
-    learned: [
-      "Principles of the hashmap data structure and how it works under the hood.",
-    ],
-  },
-  {
-    name: "binary-search-tree",
-    finishDate: "2024-02-09",
-    features: [
-      "Build a binary tree from an array with const tree = new Tree(Array).",
-      "Traverse with tree.inOrder(cb), tree.preOrder(cb), tree.postOrder(cb), each of which can take a callback function to manipulate data in the tree.",
-      "Other methods such as getLeaves which returns all leaves, isBalanced which returns whether the tree is balanced, etc.",
-    ],
-    learned: ["Learned how the binary search tree data structure works."],
-  },
-  {
-    name: "knight-travails",
-    finishDate: "2024-02-13",
-    features: [
-      "Finds a shortest path for a knight to travel between two cells on a chess board.",
-    ],
-    learned: ["Using generator functions in JavaScript."],
-  },
-  {
     name: "battleship",
     finishDate: "2024-02-19",
     features: [
