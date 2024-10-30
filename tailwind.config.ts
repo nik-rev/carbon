@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
 import tailwindAnimate from "tailwindcss-animate";
+import tailwindReactAria from "tailwindcss-react-aria-components";
 
 import { calloutAccent, calloutStylesArray } from "./src/lib/callout";
 
@@ -75,6 +76,7 @@ const config = {
   },
   plugins: [
     tailwindAnimate,
+    tailwindReactAria,
     plugin((p) => {
       p.addUtilities({
         ".bleed": {
