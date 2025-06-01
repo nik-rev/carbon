@@ -24,9 +24,35 @@
   </head>
   <body>
     <style>
-      .header {
-        margin-bottom: 2em;
+      [data-theme="light"] {
+        --accent: {{ config.extra.accent.light | default(value="#418001") }};
       }
+
+      [data-theme="dark"] {
+        --accent: {{ config.extra.accent.light | default(value="#cbefa6") }};
+      }
+
+      #site {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        max-width: 65ch;
+      }
+
+      footer {
+        font-size: small;
+        margin-top: auto;
+        height: 3rem;
+        align-self: center;
+        display: grid;
+        place-content: center;
+        p {
+          display: inline-block;
+          margin: 0;
+        }
+      }
+
       .header__links {
         display: flex;
         margin: 0px;
@@ -68,63 +94,71 @@
       }
     </style>
 
-    <header class="header">
+    <div id="site">
+      <header class="header">
 
-      <!-- Header -->
+        <!-- Header -->
     
-      <div class="header__heading">
-        <h1 class="header__heading__title">
-          {% block heading %}
-            {{ config.title }}
-          {% endblock %}
-        </h1>
-        {% if config.extra.theme_toggle | default(value=true) %}
-          <button type="button" class="header__heading__theme-toggle">
-            <!-- A sun or moon icon gets inserted here with JavaScript -->
-          </button>
-        {% endif %}
-      </div>
-
-      <!-- Navigation -->
-
-      {% if config.extra.header_links %}
-        <nav>
-          <ul class="header__links">
-            {% for link in config.extra.header_links %}
-              {% set current_path = current_path | default(value="ERROR") %}
-              {% set link = link.link | default(value=link) %}
-              {% set name = link.name | default(value=link) %}
-              <!-- `current_path` contains a '/' at the end, but `link` may not -->
-              {% set is_active = link | trim_end_matches(pat='/') == current_path | trim_end_matches(pat='/') %}
-              <li>
-                <a
-                  href="{{ link }}"
-                  class="
-                    header__links__link
-
-                    {% if is_active %}
-                      active
-                    {% endif %}
-                  "
-                >
-                  {{ name }}
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        </nav>
-      {% endif %}
-    </header>
-
-    <!-- Actual content of the page -->
-
-    {% block content %}
-      <main>
-        <div class="space">
-          {{ section.content | safe }}
+        <div class="header__heading">
+          <h1 class="header__heading__title">
+            {% block heading %}
+              {{ config.title }}
+            {% endblock %}
+          </h1>
+          {% if config.extra.theme_toggle | default(value=true) %}
+            <button type="button" class="header__heading__theme-toggle">
+              <!-- A sun or moon icon gets inserted here with JavaScript -->
+            </button>
+          {% endif %}
         </div>
-      </main>
-    {% endblock content %}
+
+        <!-- Navigation -->
+
+        {% if config.extra.header_links %}
+          <nav>
+            <ul class="header__links">
+              {% for link in config.extra.header_links %}
+                {% set current_path = current_path | default(value="ERROR") %}
+                {% set link = link.link | default(value=link) %}
+                {% set name = link.name | default(value=link) %}
+                <!-- `current_path` contains a '/' at the end, but `link` may not -->
+                {% set is_active = link | trim_end_matches(pat='/') == current_path | trim_end_matches(pat='/') %}
+                <li>
+                  <a
+                    href="{{ link }}"
+                    class="
+                      header__links__link
+
+                      {% if is_active %}
+                        active
+                      {% endif %}
+                    "
+                  >
+                    {{ name }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </nav>
+        {% endif %}
+      </header>
+
+      <!-- Actual content of the page -->
+
+      {% block content %}
+        <main>
+          <div class="space">
+            {{ section.content | safe }}
+          </div>
+        </main>
+      {% endblock content %}
+
+      {% if config.extra.show_footer | default(value=true) %}
+        <footer>
+          {{ config.extra.footer_message | default(value="Powered by [Zola](https://github.com/getzola/zola) and [nik-rev/carbon](https://github.com/nik-rev/carbon)") | markdown | safe }}
+        </footer>
+      {% endif %}
+    </div>
   </body>
 
   <!-- Theme toggle -->
@@ -132,11 +166,11 @@
   <script defer>
     const localStorageTheme = localStorage.getItem("theme");
 
-    {% if config.extra.respect_browser_preference %}
+    {% if config.extra.respect_browser_preference | default(value=true) %}
       const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
       let theme = localStorageTheme ? localStorageTheme : prefersDark ? "dark" : "light";
     {% else %}
-      let theme = localStorageTheme ? localStorageTheme : {{ config.extra.theme | default(value="dark") }};
+      let theme = localStorageTheme ? localStorageTheme : {{ config.extra.theme | default(value='"dark"') }};
     {% endif %}
 
     const themeToggle = document.querySelector(".header__heading__theme-toggle");

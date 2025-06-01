@@ -4,7 +4,7 @@
   --background2: #f4f4f4;
   --secondary: #808080;
   --tertiary: #dddddd;
-  --accent: #418001;
+  --accent: {{ config.extra.accent.light | default(value="#418001") }};
   --link: #010101;
   --table-border: #d0d0d0;
   --table-row: #f7f7f7;
@@ -16,7 +16,7 @@
   --background2: #131313;
   --secondary: #999999;
   --tertiary: #444444;
-  --accent: #cbefa6;
+  --accent: {{ config.extra.accent.light | default(value="#cbefa6") }};
   --link: #fefefe;
   --table-border: #444444;
   --table-row: #1e1e1e;

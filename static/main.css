@@ -2,6 +2,10 @@
 @import "theme.css";
 @import "fonts.css";
 
+* {
+  box-sizing: border-box;
+}
+
 /* heading links */
 .zola-anchor {
   text-decoration: none;
@@ -114,7 +118,15 @@ table tr:nth-child(even) {
   background-color: var(--table-row);
 }
 
+.mt-60 {
+  margin-top: 60px;
+}
+
 /* container */
+
+html {
+  height: 100%;
+}
 
 main {
   max-width: 65ch;
@@ -126,18 +138,21 @@ body {
 }
 body {
   font-size: 14pt;
-  padding: 5em 25%;
+  padding: 5rem 25%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
   color: var(--foreground);
   background-color: var(--background);
 }
 @media all and (max-width: 1200px) {
   body {
-    padding: 3em 15%;
+    padding: 3rem 15%;
   }
 }
 @media all and (max-width: 800px) {
   body {
-    padding: 1em 1em;
+    padding: 1rem 1em;
   }
 }
 

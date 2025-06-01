@@ -24,15 +24,15 @@ Development:
 
 These are the things you can put into `[extra]` section in `config.toml`.
 
-For clarity:
-
-- `a | b` means "`a` or `b`"
-- `a[]` means "list of `a`s"
-- `a: b` means "`a` has type `b`"
-
 All fields are optional.
 
-- `header_links: HeaderLink[]` specifies links to render in the navigation:
+- `accent` is the accent color of the website, per-theme.
+
+  I encourage you to change this to your favorite color!
+
+  - **Default**: `{ light: "#418001", dark: "#cbefa6" }`
+
+- `header_links` is a list of `HeaderLink` and specifies links to render in the navigation:
 
   ```ts
   type HeaderLink =
@@ -49,20 +49,32 @@ All fields are optional.
 
   - **Default**: Disables the navigation section
 
-- `blog_title: string` is a custom title to use in the **Blog** section.
+- `blog_title` is a custom title to use in the **Blog** section.
 
   - **Default**: Same as the `title` field.
 
 Light or dark theme options.
 
-- `theme: "light" | "dark"` sets the theme to use. This has lower priority than either `respect_browser_preference` or `theme_toggle`.
+- `theme` sets the theme to use. Can be `"light"` or `"dark"`.
 
-  - **Default**: Is `"dark"`
+  This has lower priority than either `respect_browser_preference` or `theme_toggle`.
 
-- `respect_browser_preference: true | false` if `false` ignores preference of the user. This has lower priority than `theme_toggle`.
+  - **Default**: `"dark"`
 
-  - **Default**: Is `true`
+- `respect_browser_preference` if `false` ignores preference of the user. This has lower priority than `theme_toggle`.
 
-- `theme_toggle: true | false` lets the user change the theme, if `true`. Browser preferences are taken into account regardless.
+  - **Default**: `true`
 
-  - **Default**: Is `true`
+- `theme_toggle` lets the user change the theme, if `true`. Browser preferences are taken into account regardless.
+
+  - **Default**: `true`
+
+Footer
+
+- `show_footer`: Show the footer
+
+  - **Default**: `true`
+
+- `footer_content` Contents of the message at the bottom of each page.
+
+  - **Default**: `"Powered by [Zola](https://github.com/getzola/zola) and [nik-rev/carbon](https://github.com/nik-rev/carbon)"`
