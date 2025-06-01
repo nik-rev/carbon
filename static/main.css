@@ -31,6 +31,35 @@ a:last-of-type {
 }
 
 /* code */
+.codeblock {
+  overflow: auto;
+  position: relative;
+  margin-top: 19px;
+  margin-bottom: 19px;
+  pre {
+    margin: 0;
+  }
+  .copy {
+    z-index: 9;
+    position: absolute;
+    right: 0.6em;
+    top: 0.75em;
+    width: 24px;
+    height: 24px;
+    padding: 2px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color: var(--foreground);
+
+    &.copied,
+    &:hover {
+      display: block;
+      color: var(--accent);
+    }
+  }
+}
+
 code:not(pre code) {
   color: var(--accent);
 }
