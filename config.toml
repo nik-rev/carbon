@@ -4,7 +4,7 @@ build_search_index = false
 default_language = "en"
 author = "Nik Revenco"
 title = "Carbon"
-description = "My personal blog"
+description = "A minimalistic Zola theme"
 
 [markdown]
 highlight_code = true
