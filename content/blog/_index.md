@@ -2,6 +2,9 @@
 title = "Carbon's Blog"
 aliases = ["blog"]
 sort_by = "date"
+
+[extra]
+order_by_year = true
 +++
 
 Notice how the title changed from `Carbon` to `Carbon's Features`?
