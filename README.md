@@ -10,15 +10,22 @@ A zola theme inspired by simplicity
 - Responsive
 - Accessible
 
-Markdown:
+### Markdown
 
 - Copy to Clipboard button for code blocks
 - Markdown in Headings is fully supported
 - Utility tags for styling such as `<note>This function was deprecated in version 0.11</note>`
 
-Development:
+### Development
 
 - Automatic deployment with GitHub actions, including OpenGraph image generation (powered by [og-image-generator](git@github.com:nik-rev/og-image-generator.git))
+
+### Lightweight
+
+Carbon theme delivers a featureful, yet simple blog theme with minimal dependencies and JavaScript. JavaScript is only used where necessary:
+
+- Copy to clipboard button
+- Theme toggle
 
 ## Config
 
