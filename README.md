@@ -18,8 +18,7 @@ Markdown:
 
 Development:
 
-- Automatic deployment with GitHub actions
-- OpenGraph image generation (powered by [og-image-generator](git@github.com:nik-rev/og-image-generator.git))
+- Automatic deployment with GitHub actions, including OpenGraph image generation (powered by [og-image-generator](git@github.com:nik-rev/og-image-generator.git))
 
 ## Config
 
