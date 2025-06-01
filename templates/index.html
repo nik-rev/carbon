@@ -1,5 +1,7 @@
+<!-- Entry point to every rendered page -->
+
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme={{ config.extra.theme | default(value="dark") }}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -17,8 +19,8 @@
       href="{{ get_url(path='main.css', cachebust=true) }}"
     />
 
-    {% block extra_head %}
-    {% endblock extra_head %}
+    {% block head %}
+    {% endblock head %}
   </head>
   <body>
     <style>
@@ -27,6 +29,9 @@
       }
       .header__links {
         display: flex;
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
         gap: 25px;
         .header__links__link {
           color: var(--secondary);
@@ -62,31 +67,58 @@
         }
       }
     </style>
+
     <header class="header">
+
+      <!-- Header -->
+    
       <div class="header__heading">
-        <h1 class="header__heading__title">{{ config.title }}</h1>
-        <button type="button" class="header__heading__theme-toggle">
-        </button>
+        <h1 class="header__heading__title">
+          {% block heading %}
+            {{ config.title }}
+          {% endblock %}
+        </h1>
+        {% if config.extra.theme_toggle | default(value=true) %}
+          <button type="button" class="header__heading__theme-toggle">
+            <!-- A sun or moon icon gets inserted here with JavaScript -->
+          </button>
+        {% endif %}
       </div>
 
-      {% if current_path %}
-        <nav class="header__links">
-          {% for link in config.extra.header_links %}
+      <!-- Navigation -->
+
+      {% if config.extra.header_links %}
+        <nav>
+          <ul class="header__links">
+            {% for link in config.extra.header_links %}
+              {% set current_path = current_path | default(value="ERROR") %}
               {% set link = link.link | default(value=link) %}
               {% set name = link.name | default(value=link) %}
-              <a
-                href="{{ link }}"
-                class="header__links__link {% if link | trim_end_matches(pat="/") == current_path | trim_end_matches(pat="/") %} active {% endif %}"
-              >
-                {{ name }}
-              </a>
-          {% endfor %}
+              <!-- `current_path` contains a '/' at the end, but `link` may not -->
+              {% set is_active = link | trim_end_matches(pat='/') == current_path | trim_end_matches(pat='/') %}
+              <li>
+                <a
+                  href="{{ link }}"
+                  class="
+                    header__links__link
+
+                    {% if is_active %}
+                      active
+                    {% endif %}
+                  "
+                >
+                  {{ name }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
         </nav>
       {% endif %}
     </header>
 
+    <!-- Actual content of the page -->
+
     {% block content %}
-      {% set blog = get_section(path="blog/_index.md") %}
       <main>
         <div class="space">
           {{ section.content | safe }}
@@ -99,8 +131,13 @@
 
   <script defer>
     const localStorageTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    let theme = localStorageTheme ? localStorageTheme : prefersDark ? "dark" : "light";
+
+    {% if config.extra.respect_browser_preference %}
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      let theme = localStorageTheme ? localStorageTheme : prefersDark ? "dark" : "light";
+    {% else %}
+      let theme = localStorageTheme ? localStorageTheme : {{ config.extra.theme | default(value="dark") }};
+    {% endif %}
 
     const themeToggle = document.querySelector(".header__heading__theme-toggle");
 

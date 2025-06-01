@@ -1,15 +1,25 @@
-{% extends "page.html" %}
+{% extends "index.html" %}
 
 {% block title %}
-  {{ config.title }} | {{ section.title }}
+  {{ config.extra.blog_title | default(value=config.title ~ "| Blog") }}
 {% endblock title %}
 
-{% block extra_head %}
+{% block heading %}
+  {{ config.extra.blog_title | default(value=config.title ~ "| " ~ section.title) }}
+{% endblock heading %}
+
+{% block description %}
+  {{ page.description | default(value=config.description) }}
+{% endblock description %}
+
+{% block head %}
   <style>
     .posts__year, .posts {
       list-style-type: none;
     }
-
+    .posts-content {
+      margin-bottom: 2em;
+    }
     .posts {
       padding-left: 0;
       .posts__title {
@@ -61,13 +71,16 @@
       }
     }
   </style>
-{% endblock extra_head %}
+{% endblock head %}
 
 {% block content %}
   <main>
-    <div class="space">
+    <!-- Contents of `blog/_index.md` -->
+    <div class="posts-content">
       {{ section.content | safe }}
     </div>
+
+    <!-- List of blog posts, by year -->
     <ul class="posts">
       {% for year, posts_that_year in section.pages | group_by(attribute="year") %}
         <h2 class="posts__title">Posts in {{ year }}</h2>
@@ -75,7 +88,9 @@
           {% for post in posts_that_year %}
             <li class="post">
               <p class="post__date">{{ post.date | date(format="%-d %b") }}</p>
-              <a href="{{ post.permalink }}" class="post__link">{{ post.title | markdown | replace(from="</p>", to="") | trim_start_matches(pat="<p>") | safe }}</a>
+              <a href="{{ post.permalink }}" class="post__link">
+                {{ post.title | markdown(inline=true) | safe }}
+              </a>
             </li>
           {% endfor %}
         </ul>

@@ -16,3 +16,4 @@ smart_punctuation = true
 
 [extra]
 header_links = [{ name = "/home", link = "/" }, "/blog", "/open-source"]
+blog_title = "Nik's Blog 🦀"
