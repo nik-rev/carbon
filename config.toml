@@ -3,7 +3,7 @@ build_search_index = false
 
 default_language = "en"
 author = "Nik Revenco"
-title = "Nik Revenco 🦀"
+title = "Nik 🦀"
 output_dir = ".public"
 description = "My personal blog"
 
@@ -13,3 +13,6 @@ highlight_theme = "css"
 bottom_footnotes = true
 insert_anchor_links = "heading"
 smart_punctuation = true
+
+[extra]
+header_links = [{ name = "/home", link = "/" }, "/blog", "/open-source"]

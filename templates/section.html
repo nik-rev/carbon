@@ -1,27 +1,85 @@
 {% extends "page.html" %}
 
 {% block title %}
-    {{ config.title }} | {{ section.title }}
+  {{ config.title }} | {{ section.title }}
 {% endblock title %}
 
-{% block content %}
-    <main>
-        <h1>{{ section.title }}</h1>
+{% block extra_head %}
+  <style>
+    .posts__year, .posts {
+      list-style-type: none;
+    }
 
-        {% for year, posts in section.pages | group_by(attribute="year") %}
-            <h2>{{ year }}</h2>
-            <ul>
-                {% for post in posts %}
-                    <p class="secondary small date">
-                      {% if post.date -%}
-                        {{ post.date | date(format="%-d %B") }}
-                      {%- endif %}
-                    </p>
-                    <li>
-                      <a href="{{ post.permalink }}">{{ post.title }}</a>
-                    </li>
-                {% endfor %}
-            </ul>
-        {% endfor %}
-    </main>
+    .posts {
+      padding-left: 0;
+      .posts__title {
+        margin-bottom: 3rem;
+      }
+      .posts__year {
+        padding: 0;
+        width: 100%;
+      }
+      .post {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3rem;
+        line-height: 1.6;
+        font-size: 1.4rem;
+        .post__date {
+          margin: 0;
+          color: var(--secondary);
+        }
+        .post__link {
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    @media (width >= 600px) {
+      .posts .post {
+        display: grid;
+        grid-template-columns: 5rem 1fr;
+        column-gap: 6.0rem;
+        margin-bottom: 4rem;
+        width: full;
+        .post__date {
+          width: max-content;
+          align-content: center;
+        }
+      }
+    }
+    .header-links {
+      display: flex;
+      gap: 0.5em;
+      a {
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  </style>
+{% endblock extra_head %}
+
+{% block content %}
+  <main>
+    <div class="space">
+      {{ section.content | safe }}
+    </div>
+    <ul class="posts">
+      {% for year, posts_that_year in section.pages | group_by(attribute="year") %}
+        <h2 class="posts__title">Posts in {{ year }}</h2>
+        <ul class="posts__year">
+          {% for post in posts_that_year %}
+            <li class="post">
+              <p class="post__date">{{ post.date | date(format="%-d %b") }}</p>
+              <a href="{{ post.permalink }}" class="post__link">{{ post.title | markdown | replace(from="</p>", to="") | trim_start_matches(pat="<p>") | safe }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
+    </ul>
+  </main>
 {% endblock content %}
