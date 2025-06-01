@@ -1,8 +1,6 @@
 ---
 ---
 
-<div class="mt-60" />
-
 I love open source software and programming in Rust :)
 
 Favorite things I've built:

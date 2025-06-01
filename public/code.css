@@ -1,0 +1,72 @@
+.codeblock {
+  overflow: auto;
+  position: relative;
+  margin-top: 19px;
+  margin-bottom: 19px;
+  pre {
+    margin: 0;
+  }
+  .copy {
+    z-index: 9;
+    position: absolute;
+    right: 0.6em;
+    top: 0.75em;
+    width: 24px;
+    height: 24px;
+    padding: 2px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color: var(--foreground);
+
+    &.copied,
+    &:hover {
+      display: block;
+      color: var(--accent);
+    }
+  }
+}
+
+code:not(pre code) {
+  color: var(--accent);
+}
+pre code {
+  background-color: transparent;
+}
+pre code ::before {
+  content: "";
+}
+code {
+  padding: 0.1rem 0.2rem;
+  font-size: inherit;
+  line-height: 1;
+}
+pre {
+  overflow: auto;
+  padding: 0.3em;
+}
+pre code {
+  padding: 0;
+}
+
+pre.z-code {
+  position: relative;
+}
+
+pre:hover .copy-code-button {
+  display: block;
+}
+
+.copy-code-button {
+  background-color: var(--background);
+  font-family: var(--font-mono);
+  padding: 3px 6px;
+  font-size: 0.8em;
+  border-radius: var(--copy-code-button-border-radius);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  display: none;
+  border: 1px solid var(--code-border);
+}

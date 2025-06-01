@@ -50,7 +50,7 @@ All fields are optional.
 
   - **Default**: Disables the navigation section
 
-- `blog_title` is a custom title to use in the **Blog** section.
+- `content_title` is a custom title to use in the **Content** section, (e.g. on the blog, on each blog post).
 
   - **Default**: Same as the `title` field.
 

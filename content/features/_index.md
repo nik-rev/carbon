@@ -1,6 +1,6 @@
 +++
-title = "Carbon's Blog"
-aliases = ["blog"]
+title = "Carbon's Features"
+aliases = ["features"]
 sort_by = "date"
 +++
 

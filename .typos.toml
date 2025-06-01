@@ -1,5 +1,2 @@
-[files]
-extend-exclude = ["themes"]
-
 [default]
 extend-ignore-re = ["(?Rm)^.*<\\!--typos-ignore-->$"]

@@ -1,11 +1,15 @@
 {% extends "index.html" %}
 
 {% block title %}
-  {{ config.extra.blog_title | default(value=config.title) }} | {{ page.title }}
+  {% set section = get_section(path=page.ancestors | last) %}
+  {% set title = section.title | default(value=config.title) %}
+  {{ title }} | {{ page.title }}
 {% endblock title %}
 
 {% block heading %}
-  {{ config.extra.blog_title | default(value=config.title ~ "| " ~ section.title) }}
+  {% set section = get_section(path=page.ancestors | last) %}
+  {% set title = section.title | default(value=config.title) %}
+  {{ title }}
 {% endblock heading %}
 
 {% block description %}
