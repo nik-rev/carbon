@@ -14,10 +14,11 @@ Markdown:
 
 - Copy to Clipboard button for code blocks
 - Markdown in Headings is fully supported
+- Utility tags for styling such as `<note>This function was deprecated in version 0.11</note>`
 
 Development:
 
-- Automatic deploy with GitHub actions
+- Automatic deployment with GitHub actions
 - OpenGraph image generation (powered by [og-image-generator](git@github.com:nik-rev/og-image-generator.git))
 
 ## Config
@@ -25,12 +26,6 @@ Development:
 These are the things you can put into `[extra]` section in `config.toml`.
 
 All fields are optional.
-
-- `accent` is the accent color of the website, per-theme.
-
-  I encourage you to change this to your favorite color!
-
-  - **Default**: `{ light: "#418001", dark: "#cbefa6" }`
 
 - `header_links` is a list of `HeaderLink` and specifies links to render in the navigation:
 

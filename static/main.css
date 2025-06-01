@@ -1,4 +1,5 @@
 @import "syntax.css";
+@import "admonition.css";
 @import "theme.css";
 @import "fonts.css";
 
@@ -128,12 +129,6 @@ hr {
 
 img {
   max-width: 100%;
-}
-
-blockquote {
-  margin-left: 0;
-  padding-left: 0.4rem;
-  border-left: 0.2rem solid var(--tertiary);
 }
 
 /* table */
