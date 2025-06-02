@@ -1,14 +1,14 @@
 ---
 ---
 
-I love open source software and programming in Rust :)
+Carbon is a [Zola](https://github.com/getzola/zola) theme *inspired by simplicity*. Features include:
 
-Favorite things I've built:
-
-- [ferrishot](https://ferrishot.com), a powerful cross-platform screenshot app[![ferrishot GitHub Repo stars](https://img.shields.io/github/stars/nik-rev/ferrishot)](https://github.com/nik-rev/ferrishot)
-
-Open source contributions I am most proud of:
-
-- Helix
-  - [Inline git blame](https://github.com/helix-editor/helix/pull/13133)
-  - [Color swatches](https://github.com/helix-editor/helix/pull/12308)
+- SEO Friendly
+- Light and Dark mode toggle
+- Customizable
+- Responsive
+- Accessible
+- Fast
+- Expressive markdown features
+- Consistent site design and feel
+- GitHub actions for deployment and automatic OpenGraph image generation, powered by [og-image-generator](git@github.com:nik-rev/og-image-generator.git)

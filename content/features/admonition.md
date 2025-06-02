@@ -1,9 +1,18 @@
----
-title: Admonitions
-date: "2024-01-01"
----
++++
+title = "Admonitions"
++++
 
-Render callouts, also known as "Admonitions" by using special HTML tags.
+Admonitions to make text stand out.
+
+```md
+> "This is a blockquote"
+> 
+> Einstein, 1984
+```
+
+> "This is a blockquote"
+> 
+> Einstein, 1984
 
 ```html
 <note>

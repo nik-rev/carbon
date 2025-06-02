@@ -7,15 +7,13 @@ sort_by = "date"
 order_by_year = true
 +++
 
-Notice how the title changed from `Carbon` to `Carbon's Features`?
+An example blog, with posts taken from the [Rust Blog](https://blog.rust-lang.org/) for it to look legitimate.
 
-This config is used for that effect:
+In order order by-year like this, add the following to your `content/blog/_index.md`:
 
 ```toml
-title = "Carbon"
+sort_by = "date"
 
 [extra]
-content_title = "Carbon's Features"
+order_by_year = true
 ```
-
-If you unset `content_title`, then the title will be the same everywhere.

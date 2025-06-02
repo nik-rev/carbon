@@ -87,8 +87,6 @@
     {% if parent.extra.order_by_year %}
       <ul class="posts">
         {% for year, posts_that_year in section.pages | group_by(attribute="year") %}
-          <pre>
-          </pre>
           <h2 class="posts__title">Posts in {{ year }}</h2>
           <ul class="posts__year">
             {% for post in posts_that_year %}
