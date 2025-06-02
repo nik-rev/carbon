@@ -1,0 +1,9 @@
+[package]
+name = "generate_markdown"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+itertools = "0.14.0"
+strum = { version = "0.27.1", features = ["derive"] }
+tap = "1.0.1"

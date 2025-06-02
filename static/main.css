@@ -20,6 +20,18 @@ nav {
   }
 }
 
+small {
+  font-size: small;
+  text-decoration-thickness: 1px;
+  color: var(--secondary);
+  text-decoration-color: var(--secondary);
+}
+
+summary {
+  cursor: pointer;
+  user-select: none;
+}
+
 /* links */
 a,
 a:link,
@@ -28,6 +40,15 @@ a:visited {
   &:hover {
     color: var(--link);
   }
+}
+a {
+  text-decoration-thickness: 2px;
+}
+a:has(code) {
+  text-decoration-color: var(--accent);
+}
+del:has(code) {
+  text-decoration-color: var(--accent);
 }
 /* a:hover {
   color: var(--link);
@@ -63,15 +84,6 @@ img {
 }
 
 /* table */
-
-table th,
-table td {
-  border-color: var(--table-border);
-}
-table thead,
-table tr:nth-child(even) {
-  background-color: var(--table-row);
-}
 
 .mt-60 {
   margin-top: 60px;
@@ -144,6 +156,8 @@ h4 {
 /* table */
 table {
   border-spacing: 0;
+  overflow-x: auto;
+  display: block;
 }
 table th,
 table td {
@@ -156,4 +170,13 @@ table th {
 }
 table td {
   border-top-style: none;
+}
+
+table th,
+table td {
+  border-color: var(--table-border);
+}
+table thead,
+table tr:nth-child(even) {
+  background-color: var(--table-row);
 }

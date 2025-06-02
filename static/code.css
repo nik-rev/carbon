@@ -1,4 +1,42 @@
 .codeblock {
+  /* highlighted lines */
+  mark {
+    /* this makes each line take up the full width */
+    display: block;
+    background-color: var(--table-row);
+    color: var(--foreground);
+    margin-left: -0.3rem;
+    margin-right: -0.3rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    line-height: 1.5;
+  }
+  mark:first-child {
+    margin-top: -0.3rem;
+    padding-top: 0.3rem;
+  }
+  mark:last-child {
+    margin-bottom: -0.3rem;
+    padding-bottom: 0.3rem;
+  }
+  table {
+    thead,
+    tr:nth-child(even) {
+      background-color: transparent;
+    }
+    margin: 0 -0.3rem;
+    tr,
+    th,
+    td {
+      border: none;
+    }
+
+    td {
+      --px: 0.14rem;
+      padding-top: var(--px);
+      padding-bottom: var(--px);
+    }
+  }
   overflow: auto;
   position: relative;
   margin-top: 19px;
@@ -9,8 +47,8 @@
   .copy {
     z-index: 9;
     position: absolute;
-    right: 0.6em;
-    top: 0.75em;
+    right: 0.6rem;
+    top: 0.75rem;
     width: 24px;
     height: 24px;
     padding: 2px;
@@ -37,13 +75,13 @@ pre code ::before {
   content: "";
 }
 code {
-  padding: 0.1rem 0.2rem;
+  padding: 0.1rrem 0.2rrem;
   font-size: inherit;
   line-height: 1;
 }
 pre {
   overflow: auto;
-  padding: 0.3em;
+  padding: 0.3rem;
 }
 pre code {
   padding: 0;
@@ -61,7 +99,7 @@ pre:hover .copy-code-button {
   background-color: var(--background);
   font-family: var(--font-mono);
   padding: 3px 6px;
-  font-size: 0.8em;
+  font-size: 0.8rem;
   border-radius: var(--copy-code-button-border-radius);
   position: absolute;
   top: 10px;

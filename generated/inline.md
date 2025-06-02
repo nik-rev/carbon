@@ -1,0 +1,1076 @@
+```md
+- `code`
+- <sub>sub</sub>
+- _italics_
+- [link](#)
+- <kbd>kbd</kbd>
+- **bold**
+- ~strikethrough~
+- <mark>mark</mark>
+- <sup>sup</sup>
+- <small>small</small>
+```
+
+- `code`
+- <sub>sub</sub>
+- _italics_
+- [link](#)
+- <kbd>kbd</kbd>
+- **bold**
+- ~strikethrough~
+- <mark>mark</mark>
+- <sup>sup</sup>
+- <small>small</small>
+
+<details><summary>All Combinations</summary>
+
+### 2 modifiers
+
+
+- [<kbd>link kbd</kbd>](#)
+- <small>`small code`</small>
+- _<mark>italics mark</mark>_
+- <sup><mark>sup mark</mark></sup>
+- **<sup>bold sup</sup>**
+- <sub>`sub code`</sub>
+- **<mark>bold mark</mark>**
+- <small><mark>small mark</mark></small>
+- ~`strikethrough code`~
+- <kbd><sup>kbd sup</sup></kbd>
+- <sub>~sub strikethrough~</sub>
+- <sup>`sup code`</sup>
+- _<small>italics small</small>_
+- _`italics code`_
+- _<sup>italics sup</sup>_
+- <small><kbd>small kbd</kbd></small>
+- **~bold strikethrough~**
+- [<small>link small</small>](#)
+- <small><sup>small sup</sup></small>
+- <kbd>~kbd strikethrough~</kbd>
+- [~link strikethrough~](#)
+- [<mark>link mark</mark>](#)
+- **<sub>bold sub</sub>**
+- <kbd><sub>kbd sub</sub></kbd>
+- [<sup>link sup</sup>](#)
+- <kbd>`kbd code`</kbd>
+- **<small>bold small</small>**
+- <sub><mark>sub mark</mark></sub>
+- <mark>~mark strikethrough~</mark>
+- <small><sub>small sub</sub></small>
+- <mark>`mark code`</mark>
+- _<kbd>italics kbd</kbd>_
+- **_bold italics_**
+- **`bold code`**
+- **<kbd>bold kbd</kbd>**
+- _~italics strikethrough~_
+- <sup>~sup strikethrough~</sup>
+- <sub><sup>sub sup</sup></sub>
+- **[bold link](#)**
+- [<sub>link sub</sub>](#)
+- _<sub>italics sub</sub>_
+- <kbd><mark>kbd mark</mark></kbd>
+- _[italics link](#)_
+- [`link code`](#)
+- <small>~small strikethrough~</small>
+
+### 3 modifiers
+
+
+- _<sub>`italics sub code`</sub>_
+- [<kbd><mark>link kbd mark</mark></kbd>](#)
+- **<mark>`bold mark code`</mark>**
+- <kbd>~`kbd strikethrough code`~</kbd>
+- <small><sub><sup>small sub sup</sup></sub></small>
+- [<small>`link small code`</small>](#)
+- **<sub>~bold sub strikethrough~</sub>**
+- <sub>~`sub strikethrough code`~</sub>
+- _<small><sub>italics small sub</sub></small>_
+- _<kbd><sub>italics kbd sub</sub></kbd>_
+- [<small><mark>link small mark</mark></small>](#)
+- _<mark>`italics mark code`</mark>_
+- **<kbd><sub>bold kbd sub</sub></kbd>**
+- <small><sup><mark>small sup mark</mark></sup></small>
+- [<sup>`link sup code`</sup>](#)
+- <sup><mark>~sup mark strikethrough~</mark></sup>
+- <kbd><sub><sup>kbd sub sup</sup></sub></kbd>
+- <kbd><sub><mark>kbd sub mark</mark></sub></kbd>
+- [<small>~link small strikethrough~</small>](#)
+- <sub><sup>~sub sup strikethrough~</sup></sub>
+- **_<small>bold italics small</small>_**
+- _<sub><mark>italics sub mark</mark></sub>_
+- _<sub>~italics sub strikethrough~</sub>_
+- _[<small>italics link small</small>](#)_
+- _<small><sup>italics small sup</sup></small>_
+- **<kbd><mark>bold kbd mark</mark></kbd>**
+- _[<sub>italics link sub</sub>](#)_
+- _~`italics strikethrough code`~_
+- <small><kbd><sub>small kbd sub</sub></kbd></small>
+- _[~italics link strikethrough~](#)_
+- **<small>~bold small strikethrough~</small>**
+- **<sub>`bold sub code`</sub>**
+- [<sub><sup>link sub sup</sup></sub>](#)
+- **<sup><mark>bold sup mark</mark></sup>**
+- <small><sub>~small sub strikethrough~</sub></small>
+- <sub><mark>`sub mark code`</mark></sub>
+- <small>~`small strikethrough code`~</small>
+- **<kbd><sup>bold kbd sup</sup></kbd>**
+- **<small><mark>bold small mark</mark></small>**
+- **_[bold italics link](#)_**
+- [<small><sub>link small sub</sub></small>](#)
+- _[<kbd>italics link kbd</kbd>](#)_
+- _<sub><sup>italics sub sup</sup></sub>_
+- **_`bold italics code`_**
+- **<sup>~bold sup strikethrough~</sup>**
+- [<sup>~link sup strikethrough~</sup>](#)
+- **_<sub>bold italics sub</sub>_**
+- _<small>~italics small strikethrough~</small>_
+- **[<sub>bold link sub</sub>](#)**
+- **<sub><mark>bold sub mark</mark></sub>**
+- _[<mark>italics link mark</mark>](#)_
+- **_<mark>bold italics mark</mark>_**
+- <kbd><sup>`kbd sup code`</sup></kbd>
+- **_~bold italics strikethrough~_**
+- <mark>~`mark strikethrough code`~</mark>
+- [<small><kbd>link small kbd</kbd></small>](#)
+- _<kbd>~italics kbd strikethrough~</kbd>_
+- **<kbd>~bold kbd strikethrough~</kbd>**
+- **<small><kbd>bold small kbd</kbd></small>**
+- **<sub><sup>bold sub sup</sup></sub>**
+- [~`link strikethrough code`~](#)
+- **<small>`bold small code`</small>**
+- [<mark>`link mark code`</mark>](#)
+- <small><kbd>`small kbd code`</kbd></small>
+- <kbd><sub>`kbd sub code`</sub></kbd>
+- <small><sub><mark>small sub mark</mark></sub></small>
+- **<mark>~bold mark strikethrough~</mark>**
+- [<small><sup>link small sup</sup></small>](#)
+- **[`bold link code`](#)**
+- [<sub>~link sub strikethrough~</sub>](#)
+- <small><kbd><sup>small kbd sup</sup></kbd></small>
+- **~`bold strikethrough code`~**
+- <small><mark>~small mark strikethrough~</mark></small>
+- <sub><sup>`sub sup code`</sup></sub>
+- <kbd><sup><mark>kbd sup mark</mark></sup></kbd>
+- <sup><mark>`sup mark code`</mark></sup>
+- _<sup><mark>italics sup mark</mark></sup>_
+- **[~bold link strikethrough~](#)**
+- [<kbd>~link kbd strikethrough~</kbd>](#)
+- <kbd><mark>`kbd mark code`</mark></kbd>
+- _<sup>~italics sup strikethrough~</sup>_
+- **<sup>`bold sup code`</sup>**
+- [<sub>`link sub code`</sub>](#)
+- [<kbd><sup>link kbd sup</sup></kbd>](#)
+- <small><mark>`small mark code`</mark></small>
+- _<mark>~italics mark strikethrough~</mark>_
+- <sub><sup><mark>sub sup mark</mark></sup></sub>
+- _[`italics link code`](#)_
+- [<kbd><sub>link kbd sub</sub></kbd>](#)
+- _[<sup>italics link sup</sup>](#)_
+- <small><kbd>~small kbd strikethrough~</kbd></small>
+- [<sub><mark>link sub mark</mark></sub>](#)
+- <kbd><sub>~kbd sub strikethrough~</sub></kbd>
+- <kbd><mark>~kbd mark strikethrough~</mark></kbd>
+- _<small>`italics small code`</small>_
+- [<sup><mark>link sup mark</mark></sup>](#)
+- <sub><mark>~sub mark strikethrough~</mark></sub>
+- _<sup>`italics sup code`</sup>_
+- **_<kbd>bold italics kbd</kbd>_**
+- <small><kbd><mark>small kbd mark</mark></kbd></small>
+- **<kbd>`bold kbd code`</kbd>**
+- <small><sup>~small sup strikethrough~</sup></small>
+- **<small><sup>bold small sup</sup></small>**
+- _<kbd><sup>italics kbd sup</sup></kbd>_
+- [<mark>~link mark strikethrough~</mark>](#)
+- <kbd><sup>~kbd sup strikethrough~</sup></kbd>
+- _<kbd><mark>italics kbd mark</mark></kbd>_
+- _<kbd>`italics kbd code`</kbd>_
+- **<small><sub>bold small sub</sub></small>**
+- _<small><mark>italics small mark</mark></small>_
+- <small><sub>`small sub code`</sub></small>
+- [<kbd>`link kbd code`</kbd>](#)
+- **[<small>bold link small</small>](#)**
+- <small><sup>`small sup code`</sup></small>
+- **[<kbd>bold link kbd</kbd>](#)**
+- <sup>~`sup strikethrough code`~</sup>
+- **_<sup>bold italics sup</sup>_**
+- _<small><kbd>italics small kbd</kbd></small>_
+- **[<sup>bold link sup</sup>](#)**
+- **[<mark>bold link mark</mark>](#)**
+
+### 4 modifiers
+
+
+- _[~`italics link strikethrough code`~](#)_
+- _<sub><mark>`italics sub mark code`</mark></sub>_
+- **<kbd><mark>`bold kbd mark code`</mark></kbd>**
+- **_<kbd><mark>bold italics kbd mark</mark></kbd>_**
+- **_<kbd><sub>bold italics kbd sub</sub></kbd>_**
+- **[<small>~bold link small strikethrough~</small>](#)**
+- _<small><mark>`italics small mark code`</mark></small>_
+- <small><sub><sup><mark>small sub sup mark</mark></sup></sub></small>
+- **_[<kbd>bold italics link kbd</kbd>](#)_**
+- _[<sub><sup>italics link sub sup</sup></sub>](#)_
+- _[<sub>~italics link sub strikethrough~</sub>](#)_
+- <small><kbd><sup>`small kbd sup code`</sup></kbd></small>
+- <small><kbd><mark>`small kbd mark code`</mark></kbd></small>
+- **[<sub><mark>bold link sub mark</mark></sub>](#)**
+- **<small><sub>~bold small sub strikethrough~</sub></small>**
+- **[<small>`bold link small code`</small>](#)**
+- <sub><sup><mark>~sub sup mark strikethrough~</mark></sup></sub>
+- **_<sub>~bold italics sub strikethrough~</sub>_**
+- **[<sup><mark>bold link sup mark</mark></sup>](#)**
+- **<kbd><sup>~bold kbd sup strikethrough~</sup></kbd>**
+- [<small><mark>`link small mark code`</mark></small>](#)
+- **[<sub>~bold link sub strikethrough~</sub>](#)**
+- _<kbd><mark>~italics kbd mark strikethrough~</mark></kbd>_
+- [<sub><mark>~link sub mark strikethrough~</mark></sub>](#)
+- _<small><kbd>`italics small kbd code`</kbd></small>_
+- <kbd><sub><mark>`kbd sub mark code`</mark></sub></kbd>
+- **[<small><mark>bold link small mark</mark></small>](#)**
+- **_<small><mark>bold italics small mark</mark></small>_**
+- <kbd><sub><sup><mark>kbd sub sup mark</mark></sup></sub></kbd>
+- _[<kbd><sup>italics link kbd sup</sup></kbd>](#)_
+- [<small><sub><sup>link small sub sup</sup></sub></small>](#)
+- _[<kbd>~italics link kbd strikethrough~</kbd>](#)_
+- **<sub><sup><mark>bold sub sup mark</mark></sup></sub>**
+- <kbd><sub><mark>~kbd sub mark strikethrough~</mark></sub></kbd>
+- _<kbd><sub><mark>italics kbd sub mark</mark></sub></kbd>_
+- **<small><kbd><mark>bold small kbd mark</mark></kbd></small>**
+- _<small><mark>~italics small mark strikethrough~</mark></small>_
+- _[<sub>`italics link sub code`</sub>](#)_
+- _[<kbd><mark>italics link kbd mark</mark></kbd>](#)_
+- _<small><kbd><mark>italics small kbd mark</mark></kbd></small>_
+- _[<small><sub>italics link small sub</sub></small>](#)_
+- **_<kbd><sup>bold italics kbd sup</sup></kbd>_**
+- _<sub><sup>`italics sub sup code`</sup></sub>_
+- **_~`bold italics strikethrough code`~_**
+- _<small><sup>~italics small sup strikethrough~</sup></small>_
+- <small><mark>~`small mark strikethrough code`~</mark></small>
+- _[<sup>`italics link sup code`</sup>](#)_
+- <small><kbd><sub>~small kbd sub strikethrough~</sub></kbd></small>
+- **_<small><sub>bold italics small sub</sub></small>_**
+- _<small>~`italics small strikethrough code`~</small>_
+- **[<kbd><sup>bold link kbd sup</sup></kbd>](#)**
+- **[<kbd><mark>bold link kbd mark</mark></kbd>](#)**
+- **<sup>~`bold sup strikethrough code`~</sup>**
+- _<sup><mark>~italics sup mark strikethrough~</mark></sup>_
+- [<small><sub>~link small sub strikethrough~</sub></small>](#)
+- _<small><sub>`italics small sub code`</sub></small>_
+- <sup><mark>~`sup mark strikethrough code`~</mark></sup>
+- [<kbd><sup><mark>link kbd sup mark</mark></sup></kbd>](#)
+- **<kbd><sub>`bold kbd sub code`</sub></kbd>**
+- **_<kbd>`bold italics kbd code`</kbd>_**
+- <small><sub><mark>~small sub mark strikethrough~</mark></sub></small>
+- <small><sub><sup>~small sub sup strikethrough~</sup></sub></small>
+- **[<kbd>~bold link kbd strikethrough~</kbd>](#)**
+- **_<mark>`bold italics mark code`</mark>_**
+- <small><sup>~`small sup strikethrough code`~</sup></small>
+- **[<kbd>`bold link kbd code`</kbd>](#)**
+- [<small><kbd><mark>link small kbd mark</mark></kbd></small>](#)
+- _[<small><mark>italics link small mark</mark></small>](#)_
+- <small><sup><mark>~small sup mark strikethrough~</mark></sup></small>
+- _<small><kbd>~italics small kbd strikethrough~</kbd></small>_
+- <small><kbd><sub><sup>small kbd sub sup</sup></sub></kbd></small>
+- [<sup><mark>`link sup mark code`</mark></sup>](#)
+- **<kbd><mark>~bold kbd mark strikethrough~</mark></kbd>**
+- [<mark>~`link mark strikethrough code`~</mark>](#)
+- _<kbd><sup><mark>italics kbd sup mark</mark></sup></kbd>_
+- [<small><sub>`link small sub code`</sub></small>](#)
+- **<small><mark>`bold small mark code`</mark></small>**
+- _<sub>~`italics sub strikethrough code`~</sub>_
+- _<kbd><sup>`italics kbd sup code`</sup></kbd>_
+- **<small><sub><sup>bold small sub sup</sup></sub></small>**
+- <kbd><sup>~`kbd sup strikethrough code`~</sup></kbd>
+- **_[<mark>bold italics link mark</mark>](#)_**
+- _[<mark>~italics link mark strikethrough~</mark>](#)_
+- **<sub>~`bold sub strikethrough code`~</sub>**
+- <small><sub><sup>`small sub sup code`</sup></sub></small>
+- **<sub><mark>`bold sub mark code`</mark></sub>**
+- _<sup><mark>`italics sup mark code`</mark></sup>_
+- <small><kbd><mark>~small kbd mark strikethrough~</mark></kbd></small>
+- **<small><sup><mark>bold small sup mark</mark></sup></small>**
+- **_<small><sup>bold italics small sup</sup></small>_**
+- **<small><kbd>`bold small kbd code`</kbd></small>**
+- _<kbd><sub>~italics kbd sub strikethrough~</sub></kbd>_
+- _<small><sup>`italics small sup code`</sup></small>_
+- <kbd><sub><sup>~kbd sub sup strikethrough~</sup></sub></kbd>
+- _<kbd>~`italics kbd strikethrough code`~</kbd>_
+- **[~`bold link strikethrough code`~](#)**
+- **_<mark>~bold italics mark strikethrough~</mark>_**
+- **_<small>~bold italics small strikethrough~</small>_**
+- [<sub><sup>`link sub sup code`</sup></sub>](#)
+- **[<mark>`bold link mark code`</mark>](#)**
+- **[<sup>~bold link sup strikethrough~</sup>](#)**
+- **_<sub><sup>bold italics sub sup</sup></sub>_**
+- [<small><sup>`link small sup code`</sup></small>](#)
+- _<small><sub><sup>italics small sub sup</sup></sub></small>_
+- _<mark>~`italics mark strikethrough code`~</mark>_
+- **<small><sub><mark>bold small sub mark</mark></sub></small>**
+- [<kbd><mark>~link kbd mark strikethrough~</mark></kbd>](#)
+- **_[<sup>bold italics link sup</sup>](#)_**
+- **[<small><kbd>bold link small kbd</kbd></small>](#)**
+- [<small><sup>~link small sup strikethrough~</sup></small>](#)
+- <small><sub><mark>`small sub mark code`</mark></sub></small>
+- <small><kbd><sup><mark>small kbd sup mark</mark></sup></kbd></small>
+- **_<small>`bold italics small code`</small>_**
+- [<kbd>~`link kbd strikethrough code`~</kbd>](#)
+- **<small><sup>~bold small sup strikethrough~</sup></small>**
+- _[<sub><mark>italics link sub mark</mark></sub>](#)_
+- **<small><sub>`bold small sub code`</sub></small>**
+- [<small>~`link small strikethrough code`~</small>](#)
+- _[<kbd>`italics link kbd code`</kbd>](#)_
+- <small><kbd>~`small kbd strikethrough code`~</kbd></small>
+- _[<small><sup>italics link small sup</sup></small>](#)_
+- **<sub><sup>~bold sub sup strikethrough~</sup></sub>**
+- [<small><sup><mark>link small sup mark</mark></sup></small>](#)
+- **_[<small>bold italics link small</small>](#)_**
+- _<sup>~`italics sup strikethrough code`~</sup>_
+- <kbd><sup><mark>`kbd sup mark code`</mark></sup></kbd>
+- **<small><kbd><sup>bold small kbd sup</sup></kbd></small>**
+- [<sup>~`link sup strikethrough code`~</sup>](#)
+- _<small><sub><mark>italics small sub mark</mark></sub></small>_
+- **_<sup><mark>bold italics sup mark</mark></sup>_**
+- [<kbd><sub>`link kbd sub code`</sub></kbd>](#)
+- **_[~bold italics link strikethrough~](#)_**
+- [<small><kbd><sup>link small kbd sup</sup></kbd></small>](#)
+- <kbd><mark>~`kbd mark strikethrough code`~</mark></kbd>
+- **_<sub>`bold italics sub code`</sub>_**
+- **[<kbd><sub>bold link kbd sub</sub></kbd>](#)**
+- <sub><mark>~`sub mark strikethrough code`~</mark></sub>
+- _[<mark>`italics link mark code`</mark>](#)_
+- _<sub><mark>~italics sub mark strikethrough~</mark></sub>_
+- <sub><sup>~`sub sup strikethrough code`~</sup></sub>
+- [<small><kbd><sub>link small kbd sub</sub></kbd></small>](#)
+- **_[`bold italics link code`](#)_**
+- _<small><sup><mark>italics small sup mark</mark></sup></small>_
+- _[<small>`italics link small code`</small>](#)_
+- **<kbd><sup><mark>bold kbd sup mark</mark></sup></kbd>**
+- _<small><kbd><sup>italics small kbd sup</sup></kbd></small>_
+- **<sup><mark>`bold sup mark code`</mark></sup>**
+- <small><kbd><sub>`small kbd sub code`</sub></kbd></small>
+- _<kbd><sub><sup>italics kbd sub sup</sup></sub></kbd>_
+- **<small><mark>~bold small mark strikethrough~</mark></small>**
+- [<kbd><mark>`link kbd mark code`</mark></kbd>](#)
+- **<kbd><sub><sup>bold kbd sub sup</sup></sub></kbd>**
+- _[<small><kbd>italics link small kbd</kbd></small>](#)_
+- [<sub>~`link sub strikethrough code`~</sub>](#)
+- **<mark>~`bold mark strikethrough code`~</mark>**
+- [<small><mark>~link small mark strikethrough~</mark></small>](#)
+- <kbd><sub>~`kbd sub strikethrough code`~</sub></kbd>
+- _[<sup><mark>italics link sup mark</mark></sup>](#)_
+- _<sub><sup><mark>italics sub sup mark</mark></sup></sub>_
+- <small><sup><mark>`small sup mark code`</mark></sup></small>
+- _[<sup>~italics link sup strikethrough~</sup>](#)_
+- <small><kbd><sup>~small kbd sup strikethrough~</sup></kbd></small>
+- **[<sub>`bold link sub code`</sub>](#)**
+- **<small><kbd>~bold small kbd strikethrough~</kbd></small>**
+- **[<mark>~bold link mark strikethrough~</mark>](#)**
+- <small><sub>~`small sub strikethrough code`~</sub></small>
+- [<kbd><sup>~link kbd sup strikethrough~</sup></kbd>](#)
+- <kbd><sub><sup>`kbd sub sup code`</sup></sub></kbd>
+- **<kbd><sub><mark>bold kbd sub mark</mark></sub></kbd>**
+- [<kbd><sub><mark>link kbd sub mark</mark></sub></kbd>](#)
+- _[<small>~italics link small strikethrough~</small>](#)_
+- [<sub><mark>`link sub mark code`</mark></sub>](#)
+- <small><kbd><sub><mark>small kbd sub mark</mark></sub></kbd></small>
+- **<kbd><sub>~bold kbd sub strikethrough~</sub></kbd>**
+- _<kbd><sub>`italics kbd sub code`</sub></kbd>_
+- **<kbd>~`bold kbd strikethrough code`~</kbd>**
+- [<kbd><sub><sup>link kbd sub sup</sup></sub></kbd>](#)
+- _<kbd><sup>~italics kbd sup strikethrough~</sup></kbd>_
+- **_[<sub>bold italics link sub</sub>](#)_**
+- **<small>~`bold small strikethrough code`~</small>**
+- [<sub><sup>~link sub sup strikethrough~</sup></sub>](#)
+- [<sub><sup><mark>link sub sup mark</mark></sup></sub>](#)
+- _<kbd><mark>`italics kbd mark code`</mark></kbd>_
+- **_<sup>`bold italics sup code`</sup>_**
+- [<small><kbd>~link small kbd strikethrough~</kbd></small>](#)
+- [<small><kbd>`link small kbd code`</kbd></small>](#)
+- **<kbd><sup>`bold kbd sup code`</sup></kbd>**
+- **_<small><kbd>bold italics small kbd</kbd></small>_**
+- [<sup><mark>~link sup mark strikethrough~</mark></sup>](#)
+- _<small><kbd><sub>italics small kbd sub</sub></kbd></small>_
+- _<sub><sup>~italics sub sup strikethrough~</sup></sub>_
+- **[<sup>`bold link sup code`</sup>](#)**
+- <kbd><sup><mark>~kbd sup mark strikethrough~</mark></sup></kbd>
+- [<kbd><sub>~link kbd sub strikethrough~</sub></kbd>](#)
+- **<sub><sup>`bold sub sup code`</sup></sub>**
+- **_<kbd>~bold italics kbd strikethrough~</kbd>_**
+- **_<sub><mark>bold italics sub mark</mark></sub>_**
+- **[<sub><sup>bold link sub sup</sup></sub>](#)**
+- <sub><sup><mark>`sub sup mark code`</mark></sup></sub>
+- **[<small><sub>bold link small sub</sub></small>](#)**
+- **[<small><sup>bold link small sup</sup></small>](#)**
+- **<sub><mark>~bold sub mark strikethrough~</mark></sub>**
+- _[<kbd><sub>italics link kbd sub</sub></kbd>](#)_
+- **<small><sup>`bold small sup code`</sup></small>**
+- _<small><sub>~italics small sub strikethrough~</sub></small>_
+- **_<sup>~bold italics sup strikethrough~</sup>_**
+- [<small><sub><mark>link small sub mark</mark></sub></small>](#)
+- [<kbd><sup>`link kbd sup code`</sup></kbd>](#)
+- **<sup><mark>~bold sup mark strikethrough~</mark></sup>**
+- **<small><kbd><sub>bold small kbd sub</sub></kbd></small>**
+
+### 5 modifiers
+
+
+- **<small><kbd><sub>~bold small kbd sub strikethrough~</sub></kbd></small>**
+- **_<sub><sup>~bold italics sub sup strikethrough~</sup></sub>_**
+- _<small><kbd><sup><mark>italics small kbd sup mark</mark></sup></kbd></small>_
+- **_<small><sup>`bold italics small sup code`</sup></small>_**
+- **_<kbd><sup><mark>bold italics kbd sup mark</mark></sup></kbd>_**
+- **<kbd><sup><mark>`bold kbd sup mark code`</mark></sup></kbd>**
+- **<kbd><sub><mark>~bold kbd sub mark strikethrough~</mark></sub></kbd>**
+- **_<small>~`bold italics small strikethrough code`~</small>_**
+- [<small><sub><sup><mark>link small sub sup mark</mark></sup></sub></small>](#)
+- [<kbd><sub><sup>~link kbd sub sup strikethrough~</sup></sub></kbd>](#)
+- **_<small><sup><mark>bold italics small sup mark</mark></sup></small>_**
+- **_<small><sub>`bold italics small sub code`</sub></small>_**
+- _<sub><sup>~`italics sub sup strikethrough code`~</sup></sub>_
+- **[<mark>~`bold link mark strikethrough code`~</mark>](#)**
+- [<kbd><sub>~`link kbd sub strikethrough code`~</sub></kbd>](#)
+- **<small><kbd><mark>~bold small kbd mark strikethrough~</mark></kbd></small>**
+- _<small><sup><mark>`italics small sup mark code`</mark></sup></small>_
+- **[<sub><sup>`bold link sub sup code`</sup></sub>](#)**
+- _[<kbd><sub><mark>italics link kbd sub mark</mark></sub></kbd>](#)_
+- _[<kbd><mark>~italics link kbd mark strikethrough~</mark></kbd>](#)_
+- _<small><sub><mark>~italics small sub mark strikethrough~</mark></sub></small>_
+- _[<sub><sup><mark>italics link sub sup mark</mark></sup></sub>](#)_
+- _<kbd><sub><mark>`italics kbd sub mark code`</mark></sub></kbd>_
+- **_<small><kbd><mark>bold italics small kbd mark</mark></kbd></small>_**
+- _[<small><kbd>~italics link small kbd strikethrough~</kbd></small>](#)_
+- **_<kbd><sub>~bold italics kbd sub strikethrough~</sub></kbd>_**
+- _<small><kbd><sub><sup>italics small kbd sub sup</sup></sub></kbd></small>_
+- **_<small><mark>~bold italics small mark strikethrough~</mark></small>_**
+- **[<kbd><sub>~bold link kbd sub strikethrough~</sub></kbd>](#)**
+- **[<kbd><mark>~bold link kbd mark strikethrough~</mark></kbd>](#)**
+- <small><kbd><sub><sup>`small kbd sub sup code`</sup></sub></kbd></small>
+- _[<small><sub>`italics link small sub code`</sub></small>](#)_
+- _<sub><mark>~`italics sub mark strikethrough code`~</mark></sub>_
+- **[<small><sub>~bold link small sub strikethrough~</sub></small>](#)**
+- **[<small><sup>~bold link small sup strikethrough~</sup></small>](#)**
+- **[<sup><mark>`bold link sup mark code`</mark></sup>](#)**
+- [<kbd><sub><mark>~link kbd sub mark strikethrough~</mark></sub></kbd>](#)
+- **<kbd><sub>~`bold kbd sub strikethrough code`~</sub></kbd>**
+- _[<kbd><sup><mark>italics link kbd sup mark</mark></sup></kbd>](#)_
+- _<sub><sup><mark>~italics sub sup mark strikethrough~</mark></sup></sub>_
+- _<kbd><sub><mark>~italics kbd sub mark strikethrough~</mark></sub></kbd>_
+- **_[<kbd><sup>bold italics link kbd sup</sup></kbd>](#)_**
+- **_[<sub><mark>bold italics link sub mark</mark></sub>](#)_**
+- **[<kbd><sup>`bold link kbd sup code`</sup></kbd>](#)**
+- **_[<mark>~bold italics link mark strikethrough~</mark>](#)_**
+- **<sub><sup>~`bold sub sup strikethrough code`~</sup></sub>**
+- **<small><kbd>~`bold small kbd strikethrough code`~</kbd></small>**
+- **[<small><mark>`bold link small mark code`</mark></small>](#)**
+- _[<small><mark>~italics link small mark strikethrough~</mark></small>](#)_
+- **_<small><kbd><sup>bold italics small kbd sup</sup></kbd></small>_**
+- <small><kbd><sup>~`small kbd sup strikethrough code`~</sup></kbd></small>
+- [<small><kbd><mark>~link small kbd mark strikethrough~</mark></kbd></small>](#)
+- **[<sub><sup>~bold link sub sup strikethrough~</sup></sub>](#)**
+- <kbd><sup><mark>~`kbd sup mark strikethrough code`~</mark></sup></kbd>
+- [<small><sub><sup>~link small sub sup strikethrough~</sup></sub></small>](#)
+- **_<small><sub>~bold italics small sub strikethrough~</sub></small>_**
+- _<kbd><sub><sup>`italics kbd sub sup code`</sup></sub></kbd>_
+- **_[<sup>`bold italics link sup code`</sup>](#)_**
+- **_<small><kbd>`bold italics small kbd code`</kbd></small>_**
+- **<small><sub><sup>~bold small sub sup strikethrough~</sup></sub></small>**
+- **_[<small><kbd>bold italics link small kbd</kbd></small>](#)_**
+- _<small><kbd>~`italics small kbd strikethrough code`~</kbd></small>_
+- _<kbd><sup><mark>`italics kbd sup mark code`</mark></sup></kbd>_
+- <small><sub><mark>~`small sub mark strikethrough code`~</mark></sub></small>
+- **[<kbd><sub><sup>bold link kbd sub sup</sup></sub></kbd>](#)**
+- _[<kbd><sub><sup>italics link kbd sub sup</sup></sub></kbd>](#)_
+- _<small><sup><mark>~italics small sup mark strikethrough~</mark></sup></small>_
+- [<small><sup><mark>`link small sup mark code`</mark></sup></small>](#)
+- _<kbd><sup><mark>~italics kbd sup mark strikethrough~</mark></sup></kbd>_
+- **[<small><sup><mark>bold link small sup mark</mark></sup></small>](#)**
+- **_[<kbd><mark>bold italics link kbd mark</mark></kbd>](#)_**
+- **<kbd><sup><mark>~bold kbd sup mark strikethrough~</mark></sup></kbd>**
+- _<small><kbd><mark>~italics small kbd mark strikethrough~</mark></kbd></small>_
+- [<small><kbd><sub><sup>link small kbd sub sup</sup></sub></kbd></small>](#)
+- <small><sup><mark>~`small sup mark strikethrough code`~</mark></sup></small>
+- **[<small>~`bold link small strikethrough code`~</small>](#)**
+- _[<small><kbd><sup>italics link small kbd sup</sup></kbd></small>](#)_
+- _[<sup><mark>`italics link sup mark code`</mark></sup>](#)_
+- [<sup><mark>~`link sup mark strikethrough code`~</mark></sup>](#)
+- [<kbd><sub><sup>`link kbd sub sup code`</sup></sub></kbd>](#)
+- [<kbd><sub><mark>`link kbd sub mark code`</mark></sub></kbd>](#)
+- _[<small><sub>~italics link small sub strikethrough~</sub></small>](#)_
+- **<small><sup><mark>~bold small sup mark strikethrough~</mark></sup></small>**
+- **[<kbd><sub><mark>bold link kbd sub mark</mark></sub></kbd>](#)**
+- _[<small><mark>`italics link small mark code`</mark></small>](#)_
+- **[<small><kbd><sup>bold link small kbd sup</sup></kbd></small>](#)**
+- **[<sub><sup><mark>bold link sub sup mark</mark></sup></sub>](#)**
+- **_<small><sub><mark>bold italics small sub mark</mark></sub></small>_**
+- <sub><sup><mark>~`sub sup mark strikethrough code`~</mark></sup></sub>
+- **_[<sub>`bold italics link sub code`</sub>](#)_**
+- _<kbd><sub><sup><mark>italics kbd sub sup mark</mark></sup></sub></kbd>_
+- **[<small><sup>`bold link small sup code`</sup></small>](#)**
+- [<sub><mark>~`link sub mark strikethrough code`~</mark></sub>](#)
+- **[<small><kbd>`bold link small kbd code`</kbd></small>](#)**
+- **<small><kbd><sup><mark>bold small kbd sup mark</mark></sup></kbd></small>**
+- **_<sup>~`bold italics sup strikethrough code`~</sup>_**
+- [<small><kbd><sup>~link small kbd sup strikethrough~</sup></kbd></small>](#)
+- _<small><sub><sup><mark>italics small sub sup mark</mark></sup></sub></small>_
+- **_<sub>~`bold italics sub strikethrough code`~</sub>_**
+- **<small><sub><sup>`bold small sub sup code`</sup></sub></small>**
+- **_<mark>~`bold italics mark strikethrough code`~</mark>_**
+- _[<small><sup><mark>italics link small sup mark</mark></sup></small>](#)_
+- <small><kbd><sub><mark>~small kbd sub mark strikethrough~</mark></sub></kbd></small>
+- [<small><kbd><sub>`link small kbd sub code`</sub></kbd></small>](#)
+- <kbd><sub><mark>~`kbd sub mark strikethrough code`~</mark></sub></kbd>
+- _<kbd><sup>~`italics kbd sup strikethrough code`~</sup></kbd>_
+- **_<kbd><sup>~bold italics kbd sup strikethrough~</sup></kbd>_**
+- **[<sup><mark>~bold link sup mark strikethrough~</mark></sup>](#)**
+- **<small><kbd><sup>`bold small kbd sup code`</sup></kbd></small>**
+- **<sub><sup><mark>`bold sub sup mark code`</mark></sup></sub>**
+- **<small><sup><mark>`bold small sup mark code`</mark></sup></small>**
+- _<small><kbd><sub>~italics small kbd sub strikethrough~</sub></kbd></small>_
+- [<small><kbd><mark>`link small kbd mark code`</mark></kbd></small>](#)
+- _[<kbd><sub>~italics link kbd sub strikethrough~</sub></kbd>](#)_
+- **_<small><sup>~bold italics small sup strikethrough~</sup></small>_**
+- [<small><sub><sup>`link small sub sup code`</sup></sub></small>](#)
+- **_<sup><mark>`bold italics sup mark code`</mark></sup>_**
+- _<small><sup>~`italics small sup strikethrough code`~</sup></small>_
+- [<small><sub>~`link small sub strikethrough code`~</sub></small>](#)
+- **_<sub><mark>`bold italics sub mark code`</mark></sub>_**
+- _[<kbd><sub>`italics link kbd sub code`</sub></kbd>](#)_
+- **_<sub><mark>~bold italics sub mark strikethrough~</mark></sub>_**
+- **_[<small><sub>bold italics link small sub</sub></small>](#)_**
+- [<sub><sup><mark>~link sub sup mark strikethrough~</mark></sup></sub>](#)
+- _[<small><kbd><mark>italics link small kbd mark</mark></kbd></small>](#)_
+- **<sup><mark>~`bold sup mark strikethrough code`~</mark></sup>**
+- _[<sub><mark>~italics link sub mark strikethrough~</mark></sub>](#)_
+- **[<kbd><sub>`bold link kbd sub code`</sub></kbd>](#)**
+- **<kbd><sup>~`bold kbd sup strikethrough code`~</sup></kbd>**
+- <small><kbd><sup><mark>`small kbd sup mark code`</mark></sup></kbd></small>
+- _<small><mark>~`italics small mark strikethrough code`~</mark></small>_
+- **<small><sup>~`bold small sup strikethrough code`~</sup></small>**
+- **_[~`bold italics link strikethrough code`~](#)_**
+- **_[<mark>`bold italics link mark code`</mark>](#)_**
+- **[<kbd>~`bold link kbd strikethrough code`~</kbd>](#)**
+- **[<sub>~`bold link sub strikethrough code`~</sub>](#)**
+- _<small><kbd><sup>`italics small kbd sup code`</sup></kbd></small>_
+- **<sub><mark>~`bold sub mark strikethrough code`~</mark></sub>**
+- **[<small><sub>`bold link small sub code`</sub></small>](#)**
+- [<small><mark>~`link small mark strikethrough code`~</mark></small>](#)
+- <small><kbd><sup><mark>~small kbd sup mark strikethrough~</mark></sup></kbd></small>
+- **_<small><kbd><sub>bold italics small kbd sub</sub></kbd></small>_**
+- **[<small><kbd>~bold link small kbd strikethrough~</kbd></small>](#)**
+- _[<kbd><mark>`italics link kbd mark code`</mark></kbd>](#)_
+- **[<small><kbd><mark>bold link small kbd mark</mark></kbd></small>](#)**
+- [<kbd><sup>~`link kbd sup strikethrough code`~</sup></kbd>](#)
+- _[<small><sub><sup>italics link small sub sup</sup></sub></small>](#)_
+- **<sub><sup><mark>~bold sub sup mark strikethrough~</mark></sup></sub>**
+- **[<sup>~`bold link sup strikethrough code`~</sup>](#)**
+- **[<small><mark>~bold link small mark strikethrough~</mark></small>](#)**
+- <small><kbd><sub>~`small kbd sub strikethrough code`~</sub></kbd></small>
+- **[<sub><mark>~bold link sub mark strikethrough~</mark></sub>](#)**
+- [<kbd><mark>~`link kbd mark strikethrough code`~</mark></kbd>](#)
+- **<kbd><mark>~`bold kbd mark strikethrough code`~</mark></kbd>**
+- _[<mark>~`italics link mark strikethrough code`~</mark>](#)_
+- _<small><kbd><mark>`italics small kbd mark code`</mark></kbd></small>_
+- [<kbd><sub><sup><mark>link kbd sub sup mark</mark></sup></sub></kbd>](#)
+- _<small><sub><mark>`italics small sub mark code`</mark></sub></small>_
+- _<small><kbd><sup>~italics small kbd sup strikethrough~</sup></kbd></small>_
+- _<small><kbd><sub><mark>italics small kbd sub mark</mark></sub></kbd></small>_
+- **<kbd><sub><sup>~bold kbd sub sup strikethrough~</sup></sub></kbd>**
+- **_[<sup>~bold italics link sup strikethrough~</sup>](#)_**
+- <kbd><sub><sup>~`kbd sub sup strikethrough code`~</sup></sub></kbd>
+- **<small><mark>~`bold small mark strikethrough code`~</mark></small>**
+- _<small><sub><sup>~italics small sub sup strikethrough~</sup></sub></small>_
+- **_[<kbd><sub>bold italics link kbd sub</sub></kbd>](#)_**
+- **<kbd><sub><sup><mark>bold kbd sub sup mark</mark></sup></sub></kbd>**
+- _<kbd><mark>~`italics kbd mark strikethrough code`~</mark></kbd>_
+- **_<kbd><sub><sup>bold italics kbd sub sup</sup></sub></kbd>_**
+- **_[<small>~bold italics link small strikethrough~</small>](#)_**
+- <kbd><sub><sup><mark>~kbd sub sup mark strikethrough~</mark></sup></sub></kbd>
+- **_<sup><mark>~bold italics sup mark strikethrough~</mark></sup>_**
+- **_<sub><sup><mark>bold italics sub sup mark</mark></sup></sub>_**
+- **_<small><kbd>~bold italics small kbd strikethrough~</kbd></small>_**
+- _[<sub><mark>`italics link sub mark code`</mark></sub>](#)_
+- **<small><kbd><sup>~bold small kbd sup strikethrough~</sup></kbd></small>**
+- [<small><sub><mark>`link small sub mark code`</mark></sub></small>](#)
+- **[<kbd><sup>~bold link kbd sup strikethrough~</sup></kbd>](#)**
+- **_<kbd>~`bold italics kbd strikethrough code`~</kbd>_**
+- _<small><kbd><sub>`italics small kbd sub code`</sub></kbd></small>_
+- <small><kbd><sub><mark>`small kbd sub mark code`</mark></sub></kbd></small>
+- **_<kbd><sup>`bold italics kbd sup code`</sup></kbd>_**
+- **<small><sub><mark>~bold small sub mark strikethrough~</mark></sub></small>**
+- [<small><kbd><sup><mark>link small kbd sup mark</mark></sup></kbd></small>](#)
+- <small><kbd><sub><sup>~small kbd sub sup strikethrough~</sup></sub></kbd></small>
+- _[<sup><mark>~italics link sup mark strikethrough~</mark></sup>](#)_
+- _[<small><sub><mark>italics link small sub mark</mark></sub></small>](#)_
+- _[<small>~`italics link small strikethrough code`~</small>](#)_
+- _[<small><sup>`italics link small sup code`</sup></small>](#)_
+- **[<kbd><sup><mark>bold link kbd sup mark</mark></sup></kbd>](#)**
+- _<kbd><sub>~`italics kbd sub strikethrough code`~</sub></kbd>_
+- **<small><kbd><sub><mark>bold small kbd sub mark</mark></sub></kbd></small>**
+- [<sub><sup><mark>`link sub sup mark code`</mark></sup></sub>](#)
+- <kbd><sub><sup><mark>`kbd sub sup mark code`</mark></sup></sub></kbd>
+- **_[<kbd>~bold italics link kbd strikethrough~</kbd>](#)_**
+- _[<small><sup>~italics link small sup strikethrough~</sup></small>](#)_
+- [<sub><sup>~`link sub sup strikethrough code`~</sup></sub>](#)
+- <small><sub><sup>~`small sub sup strikethrough code`~</sup></sub></small>
+- **<kbd><sub><sup>`bold kbd sub sup code`</sup></sub></kbd>**
+- **_[<sub><sup>bold italics link sub sup</sup></sub>](#)_**
+- **<small><kbd><sub>`bold small kbd sub code`</sub></kbd></small>**
+- **<small><sub><sup><mark>bold small sub sup mark</mark></sup></sub></small>**
+- **_<small><sub><sup>bold italics small sub sup</sup></sub></small>_**
+- _[<kbd><sup>~italics link kbd sup strikethrough~</sup></kbd>](#)_
+- _[<sub><sup>`italics link sub sup code`</sup></sub>](#)_
+- _[<sub>~`italics link sub strikethrough code`~</sub>](#)_
+- _[<kbd>~`italics link kbd strikethrough code`~</kbd>](#)_
+- **<small><sub>~`bold small sub strikethrough code`~</sub></small>**
+- [<small><sup>~`link small sup strikethrough code`~</sup></small>](#)
+- **_[<sup><mark>bold italics link sup mark</mark></sup>](#)_**
+- **_[<small>`bold italics link small code`</small>](#)_**
+- **[<sub><mark>`bold link sub mark code`</mark></sub>](#)**
+- <small><sub><sup><mark>`small sub sup mark code`</mark></sup></sub></small>
+- [<kbd><sup><mark>`link kbd sup mark code`</mark></sup></kbd>](#)
+- <small><kbd><mark>~`small kbd mark strikethrough code`~</mark></kbd></small>
+- _<kbd><sub><sup>~italics kbd sub sup strikethrough~</sup></sub></kbd>_
+- [<small><kbd>~`link small kbd strikethrough code`~</kbd></small>](#)
+- [<small><kbd><sub>~link small kbd sub strikethrough~</sub></kbd></small>](#)
+- **_<kbd><mark>~bold italics kbd mark strikethrough~</mark></kbd>_**
+- **[<small><sub><sup>bold link small sub sup</sup></sub></small>](#)**
+- **_<sub><sup>`bold italics sub sup code`</sup></sub>_**
+- _<small><sub><sup>`italics small sub sup code`</sup></sub></small>_
+- **<small><kbd><sub><sup>bold small kbd sub sup</sup></sub></kbd></small>**
+- **[<small><sub><mark>bold link small sub mark</mark></sub></small>](#)**
+- **_[<small><mark>bold italics link small mark</mark></small>](#)_**
+- **<small><sub><mark>`bold small sub mark code`</mark></sub></small>**
+- **_<kbd><sub><mark>bold italics kbd sub mark</mark></sub></kbd>_**
+- _<sub><sup><mark>`italics sub sup mark code`</mark></sup></sub>_
+- **_[<small><sup>bold italics link small sup</sup></small>](#)_**
+- **_[<kbd>`bold italics link kbd code`</kbd>](#)_**
+- **<small><kbd><mark>`bold small kbd mark code`</mark></kbd></small>**
+- _<small><sub>~`italics small sub strikethrough code`~</sub></small>_
+- [<small><kbd><sup>`link small kbd sup code`</sup></kbd></small>](#)
+- _[<kbd><sup>`italics link kbd sup code`</sup></kbd>](#)_
+- [<small><sup><mark>~link small sup mark strikethrough~</mark></sup></small>](#)
+- **[<kbd><mark>`bold link kbd mark code`</mark></kbd>](#)**
+- **<kbd><sub><mark>`bold kbd sub mark code`</mark></sub></kbd>**
+- <small><kbd><sub><sup><mark>small kbd sub sup mark</mark></sup></sub></kbd></small>
+- [<small><sub><mark>~link small sub mark strikethrough~</mark></sub></small>](#)
+- _<sup><mark>~`italics sup mark strikethrough code`~</mark></sup>_
+- _[<small><kbd>`italics link small kbd code`</kbd></small>](#)_
+- _[<sup>~`italics link sup strikethrough code`~</sup>](#)_
+- _[<sub><sup>~italics link sub sup strikethrough~</sup></sub>](#)_
+- [<kbd><sup><mark>~link kbd sup mark strikethrough~</mark></sup></kbd>](#)
+- **_<kbd><mark>`bold italics kbd mark code`</mark></kbd>_**
+- [<small><kbd><sub><mark>link small kbd sub mark</mark></sub></kbd></small>](#)
+- **_<kbd><sub>`bold italics kbd sub code`</sub></kbd>_**
+- **_[<sub>~bold italics link sub strikethrough~</sub>](#)_**
+- **[<small><kbd><sub>bold link small kbd sub</sub></kbd></small>](#)**
+- <small><sub><sup><mark>~small sub sup mark strikethrough~</mark></sup></sub></small>
+- _[<small><kbd><sub>italics link small kbd sub</sub></kbd></small>](#)_
+- **_<small><mark>`bold italics small mark code`</mark></small>_**
+
+### 6 modifiers
+
+
+- [<small><sub><sup><mark>~link small sub sup mark strikethrough~</mark></sup></sub></small>](#)
+- _[<small><sub><sup>`italics link small sub sup code`</sup></sub></small>](#)_
+- **[<small><mark>~`bold link small mark strikethrough code`~</mark></small>](#)**
+- _[<sub><mark>~`italics link sub mark strikethrough code`~</mark></sub>](#)_
+- **[<kbd><sub><mark>~bold link kbd sub mark strikethrough~</mark></sub></kbd>](#)**
+- **[<small><sub><mark>`bold link small sub mark code`</mark></sub></small>](#)**
+- **<small><kbd><sup>~`bold small kbd sup strikethrough code`~</sup></kbd></small>**
+- [<small><sup><mark>~`link small sup mark strikethrough code`~</mark></sup></small>](#)
+- _[<small><kbd><sub>~italics link small kbd sub strikethrough~</sub></kbd></small>](#)_
+- _[<kbd><mark>~`italics link kbd mark strikethrough code`~</mark></kbd>](#)_
+- **[<small><sub><sup>~bold link small sub sup strikethrough~</sup></sub></small>](#)**
+- [<kbd><sub><sup>~`link kbd sub sup strikethrough code`~</sup></sub></kbd>](#)
+- _[<small><kbd><sup>~italics link small kbd sup strikethrough~</sup></kbd></small>](#)_
+- **_<kbd><sup><mark>~bold italics kbd sup mark strikethrough~</mark></sup></kbd>_**
+- **[<small><kbd><mark>~bold link small kbd mark strikethrough~</mark></kbd></small>](#)**
+- **_<sup><mark>~`bold italics sup mark strikethrough code`~</mark></sup>_**
+- _[<kbd><sup><mark>`italics link kbd sup mark code`</mark></sup></kbd>](#)_
+- **[<small><sub>~`bold link small sub strikethrough code`~</sub></small>](#)**
+- **[<small><kbd><mark>`bold link small kbd mark code`</mark></kbd></small>](#)**
+- **_[<small><sub>~bold italics link small sub strikethrough~</sub></small>](#)_**
+- **[<small><kbd><sub>~bold link small kbd sub strikethrough~</sub></kbd></small>](#)**
+- [<small><kbd><sub><mark>`link small kbd sub mark code`</mark></sub></kbd></small>](#)
+- _[<sub><sup><mark>~italics link sub sup mark strikethrough~</mark></sup></sub>](#)_
+- **_[<sub><mark>~bold italics link sub mark strikethrough~</mark></sub>](#)_**
+- _[<small><kbd><mark>`italics link small kbd mark code`</mark></kbd></small>](#)_
+- _<small><kbd><sub><mark>`italics small kbd sub mark code`</mark></sub></kbd></small>_
+- **_<kbd><sub><sup>~bold italics kbd sub sup strikethrough~</sup></sub></kbd>_**
+- [<small><sub><sup><mark>`link small sub sup mark code`</mark></sup></sub></small>](#)
+- **<small><sub><sup><mark>`bold small sub sup mark code`</mark></sup></sub></small>**
+- **_<kbd><sup>~`bold italics kbd sup strikethrough code`~</sup></kbd>_**
+- _<small><sub><mark>~`italics small sub mark strikethrough code`~</mark></sub></small>_
+- [<kbd><sup><mark>~`link kbd sup mark strikethrough code`~</mark></sup></kbd>](#)
+- **_[<sup>~`bold italics link sup strikethrough code`~</sup>](#)_**
+- **_<small><sub><sup>~bold italics small sub sup strikethrough~</sup></sub></small>_**
+- **_[<small><kbd>~bold italics link small kbd strikethrough~</kbd></small>](#)_**
+- **_[<sup><mark>`bold italics link sup mark code`</mark></sup>](#)_**
+- **<small><kbd><sub><mark>`bold small kbd sub mark code`</mark></sub></kbd></small>**
+- **_<small><kbd><mark>`bold italics small kbd mark code`</mark></kbd></small>_**
+- **[<small><sub><sup>`bold link small sub sup code`</sup></sub></small>](#)**
+- _<small><sup><mark>~`italics small sup mark strikethrough code`~</mark></sup></small>_
+- **<kbd><sub><sup><mark>`bold kbd sub sup mark code`</mark></sup></sub></kbd>**
+- **_<small><kbd><sup>~bold italics small kbd sup strikethrough~</sup></kbd></small>_**
+- _[<kbd><sup><mark>~italics link kbd sup mark strikethrough~</mark></sup></kbd>](#)_
+- _[<small><sub><sup>~italics link small sub sup strikethrough~</sup></sub></small>](#)_
+- _[<small><sub><sup><mark>italics link small sub sup mark</mark></sup></sub></small>](#)_
+- **<small><sub><mark>~`bold small sub mark strikethrough code`~</mark></sub></small>**
+- _<small><kbd><sup><mark>~italics small kbd sup mark strikethrough~</mark></sup></kbd></small>_
+- <small><kbd><sub><sup><mark>~small kbd sub sup mark strikethrough~</mark></sup></sub></kbd></small>
+- **[<small><sup>~`bold link small sup strikethrough code`~</sup></small>](#)**
+- **_<small><kbd><mark>~bold italics small kbd mark strikethrough~</mark></kbd></small>_**
+- _[<kbd><sub><sup><mark>italics link kbd sub sup mark</mark></sup></sub></kbd>](#)_
+- **_<small><mark>~`bold italics small mark strikethrough code`~</mark></small>_**
+- **_<small><sub><sup>`bold italics small sub sup code`</sup></sub></small>_**
+- **[<kbd><mark>~`bold link kbd mark strikethrough code`~</mark></kbd>](#)**
+- _<kbd><sub><sup>~`italics kbd sub sup strikethrough code`~</sup></sub></kbd>_
+- **_<small><sup><mark>~bold italics small sup mark strikethrough~</mark></sup></small>_**
+- _<small><kbd><sup>~`italics small kbd sup strikethrough code`~</sup></kbd></small>_
+- **_[<kbd><sub><sup>bold italics link kbd sub sup</sup></sub></kbd>](#)_**
+- **<small><kbd><sub>~`bold small kbd sub strikethrough code`~</sub></kbd></small>**
+- _<kbd><sub><sup><mark>~italics kbd sub sup mark strikethrough~</mark></sup></sub></kbd>_
+- **_<small><kbd>~`bold italics small kbd strikethrough code`~</kbd></small>_**
+- **<small><kbd><sup><mark>`bold small kbd sup mark code`</mark></sup></kbd></small>**
+- **[<small><sup><mark>~bold link small sup mark strikethrough~</mark></sup></small>](#)**
+- _[<small><sup>~`italics link small sup strikethrough code`~</sup></small>](#)_
+- **[<sub><sup>~`bold link sub sup strikethrough code`~</sup></sub>](#)**
+- [<small><kbd><sub>~`link small kbd sub strikethrough code`~</sub></kbd></small>](#)
+- _<small><kbd><sub><sup>~italics small kbd sub sup strikethrough~</sup></sub></kbd></small>_
+- [<small><kbd><sup><mark>~link small kbd sup mark strikethrough~</mark></sup></kbd></small>](#)
+- _<kbd><sup><mark>~`italics kbd sup mark strikethrough code`~</mark></sup></kbd>_
+- **_[<kbd><sup><mark>bold italics link kbd sup mark</mark></sup></kbd>](#)_**
+- <kbd><sub><sup><mark>~`kbd sub sup mark strikethrough code`~</mark></sup></sub></kbd>
+- **<kbd><sub><sup><mark>~bold kbd sub sup mark strikethrough~</mark></sup></sub></kbd>**
+- **_[<small><sub><mark>bold italics link small sub mark</mark></sub></small>](#)_**
+- **<small><kbd><sub><mark>~bold small kbd sub mark strikethrough~</mark></sub></kbd></small>**
+- [<kbd><sub><sup><mark>`link kbd sub sup mark code`</mark></sup></sub></kbd>](#)
+- [<small><kbd><sup>~`link small kbd sup strikethrough code`~</sup></kbd></small>](#)
+- [<small><kbd><sup><mark>`link small kbd sup mark code`</mark></sup></kbd></small>](#)
+- **_<kbd><sub><mark>~bold italics kbd sub mark strikethrough~</mark></sub></kbd>_**
+- **[<kbd><sub><sup><mark>bold link kbd sub sup mark</mark></sup></sub></kbd>](#)**
+- **_[<sub><sup>~bold italics link sub sup strikethrough~</sup></sub>](#)_**
+- **_[<small><sub>`bold italics link small sub code`</sub></small>](#)_**
+- _[<kbd><sup>~`italics link kbd sup strikethrough code`~</sup></kbd>](#)_
+- _[<small><mark>~`italics link small mark strikethrough code`~</mark></small>](#)_
+- **_<small><kbd><sub><sup>bold italics small kbd sub sup</sup></sub></kbd></small>_**
+- **_<small><sup><mark>`bold italics small sup mark code`</mark></sup></small>_**
+- **[<kbd><sub><sup>~bold link kbd sub sup strikethrough~</sup></sub></kbd>](#)**
+- **_[<small><sup>`bold italics link small sup code`</sup></small>](#)_**
+- **_[<kbd>~`bold italics link kbd strikethrough code`~</kbd>](#)_**
+- <small><sub><sup><mark>~`small sub sup mark strikethrough code`~</mark></sup></sub></small>
+- **[<small><kbd><sub>`bold link small kbd sub code`</sub></kbd></small>](#)**
+- **_[<mark>~`bold italics link mark strikethrough code`~</mark>](#)_**
+- **_<sub><sup><mark>`bold italics sub sup mark code`</mark></sup></sub>_**
+- **_[<sup><mark>~bold italics link sup mark strikethrough~</mark></sup>](#)_**
+- _[<small><kbd><sub>`italics link small kbd sub code`</sub></kbd></small>](#)_
+- **_[<small><mark>`bold italics link small mark code`</mark></small>](#)_**
+- **[<kbd><sub>~`bold link kbd sub strikethrough code`~</sub></kbd>](#)**
+- _[<small><sub><mark>`italics link small sub mark code`</mark></sub></small>](#)_
+- **[<small><sub><sup><mark>bold link small sub sup mark</mark></sup></sub></small>](#)**
+- [<small><kbd><mark>~`link small kbd mark strikethrough code`~</mark></kbd></small>](#)
+- **[<small><kbd><sup>`bold link small kbd sup code`</sup></kbd></small>](#)**
+- **_[<sub><sup><mark>bold italics link sub sup mark</mark></sup></sub>](#)_**
+- **_[<kbd><sup>~bold italics link kbd sup strikethrough~</sup></kbd>](#)_**
+- **[<kbd><sub><mark>`bold link kbd sub mark code`</mark></sub></kbd>](#)**
+- **<small><kbd><mark>~`bold small kbd mark strikethrough code`~</mark></kbd></small>**
+- **_<sub><sup>~`bold italics sub sup strikethrough code`~</sup></sub>_**
+- [<kbd><sub><sup><mark>~link kbd sub sup mark strikethrough~</mark></sup></sub></kbd>](#)
+- **[<kbd><sup><mark>~bold link kbd sup mark strikethrough~</mark></sup></kbd>](#)**
+- [<kbd><sub><mark>~`link kbd sub mark strikethrough code`~</mark></sub></kbd>](#)
+- **_[<kbd><sup>`bold italics link kbd sup code`</sup></kbd>](#)_**
+- **_<kbd><mark>~`bold italics kbd mark strikethrough code`~</mark></kbd>_**
+- **_[<small>~`bold italics link small strikethrough code`~</small>](#)_**
+- _<kbd><sub><mark>~`italics kbd sub mark strikethrough code`~</mark></sub></kbd>_
+- _[<kbd><sub>~`italics link kbd sub strikethrough code`~</sub></kbd>](#)_
+- **_<small><sub><sup><mark>bold italics small sub sup mark</mark></sup></sub></small>_**
+- _[<kbd><sub><sup>`italics link kbd sub sup code`</sup></sub></kbd>](#)_
+- _<small><kbd><sub><sup><mark>italics small kbd sub sup mark</mark></sup></sub></kbd></small>_
+- _<small><kbd><sub><sup>`italics small kbd sub sup code`</sup></sub></kbd></small>_
+- **[<kbd><sup><mark>`bold link kbd sup mark code`</mark></sup></kbd>](#)**
+- _<small><sub><sup><mark>`italics small sub sup mark code`</mark></sup></sub></small>_
+- **_<kbd><sub>~`bold italics kbd sub strikethrough code`~</sub></kbd>_**
+- **[<sub><sup><mark>`bold link sub sup mark code`</mark></sup></sub>](#)**
+- <small><kbd><sub><sup><mark>`small kbd sub sup mark code`</mark></sup></sub></kbd></small>
+- [<sub><sup><mark>~`link sub sup mark strikethrough code`~</mark></sup></sub>](#)
+- _<small><kbd><sub>~`italics small kbd sub strikethrough code`~</sub></kbd></small>_
+- **_[<small><sup><mark>bold italics link small sup mark</mark></sup></small>](#)_**
+- **<small><kbd><sub><sup><mark>bold small kbd sub sup mark</mark></sup></sub></kbd></small>**
+- **[<small><kbd><sup>~bold link small kbd sup strikethrough~</sup></kbd></small>](#)**
+- **_[<small><sup>~bold italics link small sup strikethrough~</sup></small>](#)_**
+- **_<small><kbd><sub>~bold italics small kbd sub strikethrough~</sub></kbd></small>_**
+- _[<small><sup><mark>`italics link small sup mark code`</mark></sup></small>](#)_
+- **<small><kbd><sub><sup>`bold small kbd sub sup code`</sup></sub></kbd></small>**
+- [<small><kbd><sub><sup><mark>link small kbd sub sup mark</mark></sup></sub></kbd></small>](#)
+- **<small><kbd><sup><mark>~bold small kbd sup mark strikethrough~</mark></sup></kbd></small>**
+- <small><kbd><sub><sup>~`small kbd sub sup strikethrough code`~</sup></sub></kbd></small>
+- _<sub><sup><mark>~`italics sub sup mark strikethrough code`~</mark></sup></sub>_
+- **_<sub><sup><mark>~bold italics sub sup mark strikethrough~</mark></sup></sub>_**
+- **<small><sup><mark>~`bold small sup mark strikethrough code`~</mark></sup></small>**
+- **_[<small><kbd><sub>bold italics link small kbd sub</sub></kbd></small>](#)_**
+- **[<sub><sup><mark>~bold link sub sup mark strikethrough~</mark></sup></sub>](#)**
+- **[<small><kbd><sup><mark>bold link small kbd sup mark</mark></sup></kbd></small>](#)**
+- _[<small><sub><mark>~italics link small sub mark strikethrough~</mark></sub></small>](#)_
+- [<small><kbd><sub><mark>~link small kbd sub mark strikethrough~</mark></sub></kbd></small>](#)
+- **_[<kbd><sub><mark>bold italics link kbd sub mark</mark></sub></kbd>](#)_**
+- _<small><kbd><sup><mark>`italics small kbd sup mark code`</mark></sup></kbd></small>_
+- **_[<small><kbd>`bold italics link small kbd code`</kbd></small>](#)_**
+- _[<small><sub>~`italics link small sub strikethrough code`~</sub></small>](#)_
+- **_[<sub><sup>`bold italics link sub sup code`</sup></sub>](#)_**
+- **_<small><sub><mark>`bold italics small sub mark code`</mark></sub></small>_**
+- **_[<sub>~`bold italics link sub strikethrough code`~</sub>](#)_**
+- **_[<small><kbd><sup>bold italics link small kbd sup</sup></kbd></small>](#)_**
+- _[<small><kbd><sub><mark>italics link small kbd sub mark</mark></sub></kbd></small>](#)_
+- **<kbd><sub><sup>~`bold kbd sub sup strikethrough code`~</sup></sub></kbd>**
+- **<small><sub><sup><mark>~bold small sub sup mark strikethrough~</mark></sup></sub></small>**
+- [<small><sub><sup>~`link small sub sup strikethrough code`~</sup></sub></small>](#)
+- **_[<kbd><sub>`bold italics link kbd sub code`</sub></kbd>](#)_**
+- _[<sub><sup>~`italics link sub sup strikethrough code`~</sup></sub>](#)_
+- _<small><kbd><sub><mark>~italics small kbd sub mark strikethrough~</mark></sub></kbd></small>_
+- **[<small><kbd><sub><mark>bold link small kbd sub mark</mark></sub></kbd></small>](#)**
+- **_[<kbd><sub>~bold italics link kbd sub strikethrough~</sub></kbd>](#)_**
+- _<small><sub><sup><mark>~italics small sub sup mark strikethrough~</mark></sup></sub></small>_
+- _[<small><kbd><sup>`italics link small kbd sup code`</sup></kbd></small>](#)_
+- <small><kbd><sub><mark>~`small kbd sub mark strikethrough code`~</mark></sub></kbd></small>
+- **[<sup><mark>~`bold link sup mark strikethrough code`~</mark></sup>](#)**
+- **_[<kbd><mark>~bold italics link kbd mark strikethrough~</mark></kbd>](#)_**
+- **_[<kbd><mark>`bold italics link kbd mark code`</mark></kbd>](#)_**
+- **_<kbd><sub><sup><mark>bold italics kbd sub sup mark</mark></sup></sub></kbd>_**
+- _[<kbd><sub><mark>~italics link kbd sub mark strikethrough~</mark></sub></kbd>](#)_
+- _[<kbd><sub><sup>~italics link kbd sub sup strikethrough~</sup></sub></kbd>](#)_
+- [<small><kbd><sub><sup>~link small kbd sub sup strikethrough~</sup></sub></kbd></small>](#)
+- **_[<sub><mark>`bold italics link sub mark code`</mark></sub>](#)_**
+- **<small><sub><sup>~`bold small sub sup strikethrough code`~</sup></sub></small>**
+- **_<small><kbd><sup>`bold italics small kbd sup code`</sup></kbd></small>_**
+- _[<sub><sup><mark>`italics link sub sup mark code`</mark></sup></sub>](#)_
+- **[<kbd><sub><sup>`bold link kbd sub sup code`</sup></sub></kbd>](#)**
+- **<small><kbd><sub><sup>~bold small kbd sub sup strikethrough~</sup></sub></kbd></small>**
+- **_<small><kbd><sub><mark>bold italics small kbd sub mark</mark></sub></kbd></small>_**
+- **_<sub><mark>~`bold italics sub mark strikethrough code`~</mark></sub>_**
+- _[<small><kbd><sup><mark>italics link small kbd sup mark</mark></sup></kbd></small>](#)_
+- **<kbd><sub><mark>~`bold kbd sub mark strikethrough code`~</mark></sub></kbd>**
+- _[<sup><mark>~`italics link sup mark strikethrough code`~</mark></sup>](#)_
+- **_<small><sub>~`bold italics small sub strikethrough code`~</sub></small>_**
+- **<kbd><sup><mark>~`bold kbd sup mark strikethrough code`~</mark></sup></kbd>**
+- **_<kbd><sup><mark>`bold italics kbd sup mark code`</mark></sup></kbd>_**
+- **_<small><kbd><sub>`bold italics small kbd sub code`</sub></kbd></small>_**
+- [<small><kbd><sub><sup>`link small kbd sub sup code`</sup></sub></kbd></small>](#)
+- _[<small><kbd>~`italics link small kbd strikethrough code`~</kbd></small>](#)_
+- **[<small><kbd><sub><sup>bold link small kbd sub sup</sup></sub></kbd></small>](#)**
+- **<sub><sup><mark>~`bold sub sup mark strikethrough code`~</mark></sup></sub>**
+- _[<small><kbd><sub><sup>italics link small kbd sub sup</sup></sub></kbd></small>](#)_
+- **_[<small><mark>~bold italics link small mark strikethrough~</mark></small>](#)_**
+- **_<small><sup>~`bold italics small sup strikethrough code`~</sup></small>_**
+- **[<small><sub><mark>~bold link small sub mark strikethrough~</mark></sub></small>](#)**
+- **[<kbd><sup>~`bold link kbd sup strikethrough code`~</sup></kbd>](#)**
+- <small><kbd><sup><mark>~`small kbd sup mark strikethrough code`~</mark></sup></kbd></small>
+- **_[<small><sub><sup>bold italics link small sub sup</sup></sub></small>](#)_**
+- _<small><sub><sup>~`italics small sub sup strikethrough code`~</sup></sub></small>_
+- _[<kbd><sub><mark>`italics link kbd sub mark code`</mark></sub></kbd>](#)_
+- **_<kbd><sub><sup>`bold italics kbd sub sup code`</sup></sub></kbd>_**
+- **_<small><sub><mark>~bold italics small sub mark strikethrough~</mark></sub></small>_**
+- [<small><sub><mark>~`link small sub mark strikethrough code`~</mark></sub></small>](#)
+- **[<small><kbd>~`bold link small kbd strikethrough code`~</kbd></small>](#)**
+- **[<small><sup><mark>`bold link small sup mark code`</mark></sup></small>](#)**
+- _<small><kbd><mark>~`italics small kbd mark strikethrough code`~</mark></kbd></small>_
+- _[<small><sup><mark>~italics link small sup mark strikethrough~</mark></sup></small>](#)_
+- _[<small><kbd><mark>~italics link small kbd mark strikethrough~</mark></kbd></small>](#)_
+- **_[<small><kbd><mark>bold italics link small kbd mark</mark></kbd></small>](#)_**
+- **_<small><kbd><sup><mark>bold italics small kbd sup mark</mark></sup></kbd></small>_**
+- _<kbd><sub><sup><mark>`italics kbd sub sup mark code`</mark></sup></sub></kbd>_
+- **[<sub><mark>~`bold link sub mark strikethrough code`~</mark></sub>](#)**
+- **_<kbd><sub><mark>`bold italics kbd sub mark code`</mark></sub></kbd>_**
+
+### 7 modifiers
+
+
+- _[<small><sub><sup>~`italics link small sub sup strikethrough code`~</sup></sub></small>](#)_
+- _<small><kbd><sub><mark>~`italics small kbd sub mark strikethrough code`~</mark></sub></kbd></small>_
+- **_[<small><sub><mark>~bold italics link small sub mark strikethrough~</mark></sub></small>](#)_**
+- **_[<sub><sup>~`bold italics link sub sup strikethrough code`~</sup></sub>](#)_**
+- **[<sub><sup><mark>~`bold link sub sup mark strikethrough code`~</mark></sup></sub>](#)**
+- **_<small><kbd><sub><sup>~bold italics small kbd sub sup strikethrough~</sup></sub></kbd></small>_**
+- **[<small><sub><sup><mark>`bold link small sub sup mark code`</mark></sup></sub></small>](#)**
+- _[<small><kbd><sub><sup><mark>italics link small kbd sub sup mark</mark></sup></sub></kbd></small>](#)_
+- _[<kbd><sub><sup><mark>`italics link kbd sub sup mark code`</mark></sup></sub></kbd>](#)_
+- **_[<kbd><sup><mark>`bold italics link kbd sup mark code`</mark></sup></kbd>](#)_**
+- **_[<small><sub><sup><mark>bold italics link small sub sup mark</mark></sup></sub></small>](#)_**
+- **_[<small><kbd><mark>~bold italics link small kbd mark strikethrough~</mark></kbd></small>](#)_**
+- **[<small><kbd><sub><mark>~bold link small kbd sub mark strikethrough~</mark></sub></kbd></small>](#)**
+- **_<small><kbd><sub><sup><mark>bold italics small kbd sub sup mark</mark></sup></sub></kbd></small>_**
+- **[<small><sub><mark>~`bold link small sub mark strikethrough code`~</mark></sub></small>](#)**
+- **[<small><kbd><mark>~`bold link small kbd mark strikethrough code`~</mark></kbd></small>](#)**
+- **<small><kbd><sub><sup><mark>`bold small kbd sub sup mark code`</mark></sup></sub></kbd></small>**
+- **_[<small><kbd><sub>~bold italics link small kbd sub strikethrough~</sub></kbd></small>](#)_**
+- [<small><kbd><sub><sup>~`link small kbd sub sup strikethrough code`~</sup></sub></kbd></small>](#)
+- [<small><kbd><sup><mark>~`link small kbd sup mark strikethrough code`~</mark></sup></kbd></small>](#)
+- **_[<small><kbd><sub>`bold italics link small kbd sub code`</sub></kbd></small>](#)_**
+- **_[<small><sup><mark>~bold italics link small sup mark strikethrough~</mark></sup></small>](#)_**
+- **_<kbd><sub><sup><mark>`bold italics kbd sub sup mark code`</mark></sup></sub></kbd>_**
+- _[<small><sup><mark>~`italics link small sup mark strikethrough code`~</mark></sup></small>](#)_
+- **[<small><kbd><sub><sup><mark>bold link small kbd sub sup mark</mark></sup></sub></kbd></small>](#)**
+- _[<small><kbd><sup>~`italics link small kbd sup strikethrough code`~</sup></kbd></small>](#)_
+- **[<small><sub><sup>~`bold link small sub sup strikethrough code`~</sup></sub></small>](#)**
+- **_<small><kbd><sub><mark>~bold italics small kbd sub mark strikethrough~</mark></sub></kbd></small>_**
+- **_[<small><kbd><sup>~bold italics link small kbd sup strikethrough~</sup></kbd></small>](#)_**
+- [<kbd><sub><sup><mark>~`link kbd sub sup mark strikethrough code`~</mark></sup></sub></kbd>](#)
+- **[<small><kbd><sup><mark>~bold link small kbd sup mark strikethrough~</mark></sup></kbd></small>](#)**
+- _<small><kbd><sub><sup><mark>`italics small kbd sub sup mark code`</mark></sup></sub></kbd></small>_
+- **_<small><kbd><sup><mark>~bold italics small kbd sup mark strikethrough~</mark></sup></kbd></small>_**
+- **_<small><kbd><sub>~`bold italics small kbd sub strikethrough code`~</sub></kbd></small>_**
+- _[<sub><sup><mark>~`italics link sub sup mark strikethrough code`~</mark></sup></sub>](#)_
+- **_<small><kbd><sub><sup>`bold italics small kbd sub sup code`</sup></sub></kbd></small>_**
+- **_[<kbd><sup>~`bold italics link kbd sup strikethrough code`~</sup></kbd>](#)_**
+- **_[<small><kbd><sup>`bold italics link small kbd sup code`</sup></kbd></small>](#)_**
+- **[<small><sub><sup><mark>~bold link small sub sup mark strikethrough~</mark></sup></sub></small>](#)**
+- **_[<small><sup>~`bold italics link small sup strikethrough code`~</sup></small>](#)_**
+- **[<kbd><sub><sup><mark>~bold link kbd sub sup mark strikethrough~</mark></sup></sub></kbd>](#)**
+- [<small><kbd><sub><sup><mark>~link small kbd sub sup mark strikethrough~</mark></sup></sub></kbd></small>](#)
+- **<small><sub><sup><mark>~`bold small sub sup mark strikethrough code`~</mark></sup></sub></small>**
+- **<small><kbd><sub><sup><mark>~bold small kbd sub sup mark strikethrough~</mark></sup></sub></kbd></small>**
+- _[<small><kbd><sup><mark>~italics link small kbd sup mark strikethrough~</mark></sup></kbd></small>](#)_
+- **_[<small><sub><mark>`bold italics link small sub mark code`</mark></sub></small>](#)_**
+- _[<kbd><sub><sup>~`italics link kbd sub sup strikethrough code`~</sup></sub></kbd>](#)_
+- _[<small><kbd><sub><mark>`italics link small kbd sub mark code`</mark></sub></kbd></small>](#)_
+- **[<small><kbd><sub>~`bold link small kbd sub strikethrough code`~</sub></kbd></small>](#)**
+- **_<small><sub><mark>~`bold italics small sub mark strikethrough code`~</mark></sub></small>_**
+- _[<small><kbd><sub><sup>~italics link small kbd sub sup strikethrough~</sup></sub></kbd></small>](#)_
+- _<small><kbd><sub><sup><mark>~italics small kbd sub sup mark strikethrough~</mark></sup></sub></kbd></small>_
+- **_[<sub><sup><mark>~bold italics link sub sup mark strikethrough~</mark></sup></sub>](#)_**
+- <small><kbd><sub><sup><mark>~`small kbd sub sup mark strikethrough code`~</mark></sup></sub></kbd></small>
+- _[<small><sub><sup><mark>`italics link small sub sup mark code`</mark></sup></sub></small>](#)_
+- **_[<small><kbd><sub><sup>bold italics link small kbd sub sup</sup></sub></kbd></small>](#)_**
+- **_[<small><mark>~`bold italics link small mark strikethrough code`~</mark></small>](#)_**
+- **_<small><sub><sup>~`bold italics small sub sup strikethrough code`~</sup></sub></small>_**
+- **_<small><kbd><sup><mark>`bold italics small kbd sup mark code`</mark></sup></kbd></small>_**
+- **_[<small><kbd>~`bold italics link small kbd strikethrough code`~</kbd></small>](#)_**
+- **[<kbd><sup><mark>~`bold link kbd sup mark strikethrough code`~</mark></sup></kbd>](#)**
+- **_[<small><kbd><sub><mark>bold italics link small kbd sub mark</mark></sub></kbd></small>](#)_**
+- **_[<small><sub>~`bold italics link small sub strikethrough code`~</sub></small>](#)_**
+- **_<small><kbd><sup>~`bold italics small kbd sup strikethrough code`~</sup></kbd></small>_**
+- **_[<kbd><sup><mark>~bold italics link kbd sup mark strikethrough~</mark></sup></kbd>](#)_**
+- **_<small><sub><sup><mark>~bold italics small sub sup mark strikethrough~</mark></sup></sub></small>_**
+- [<small><kbd><sub><mark>~`link small kbd sub mark strikethrough code`~</mark></sub></kbd></small>](#)
+- **_[<kbd><sub>~`bold italics link kbd sub strikethrough code`~</sub></kbd>](#)_**
+- _[<small><kbd><sub>~`italics link small kbd sub strikethrough code`~</sub></kbd></small>](#)_
+- **_[<sup><mark>~`bold italics link sup mark strikethrough code`~</mark></sup>](#)_**
+- **_[<kbd><sub><sup>~bold italics link kbd sub sup strikethrough~</sup></sub></kbd>](#)_**
+- **_[<kbd><mark>~`bold italics link kbd mark strikethrough code`~</mark></kbd>](#)_**
+- _[<small><kbd><mark>~`italics link small kbd mark strikethrough code`~</mark></kbd></small>](#)_
+- **_<kbd><sub><sup>~`bold italics kbd sub sup strikethrough code`~</sup></sub></kbd>_**
+- _<small><kbd><sup><mark>~`italics small kbd sup mark strikethrough code`~</mark></sup></kbd></small>_
+- _<small><sub><sup><mark>~`italics small sub sup mark strikethrough code`~</mark></sup></sub></small>_
+- _<kbd><sub><sup><mark>~`italics kbd sub sup mark strikethrough code`~</mark></sup></sub></kbd>_
+- [<small><kbd><sub><sup><mark>`link small kbd sub sup mark code`</mark></sup></sub></kbd></small>](#)
+- **_<small><kbd><mark>~`bold italics small kbd mark strikethrough code`~</mark></kbd></small>_**
+- **[<small><kbd><sup><mark>`bold link small kbd sup mark code`</mark></sup></kbd></small>](#)**
+- **[<kbd><sub><sup>~`bold link kbd sub sup strikethrough code`~</sup></sub></kbd>](#)**
+- **[<small><kbd><sup>~`bold link small kbd sup strikethrough code`~</sup></kbd></small>](#)**
+- **_[<small><sup><mark>`bold italics link small sup mark code`</mark></sup></small>](#)_**
+- **_[<small><sub><sup>~bold italics link small sub sup strikethrough~</sup></sub></small>](#)_**
+- _[<small><kbd><sub><mark>~italics link small kbd sub mark strikethrough~</mark></sub></kbd></small>](#)_
+- **[<kbd><sub><mark>~`bold link kbd sub mark strikethrough code`~</mark></sub></kbd>](#)**
+- _[<small><sub><mark>~`italics link small sub mark strikethrough code`~</mark></sub></small>](#)_
+- **_[<kbd><sub><mark>`bold italics link kbd sub mark code`</mark></sub></kbd>](#)_**
+- **_[<small><kbd><sup><mark>bold italics link small kbd sup mark</mark></sup></kbd></small>](#)_**
+- **_[<kbd><sub><mark>~bold italics link kbd sub mark strikethrough~</mark></sub></kbd>](#)_**
+- **<small><kbd><sup><mark>~`bold small kbd sup mark strikethrough code`~</mark></sup></kbd></small>**
+- _<small><kbd><sub><sup>~`italics small kbd sub sup strikethrough code`~</sup></sub></kbd></small>_
+- **[<kbd><sub><sup><mark>`bold link kbd sub sup mark code`</mark></sup></sub></kbd>](#)**
+- **_[<small><kbd><mark>`bold italics link small kbd mark code`</mark></kbd></small>](#)_**
+- **[<small><kbd><sub><sup>`bold link small kbd sub sup code`</sup></sub></kbd></small>](#)**
+- **_[<kbd><sub><sup><mark>bold italics link kbd sub sup mark</mark></sup></sub></kbd>](#)_**
+- _[<kbd><sub><sup><mark>~italics link kbd sub sup mark strikethrough~</mark></sup></sub></kbd>](#)_
+- **_[<sub><mark>~`bold italics link sub mark strikethrough code`~</mark></sub>](#)_**
+- **_<sub><sup><mark>~`bold italics sub sup mark strikethrough code`~</mark></sup></sub>_**
+- _[<small><kbd><sub><sup>`italics link small kbd sub sup code`</sup></sub></kbd></small>](#)_
+- [<small><sub><sup><mark>~`link small sub sup mark strikethrough code`~</mark></sup></sub></small>](#)
+- _[<kbd><sub><mark>~`italics link kbd sub mark strikethrough code`~</mark></sub></kbd>](#)_
+- **_[<kbd><sub><sup>`bold italics link kbd sub sup code`</sup></sub></kbd>](#)_**
+- _[<small><sub><sup><mark>~italics link small sub sup mark strikethrough~</mark></sup></sub></small>](#)_
+- **_<kbd><sup><mark>~`bold italics kbd sup mark strikethrough code`~</mark></sup></kbd>_**
+- **_<kbd><sub><mark>~`bold italics kbd sub mark strikethrough code`~</mark></sub></kbd>_**
+- **_[<sub><sup><mark>`bold italics link sub sup mark code`</mark></sup></sub>](#)_**
+- **<small><kbd><sub><sup>~`bold small kbd sub sup strikethrough code`~</sup></sub></kbd></small>**
+- **_<kbd><sub><sup><mark>~bold italics kbd sub sup mark strikethrough~</mark></sup></sub></kbd>_**
+- **<small><kbd><sub><mark>~`bold small kbd sub mark strikethrough code`~</mark></sub></kbd></small>**
+- **_<small><sub><sup><mark>`bold italics small sub sup mark code`</mark></sup></sub></small>_**
+- **_<small><sup><mark>~`bold italics small sup mark strikethrough code`~</mark></sup></small>_**
+- **_<small><kbd><sub><mark>`bold italics small kbd sub mark code`</mark></sub></kbd></small>_**
+- **_[<small><sub><sup>`bold italics link small sub sup code`</sup></sub></small>](#)_**
+- **<kbd><sub><sup><mark>~`bold kbd sub sup mark strikethrough code`~</mark></sup></sub></kbd>**
+- _[<small><kbd><sup><mark>`italics link small kbd sup mark code`</mark></sup></kbd></small>](#)_
+- **[<small><kbd><sub><mark>`bold link small kbd sub mark code`</mark></sub></kbd></small>](#)**
+- _[<kbd><sup><mark>~`italics link kbd sup mark strikethrough code`~</mark></sup></kbd>](#)_
+- **[<small><sup><mark>~`bold link small sup mark strikethrough code`~</mark></sup></small>](#)**
+- **[<small><kbd><sub><sup>~bold link small kbd sub sup strikethrough~</sup></sub></kbd></small>](#)**
+
+### 8 modifiers
+
+
+- **_[<small><kbd><sup>~`bold italics link small kbd sup strikethrough code`~</sup></kbd></small>](#)_**
+- **_[<small><kbd><mark>~`bold italics link small kbd mark strikethrough code`~</mark></kbd></small>](#)_**
+- **_<small><kbd><sup><mark>~`bold italics small kbd sup mark strikethrough code`~</mark></sup></kbd></small>_**
+- [<small><kbd><sub><sup><mark>~`link small kbd sub sup mark strikethrough code`~</mark></sup></sub></kbd></small>](#)
+- **<small><kbd><sub><sup><mark>~`bold small kbd sub sup mark strikethrough code`~</mark></sup></sub></kbd></small>**
+- **[<small><sub><sup><mark>~`bold link small sub sup mark strikethrough code`~</mark></sup></sub></small>](#)**
+- **_[<small><kbd><sup><mark>~bold italics link small kbd sup mark strikethrough~</mark></sup></kbd></small>](#)_**
+- **[<small><kbd><sub><sup><mark>~bold link small kbd sub sup mark strikethrough~</mark></sup></sub></kbd></small>](#)**
+- **_[<small><kbd><sub>~`bold italics link small kbd sub strikethrough code`~</sub></kbd></small>](#)_**
+- **_[<small><sub><sup>~`bold italics link small sub sup strikethrough code`~</sup></sub></small>](#)_**
+- _[<small><kbd><sub><sup>~`italics link small kbd sub sup strikethrough code`~</sup></sub></kbd></small>](#)_
+- **[<small><kbd><sub><mark>~`bold link small kbd sub mark strikethrough code`~</mark></sub></kbd></small>](#)**
+- _[<small><kbd><sub><sup><mark>`italics link small kbd sub sup mark code`</mark></sup></sub></kbd></small>](#)_
+- **_[<kbd><sup><mark>~`bold italics link kbd sup mark strikethrough code`~</mark></sup></kbd>](#)_**
+- **_[<small><kbd><sup><mark>`bold italics link small kbd sup mark code`</mark></sup></kbd></small>](#)_**
+- **_[<small><sub><sup><mark>`bold italics link small sub sup mark code`</mark></sup></sub></small>](#)_**
+- **_[<kbd><sub><sup><mark>~bold italics link kbd sub sup mark strikethrough~</mark></sup></sub></kbd>](#)_**
+- **_<small><kbd><sub><sup><mark>~bold italics small kbd sub sup mark strikethrough~</mark></sup></sub></kbd></small>_**
+- **_[<small><sup><mark>~`bold italics link small sup mark strikethrough code`~</mark></sup></small>](#)_**
+- _[<small><kbd><sup><mark>~`italics link small kbd sup mark strikethrough code`~</mark></sup></kbd></small>](#)_
+- **_[<kbd><sub><sup><mark>`bold italics link kbd sub sup mark code`</mark></sup></sub></kbd>](#)_**
+- **_[<kbd><sub><sup>~`bold italics link kbd sub sup strikethrough code`~</sup></sub></kbd>](#)_**
+- **_[<small><kbd><sub><sup><mark>bold italics link small kbd sub sup mark</mark></sup></sub></kbd></small>](#)_**
+- _[<small><kbd><sub><mark>~`italics link small kbd sub mark strikethrough code`~</mark></sub></kbd></small>](#)_
+- **_[<small><sub><mark>~`bold italics link small sub mark strikethrough code`~</mark></sub></small>](#)_**
+- **[<small><kbd><sub><sup><mark>`bold link small kbd sub sup mark code`</mark></sup></sub></kbd></small>](#)**
+- **_<small><kbd><sub><sup><mark>`bold italics small kbd sub sup mark code`</mark></sup></sub></kbd></small>_**
+- **[<small><kbd><sub><sup>~`bold link small kbd sub sup strikethrough code`~</sup></sub></kbd></small>](#)**
+- **_[<small><kbd><sub><mark>`bold italics link small kbd sub mark code`</mark></sub></kbd></small>](#)_**
+- **_[<small><sub><sup><mark>~bold italics link small sub sup mark strikethrough~</mark></sup></sub></small>](#)_**
+- **_[<small><kbd><sub><sup>`bold italics link small kbd sub sup code`</sup></sub></kbd></small>](#)_**
+- _[<small><sub><sup><mark>~`italics link small sub sup mark strikethrough code`~</mark></sup></sub></small>](#)_
+- **_<small><kbd><sub><mark>~`bold italics small kbd sub mark strikethrough code`~</mark></sub></kbd></small>_**
+- **_[<small><kbd><sub><sup>~bold italics link small kbd sub sup strikethrough~</sup></sub></kbd></small>](#)_**
+- **_<kbd><sub><sup><mark>~`bold italics kbd sub sup mark strikethrough code`~</mark></sup></sub></kbd>_**
+- **[<small><kbd><sup><mark>~`bold link small kbd sup mark strikethrough code`~</mark></sup></kbd></small>](#)**
+- _[<small><kbd><sub><sup><mark>~italics link small kbd sub sup mark strikethrough~</mark></sup></sub></kbd></small>](#)_
+- _<small><kbd><sub><sup><mark>~`italics small kbd sub sup mark strikethrough code`~</mark></sup></sub></kbd></small>_
+- **_[<sub><sup><mark>~`bold italics link sub sup mark strikethrough code`~</mark></sup></sub>](#)_**
+- **_[<kbd><sub><mark>~`bold italics link kbd sub mark strikethrough code`~</mark></sub></kbd>](#)_**
+- _[<kbd><sub><sup><mark>~`italics link kbd sub sup mark strikethrough code`~</mark></sup></sub></kbd>](#)_
+- **_<small><sub><sup><mark>~`bold italics small sub sup mark strikethrough code`~</mark></sup></sub></small>_**
+- **_[<small><kbd><sub><mark>~bold italics link small kbd sub mark strikethrough~</mark></sub></kbd></small>](#)_**
+- **_<small><kbd><sub><sup>~`bold italics small kbd sub sup strikethrough code`~</sup></sub></kbd></small>_**
+- **[<kbd><sub><sup><mark>~`bold link kbd sub sup mark strikethrough code`~</mark></sup></sub></kbd>](#)**
+
+### 9 modifiers
+
+
+- **_[<kbd><sub><sup><mark>~`bold italics link kbd sub sup mark strikethrough code`~</mark></sup></sub></kbd>](#)_**
+- **_[<small><kbd><sup><mark>~`bold italics link small kbd sup mark strikethrough code`~</mark></sup></kbd></small>](#)_**
+- **_[<small><kbd><sub><sup><mark>~bold italics link small kbd sub sup mark strikethrough~</mark></sup></sub></kbd></small>](#)_**
+- **_[<small><kbd><sub><sup><mark>`bold italics link small kbd sub sup mark code`</mark></sup></sub></kbd></small>](#)_**
+- _[<small><kbd><sub><sup><mark>~`italics link small kbd sub sup mark strikethrough code`~</mark></sup></sub></kbd></small>](#)_
+- **_[<small><kbd><sub><sup>~`bold italics link small kbd sub sup strikethrough code`~</sup></sub></kbd></small>](#)_**
+- **[<small><kbd><sub><sup><mark>~`bold link small kbd sub sup mark strikethrough code`~</mark></sup></sub></kbd></small>](#)**
+- **_[<small><sub><sup><mark>~`bold italics link small sub sup mark strikethrough code`~</mark></sup></sub></small>](#)_**
+- **_<small><kbd><sub><sup><mark>~`bold italics small kbd sub sup mark strikethrough code`~</mark></sup></sub></kbd></small>_**
+- **_[<small><kbd><sub><mark>~`bold italics link small kbd sub mark strikethrough code`~</mark></sub></kbd></small>](#)_**
+
+### 10 modifiers
+
+
+- **_[<small><kbd><sub><sup><mark>~`bold italics link small kbd sub sup mark strikethrough code`~</mark></sup></sub></kbd></small>](#)_**
+
+</details>
