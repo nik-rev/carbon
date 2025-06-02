@@ -17,6 +17,7 @@ use tap::Pipe;
     Hash,
     strum::IntoStaticStr,
     strum::EnumCount,
+    Debug,
 )]
 #[strum(serialize_all = "kebab-case")]
 enum InlineMarkdown {
@@ -108,9 +109,11 @@ fn main() {
                 .collect::<HashSet<_>>()
                 // ---
                 .into_iter()
+                .sorted()
                 .map(|permutation| {
                     permutation
                         .into_iter()
+                        .sorted()
                         .fold(
                             (String::new(), String::new(), String::new()),
                             |(mut before, mut name, mut after), modifier| {

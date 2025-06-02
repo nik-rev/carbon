@@ -3,6 +3,7 @@
 @import "theme.css";
 @import "code.css";
 @import "fonts.css";
+@import "inline.css";
 
 nav {
   margin-bottom: 60px;
@@ -20,41 +21,9 @@ nav {
   }
 }
 
-small {
-  font-size: small;
-  text-decoration-thickness: 1px;
-  color: var(--secondary);
-  text-decoration-color: var(--secondary);
-}
-
 summary {
   cursor: pointer;
   user-select: none;
-}
-
-/* links */
-a,
-a:link,
-a:visited {
-  color: var(--foreground);
-  &:hover {
-    color: var(--link);
-  }
-}
-a {
-  text-decoration-thickness: 2px;
-}
-a:has(code) {
-  text-decoration-color: var(--accent);
-}
-del:has(code) {
-  text-decoration-color: var(--accent);
-}
-/* a:hover {
-  color: var(--link);
-}
-a:last-of-type {
-  margin-right: 0;
 }
 
 /* footnote */
@@ -81,12 +50,6 @@ hr {
 
 img {
   max-width: 100%;
-}
-
-/* table */
-
-.mt-60 {
-  margin-top: 60px;
 }
 
 /* container */
