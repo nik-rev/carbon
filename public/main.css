@@ -29,11 +29,8 @@ a:visited {
     color: var(--link);
   }
 }
-/* a:hover {
-  color: var(--link);
-}
-a:last-of-type {
-  margin-right: 0;
+a:has(code) {
+  text-decoration-color: var(--accent);
 }
 
 /* footnote */
