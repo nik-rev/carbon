@@ -1,6 +1,7 @@
 base_url = "https://nikrev.com"
 build_search_index = false
 
+minify_html = true
 output_dir = ".public"
 default_language = "en"
 author = "Nik Revenco"

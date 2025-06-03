@@ -327,7 +327,7 @@ fn main() {
 
 Renders as:
 
-```rust,name=mod.rs,hide_lines=2,hl_lines = 3-5,linenos,linenostart = 10
+```rust,name=mod.rs,hide_lines=2,hl_lines = 3 5,linenos,linenostart = 10
 fn main() {
     // This is a comment
     for i in 1..=5 {

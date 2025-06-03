@@ -1,4 +1,19 @@
 .codeblock {
+  /* show name of the code block in the top-right corner */
+  &:has(pre[data-name]) {
+    position: relative;
+    &::before {
+      position: absolute;
+      font-family: monospace;
+      content: attr(data-name);
+      background-color: var(--background2);
+      padding: 5px 10px;
+      right: 0px;
+      top: -20%;
+      z-index: 20;
+    }
+  }
+
   /* highlighted lines */
   mark {
     /* this makes each line take up the full width */
@@ -20,6 +35,8 @@
     padding-bottom: 0.3rem;
   }
   table {
+    table-layout: fixed;
+
     thead,
     tr:nth-child(even) {
       background-color: transparent;
@@ -31,13 +48,31 @@
       border: none;
     }
 
+    tr {
+      width: 100% !important;
+    }
+
+    /* --- highlight rows in table with block with line numbers */
+    td:has(mark) {
+      background-color: var(--table-row);
+      padding: 3px;
+    }
+    td mark {
+      padding-left: 13px;
+    }
+    /* --- */
+
     td {
       --px: 0.14rem;
       padding-top: var(--px);
       padding-bottom: var(--px);
     }
+
+    tbody {
+      width: 100%;
+    }
   }
-  overflow: auto;
+  overflow: visible;
   position: relative;
   margin-top: 19px;
   margin-bottom: 19px;
@@ -56,6 +91,8 @@
     background: transparent;
     border: none;
     color: var(--foreground);
+    --foreground: var(--foreground);
+    --background: var(--background2);
 
     &.copied,
     &:hover {
