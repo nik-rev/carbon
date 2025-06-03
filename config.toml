@@ -18,8 +18,8 @@ smart_punctuation = true
 [extra]
 locale = "en_GB"
 header_links = [
-  { name = "/home", link = "/" },
-  "/features",
-  "/blog",
-  { name = "/installation.md", link = "/installation" },
+  { name = "/home", link = "/carbon" },
+  { name = "/features", link = "/carbon/features" },
+  { name = "/blog", link = "/carbon/blog" },
+  { name = "/installation.md", link = "/carbon/installation" },
 ]
