@@ -1,0 +1,22 @@
+name = "Carbon"
+description = "A Zola theme inspired by simplicity"
+# An optional tags to allow quick search
+tags = []
+license = "MIT OR Apache-2.0"
+homepage = "https://github.com/nik-rev/carbon"
+# The minimum version of Zola required
+min_version = "0.20.0"
+# An optional live demo URL
+demo = "https://nik-rev.github.io/carbon/"
+
+[extra]
+
+[author]
+name = "Nik Revenco"
+homepage = "https://nikrev.com"
+
+# Carbon theme is heavily inspired by Typo theme
+[original]
+author = "Francesco Tomaselli"
+homepage = "https://tomfran.github.io/typo-wiki/"
+repo = "https://github.com/tomfran/typo"
