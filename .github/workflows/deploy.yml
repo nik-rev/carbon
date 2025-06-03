@@ -19,9 +19,12 @@ jobs:
       - run: |
           curl --proto '=https' --tlsv1.2 -LsSf https://github.com/nik-rev/og-image-generator/releases/download/v0.2.0/og-image-generator-installer.sh | sh
 
+          export PATH="$HOME/.cargo/bin:$PATH"
+          chmod +x $HOME/.cargo/bin/og-image-generator || true
+
           cd .public
 
-          sudo og-image-generator all --font fonts/Literata/Literata.ttf open_graph_template.html .
+          og-image-generator all --font fonts/Literata/Literata.ttf open_graph_template.html .
 
           echo "Pushing artifacts to ${GITHUB_REPOSITORY}:gh-pages"
 
