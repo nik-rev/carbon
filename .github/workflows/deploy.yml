@@ -21,7 +21,7 @@ jobs:
 
           cd .public
 
-          og-image-generator all --font fonts/Literata/Literata.ttf open_graph_template.html .
+          sudo og-image-generator all --font fonts/Literata/Literata.ttf open_graph_template.html .
 
           echo "Pushing artifacts to ${GITHUB_REPOSITORY}:gh-pages"
 
