@@ -62,7 +62,7 @@ Light or dark theme options.
 
   - **Default**: `"dark"`
 
-- `respect_browser_preference` if `false` ignores preference of the user. This has lower priority than `theme_toggle`.
+- `respect_browser_preference` if `false` ignores preference of the user. This has lower priority than `theme_toggle`
 
   - **Default**: `true`
 
