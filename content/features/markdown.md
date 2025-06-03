@@ -63,7 +63,7 @@ weight = 1
 
 ## Inline Markdown
 
-{{ include(path="generated/inline.md") }}
+{{ include_markdown(path="generated/inline.md") }}
 
 ## Headings
 

@@ -1,10 +1,23 @@
 {% extends "index.html" %}
 
 {% block head_variables %}
+  <!-- The page is not part of any collection, it is a standalone page -->
+  {% set is_standalone = page.ancestors | length == 1 %}
+
   {% set section = get_section(path=page.ancestors | last) %}
   {% set base_title = section.title | default(value=config.title) %}
 
-  {% set title = base_title ~ " | " ~ page.title %}
+  {% if is_standalone %}
+    <!-- If the page is standalone, the page's title should change title of the website -->
+    {% set title = page.title | default(value=config.title) %}
+  {% else %}
+    {% if page.title %}
+      {% set title = base_title ~ " | " ~ page.title %}
+    {% else %}
+      {% set title = base_title %}
+    {% endif %}
+  {% endif %}
+
   {% set description = page.description | default(value=config.description) %}
 
   {% set og_image_title = page.title %}
@@ -12,20 +25,38 @@
 {% endblock head_variables %}
 
 {% block heading %}
-  {% set section = get_section(path=page.ancestors | last) %}
-  {% set title = section.title | default(value=config.title) %}
-  {{ title }}
+  <!-- The page is not part of any collection, it is a standalone page -->
+  {% set is_standalone = page.ancestors | length == 1 %}
+
+  {% if is_standalone %}
+    {{ page.title | default(value=config.title) }}
+  {% else %}
+    {% set section = get_section(path=page.ancestors | last) %}
+    {% set title = section.title | default(value=config.title) %}
+    {{ title }}
+  {% endif %}
 {% endblock heading %}
 
 {% block content %}
-  <main>
-    <h1 class="title">{{ page.title | markdown(inline=true) | safe }}</h1>
+  <!-- The page is not part of any collection, it is a standalone page -->
+  {% set is_standalone = page.ancestors | length == 1 %}
+
+  <main class="post-content">
+    <!-- Standalone pages should not have a 2nd level 1 heading -->
+    {% if not is_standalone %}
+      {% if page.title %}
+        <h1 class="post-content__title">{{ page.title | markdown(inline=true) | safe }}</h1>
+      {% endif %}
+    {% endif %}
+
+    <!-- Date of the page -->
     {% if page.date %}
-      <p class="secondary">
+      <p class="post-content__date">
         {{ page.date | date(format="%-d %B, %Y") }}
       </p>
     {% endif %}
-    <div class="space"></div>
+
+    <!-- Main content of the page -->
     {{ page.content | safe }}
   </main>
 {% endblock content %}

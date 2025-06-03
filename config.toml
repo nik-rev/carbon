@@ -16,7 +16,6 @@ insert_anchor_links = "heading"
 smart_punctuation = true
 
 [extra]
-locale = "en_GB"
 header_links = [
   { name = "/home", link = "/carbon" },
   { name = "/features", link = "/carbon/features" },

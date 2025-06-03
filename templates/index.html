@@ -1,7 +1,7 @@
 <!-- Entry point to every rendered page -->
 
 <!doctype html>
-<html lang="en" data-theme={{ config.extra.theme | default(value="dark") }}>
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -41,10 +41,6 @@
     <meta itemprop="headline" content="{{ title }}" />
     <meta name="description" content="{{ description }}" />
 
-    {% if config.extra.locale %}
-      <meta property="og:locale" content="{{ config.extra.locale }}" />
-    {% endif %}
-
     {% if current_url %}
       {% set url = current_url | safe %}
       <meta property="og:url" content="{{ url }}" />
@@ -64,77 +60,14 @@
       {% endif %}
     {% endif %}
 
+    <script src="/code_blocks.js" type="text/javascript" defer></script>
+    <script src="/theme_toggle.js" type="text/javascript" defer></script>
+
     <!-- Allow adding custom elements to the <head> -->
     {% block head %}
     {% endblock head %}
   </head>
   <body>
-    <style>
-      #site {
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        max-width: 65ch;
-      }
-
-      footer {
-        font-size: small;
-        a {
-          text-decoration-thickness: 1px;
-        }
-        margin-top: auto;
-        height: 3rem;
-        align-self: center;
-        display: grid;
-        place-content: center;
-        p {
-          display: inline-block;
-          margin: 0;
-        }
-      }
-
-      .header__links {
-        display: flex;
-        margin: 0px;
-        padding: 0px;
-        list-style: none;
-        gap: 25px;
-        .header__links__link {
-          color: var(--secondary);
-          text-decoration: none;
-          &.active {
-            color: var(--link);
-          }
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-      }
-      .header__heading {
-        margin-bottom: 25px;
-        margin-top: 25px;
-        display: flex;
-        justify-content: space-between;
-      }
-      .header__heading__title {
-        margin: 0px;
-      }
-      .header__heading__theme-toggle {
-        margin-top: auto;
-        margin-bottom: auto;
-        background: none;
-        border: none;
-        height: min-content;
-        cursor: pointer;
-        .header__heading__theme-toggle__icon {
-          color: var(--foreground);
-          background-color: none;
-          height: 24px;
-        }
-      }
-    </style>
-
     <div id="site">
       <header class="header">
 
@@ -203,79 +136,4 @@
       {% endif %}
     </div>
   </body>
-
-  <!-- Theme toggle -->
-
-  <script defer>
-    const copyIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18">' +
-      '<path d="M5.00242 8 L5.00019 20 H14.9998 V8 H5.00242 Z" fill="var(--background)" />' +
-      '<path d="M8.9998 4 H18.9998 V16 H8.9998 V4 Z" fill="var(--background)" />' +
-      '<path d="M6.9998 6V3C6.9998 2.44772 7.44752 2 7.9998 2H19.9998C20.5521 2 20.9998 2.44772 20.9998 3V17C20.9998 17.5523 20.5521 18 19.9998 18H16.9998V20.9991C16.9998 21.5519 16.5499 22 15.993 22H4.00666C3.45059 22 3 21.5554 3 20.9991L3.0026 7.00087C3.0027 6.44811 3.45264 6 4.00942 6H6.9998ZM5.00242 8L5.00019 20H14.9998V8H5.00242ZM8.9998 6H16.9998V16H18.9998V4H8.9998V6Z" fill="currentColor"/>' +
-    '</svg>';
-    const checkIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path d="M10.0007 15.1709L19.1931 5.97852L20.6073 7.39273L10.0007 17.9993L3.63672 11.6354L5.05093 10.2212L10.0007 15.1709Z" fill="currentColor"></path></svg>';
-
-    document.querySelectorAll("pre").forEach(codeBlock => {
-      if (codeBlock.classList.contains("mermaid")) {
-        return;
-      };
-      const wrapper = document.createElement("div");
-      wrapper.className = "codeblock";
-      wrapper.setAttribute("data-name", codeBlock.getAttribute("data-name"))
-      const copyButton = document.createElement("button");
-      copyButton.className = "copy";
-      copyButton.title = "copy"
-      copyButton.ariaLabel = "copy";
-      copyButton.innerHTML = copyIcon;
-      const copyToClipboard = () => {
-        navigator.clipboard.writeText(codeBlock.textContent).then(() => {
-          copyButton.innerHTML = checkIcon;
-          copyButton.classList.add("copied");
-          copyButton.removeEventListener("click", copyToClipboard);
-          setTimeout(() => {
-            copyButton.innerHTML = copyIcon;
-            copyButton.classList.remove("copied");
-            copyButton.addEventListener("click", copyToClipboard);
-          }, 1500);
-        });
-      };
-      copyButton.addEventListener("click", copyToClipboard);
-      wrapper.appendChild(codeBlock.cloneNode(true));
-      wrapper.appendChild(copyButton);
-      codeBlock.replaceWith(wrapper);
-    });
-  </script>
-
-  <!-- Theme toggle -->
-
-  <script defer>
-    const localStorageTheme = localStorage.getItem("theme");
-
-    {% if config.extra.respect_browser_preference | default(value=true) %}
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      let theme = localStorageTheme ? localStorageTheme : prefersDark ? "dark" : "light";
-    {% else %}
-      let theme = localStorageTheme ? localStorageTheme : {{ config.extra.theme | default(value='"dark"') }};
-    {% endif %}
-
-    const themeToggle = document.querySelector(".header__heading__theme-toggle");
-
-    const iconClass = "header__heading__theme-toggle__icon";
-    const moon = `<svg class="${iconClass}" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M264 480A232 232 0 0 1 32 248c0-94 54-178.28 137.61-214.67a16 16 0 0 1 21.06 21.06C181.07 76.43 176 104.66 176 136c0 110.28 89.72 200 200 200 31.34 0 59.57-5.07 81.61-14.67a16 16 0 0 1 21.06 21.06C442.28 426 358 480 264 480z"></path></svg>`;
-    const sun = `<svg class="${iconClass}" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M256 118a22 22 0 0 1-22-22V48a22 22 0 0 1 44 0v48a22 22 0 0 1-22 22zm0 368a22 22 0 0 1-22-22v-48a22 22 0 0 1 44 0v48a22 22 0 0 1-22 22zm113.14-321.14a22 22 0 0 1-15.56-37.55l33.94-33.94a22 22 0 0 1 31.11 31.11l-33.94 33.94a21.93 21.93 0 0 1-15.55 6.44zM108.92 425.08a22 22 0 0 1-15.55-37.56l33.94-33.94a22 22 0 1 1 31.11 31.11l-33.94 33.94a21.94 21.94 0 0 1-15.56 6.45zM464 278h-48a22 22 0 0 1 0-44h48a22 22 0 0 1 0 44zm-368 0H48a22 22 0 0 1 0-44h48a22 22 0 0 1 0 44zm307.08 147.08a21.94 21.94 0 0 1-15.56-6.45l-33.94-33.94a22 22 0 0 1 31.11-31.11l33.94 33.94a22 22 0 0 1-15.55 37.56zM142.86 164.86a21.89 21.89 0 0 1-15.55-6.44l-33.94-33.94a22 22 0 0 1 31.11-31.11l33.94 33.94a22 22 0 0 1-15.56 37.55zM256 358a102 102 0 1 1 102-102 102.12 102.12 0 0 1-102 102z"></path></svg>`;
-
-    function changeTheme(theme) {
-      themeToggle.innerHTML = theme === "dark" ? moon : sun;
-      themeToggle.setAttribute("aria-label", theme === "dark" ? "Change to light theme" : "Change to dark theme");
-      document.documentElement.setAttribute("data-theme", theme);
-      localStorage.setItem("theme", theme)
-    }
-
-    changeTheme(theme);
-
-    themeToggle.addEventListener("click", () => {
-      const newTheme = theme === "dark" ? "light" : "dark";
-      changeTheme(newTheme);
-      theme = newTheme;
-    })
-  </script>
 </html>

@@ -1,6 +1,7 @@
 @import "syntax.css";
 @import "admonition.css";
 @import "theme.css";
+@import "posts.css";
 @import "code.css";
 @import "fonts.css";
 @import "inline.css";
@@ -142,4 +143,68 @@ table td {
 table thead,
 table tr:nth-child(even) {
   background-color: var(--table-row);
+}
+
+#site {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 65ch;
+}
+
+footer {
+  font-size: small;
+  a {
+    text-decoration-thickness: 1px;
+  }
+  margin-top: auto;
+  height: 3rem;
+  align-self: center;
+  display: grid;
+  place-content: center;
+  p {
+    display: inline-block;
+    margin: 0;
+  }
+}
+
+.header__links {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  gap: 25px;
+  .header__links__link {
+    color: var(--secondary);
+    text-decoration: none;
+    &.active {
+      color: var(--link);
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.header__heading {
+  margin-bottom: 25px;
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+.header__heading__title {
+  margin: 0px;
+}
+.header__heading__theme-toggle {
+  margin-top: auto;
+  margin-bottom: auto;
+  background: none;
+  border: none;
+  height: min-content;
+  cursor: pointer;
+  .header__heading__theme-toggle__icon {
+    color: var(--foreground);
+    background-color: none;
+    height: 24px;
+  }
 }
