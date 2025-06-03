@@ -31,13 +31,13 @@ jobs:
 
           sudo touch .nojekyll
 
-          git init
-          git config user.name "GitHub Actions"
-          git config user.email "github-actions-bot@users.noreply.github.com"
-          git add .
+          sudo git init
+          sudo git config user.name "GitHub Actions"
+          sudo git config user.email "github-actions-bot@users.noreply.github.com"
+          sudo git add .
 
-          git commit -m "Deploy ${GITHUB_REPOSITORY} to ${GITHUB_REPOSITORY}:gh-pages"
-          git push --force "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}" master:gh-pages
+          sudo git commit -m "Deploy ${GITHUB_REPOSITORY} to ${GITHUB_REPOSITORY}:gh-pages"
+          sudo git push --force "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}" master:gh-pages
 
           echo "Deploy complete"
         env:
