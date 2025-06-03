@@ -1,5 +1,6 @@
 +++
 title = "Custom Theme"
+weight = 2
 +++
 
 All of Carbon's colors are declared in the `/static/theme.css` file:

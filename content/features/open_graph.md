@@ -1,5 +1,6 @@
 +++
 title = "Automatic Deployment + Open Graph Image Generation"
+weight = 3
 +++
 
 By using [og-image-generator](https://github.com/nik-rev/og-image-generator), you can automatically generate Open Graph images for your website that look like this:
