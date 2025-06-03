@@ -17,10 +17,10 @@ const sun = `<svg class="${iconClass}" stroke="currentColor" fill="currentColor"
 
 function changeTheme(theme) {
   themeToggle.innerHTML = theme === "dark" ? moon : sun;
-  themeToggle.setAttribute(
-    "aria-label",
-    theme === "dark" ? "Change to light theme" : "Change to dark theme",
-  );
+  let label =
+    theme === "dark" ? "Change to light theme" : "Change to dark theme";
+  themeToggle.setAttribute("aria-label", label);
+  themeToggle.setAttribute("title", label);
   document.documentElement.setAttribute("data-theme", theme);
   localStorage.setItem("theme", theme);
 }

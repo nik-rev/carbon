@@ -206,5 +206,28 @@ footer {
     color: var(--foreground);
     background-color: none;
     height: 24px;
+    &:hover {
+      color: var(--link);
+    }
   }
+}
+.header__heading__rss {
+  margin-top: auto;
+  margin-bottom: auto;
+  background: none;
+  border: none;
+  height: min-content;
+  cursor: pointer;
+  .header__heading__rss__icon {
+    color: var(--foreground);
+    height: 24px;
+    background-color: none;
+    &:hover {
+      color: var(--link);
+    }
+  }
+}
+.header__heading__icon-container {
+  display: flex;
+  gap: 10px;
 }
