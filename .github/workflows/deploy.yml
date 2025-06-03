@@ -22,7 +22,7 @@ jobs:
           export PATH="$HOME/.cargo/bin:$PATH"
           chmod +x $HOME/.cargo/bin/og-image-generator || true
 
-          chmod -R u+w .public
+          sudo chmod -R u+w .public
           cd .public
 
           og-image-generator all --font fonts/Literata/Literata.ttf open_graph_template.html .
