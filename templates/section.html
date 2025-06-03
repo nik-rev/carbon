@@ -1,18 +1,17 @@
 {% extends "index.html" %}
 
-{% block title %}
+{% block head_variables %}
   {% set title = section.title | default(value=config.title) %}
-  {{ title }}
-{% endblock title %}
+  {% set description = section.description %}
+
+  {% set og_image_title = section.title %}
+  {% set og_image_description = section.description %}
+{% endblock head_variables %}
 
 {% block heading %}
   {% set title = section.title | default(value=config.title) %}
   {{ title }}
 {% endblock heading %}
-
-{% block description %}
-  {{ section.description }}
-{% endblock description %}
 
 {% block head %}
   <style>

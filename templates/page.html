@@ -1,20 +1,21 @@
 {% extends "index.html" %}
 
-{% block title %}
+{% block head_variables %}
   {% set section = get_section(path=page.ancestors | last) %}
-  {% set title = section.title | default(value=config.title) %}
-  {{ title }} | {{ page.title }}
-{% endblock title %}
+  {% set base_title = section.title | default(value=config.title) %}
+
+  {% set title = base_title ~ " | " ~ page.title %}
+  {% set description = page.description | default(value=config.description) %}
+
+  {% set og_image_title = page.title %}
+  {% set og_image_description = page.description %}
+{% endblock head_variables %}
 
 {% block heading %}
   {% set section = get_section(path=page.ancestors | last) %}
   {% set title = section.title | default(value=config.title) %}
   {{ title }}
 {% endblock heading %}
-
-{% block description %}
-  {{ page.description | default(value=config.description) }}
-{% endblock description %}
 
 {% block content %}
   <main>

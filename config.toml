@@ -1,4 +1,4 @@
-base_url = "https://nikrev.com"
+base_url = "https://nik-rev.github.io/carbon/"
 build_search_index = false
 
 minify_html = true
@@ -16,6 +16,7 @@ insert_anchor_links = "heading"
 smart_punctuation = true
 
 [extra]
+locale = "en_GB"
 header_links = [
   { name = "/home", link = "/" },
   "/features",
