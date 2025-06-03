@@ -29,7 +29,7 @@ jobs:
 
           echo "Pushing artifacts to ${GITHUB_REPOSITORY}:gh-pages"
 
-          touch .nojekyll
+          sudo touch .nojekyll
 
           git init
           git config user.name "GitHub Actions"
