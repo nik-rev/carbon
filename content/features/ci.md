@@ -164,8 +164,6 @@ All of the appropriate meta tags are already setup for you.
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="author" content="{{ config.author }}" />
-<meta property="og-image-generator" key="title" value="{{ og_image_title }}" />
-<meta property="og-image-generator" key="description" value="{{ og_image_description }}" />
 <meta property="og:title" content="{{ title }}" />
 <meta property="og:description" content="{{ description }}" />
 <meta itemprop="headline" content="{{ title }}" />
@@ -174,8 +172,8 @@ All of the appropriate meta tags are already setup for you.
 <meta name="og:type" content="summary_large_image" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:title" content="{{ title }}" />
-<meta property="og:image" content="{{ url ~ 'og.png' }}" >
-<meta property="og:image:alt" content="{{ title }}" >
+<meta property="og:image" content="{{ url ~ 'og.png' }}" />
+<meta property="og:image:alt" content="{{ title }}" />
 <meta property="og:image:width" content="{{ og_width }}" />
 <meta property="og:image:height" content="{{ og_height }}" />
 <meta property="twitter:image:width" content="{{ og_width }}" />
