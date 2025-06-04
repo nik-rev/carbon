@@ -4,7 +4,7 @@ tags = ["minimal", "responsive", "seo", "blog", "designed"]
 license = "MIT OR Apache-2.0"
 homepage = "https://github.com/nik-rev/carbon"
 min_version = "0.19.0"
-demo = "https://nik-rev.github.io/carbon/"
+demo = "https://carbon.nikrev.com"
 
 [extra]
 footer = "Powered by [Zola](https://github.com/getzola/zola) and [nik-rev/carbon](https://github.com/nik-rev/carbon)"
