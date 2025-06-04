@@ -1,5 +1,6 @@
 +++
 title = "Extending Carbon Theme"
+weight = 4
 +++
 
 This example shows how to extend a template in Carbon with custom HTML and CSS.
@@ -37,7 +38,7 @@ In your project, create `/template/index.html` with the following contents:
 {% block extra_head %}
   <link
     rel="stylesheet"
-    href="{{ get_url(path='custom.css', cachebust=true) }}"
+    href="{{ get_url(path='custom.css', cachebust=true)} }"
   />
 {% endblock extra_head %}
 ```

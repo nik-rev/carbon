@@ -3,10 +3,10 @@ title = "Custom Theme"
 weight = 2
 +++
 
-All of Carbon's colors are declared in the `/carbon/static/theme.css` file:
+All of Carbon's colors are declared in the `/static/carbon/theme.css` file:
 
 ```css
-{{ include(path="/carbon/static/theme.css") }}
+{{ include(path="/static/carbon/theme.css") }}
 ```
 
 By copying this file into the same location in your own site, it will override all of the colors so you can choose a custom theme.
