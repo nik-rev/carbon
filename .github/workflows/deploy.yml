@@ -15,7 +15,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BUILD_ONLY: true
-          OUT_DIR: .public
       - run: |
           curl --proto '=https' --tlsv1.2 -LsSf https://github.com/nik-rev/og-image-generator/releases/download/v0.2.0/og-image-generator-installer.sh | sh
 
