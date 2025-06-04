@@ -13,9 +13,9 @@ div {
 }
 ```
 
-The file `/themes/carbon/templates/index.html` is the root HTML file, which all pages like `/themes/carbon/templates/page.html` inherit from.
+The file `carbon/templates/index.html` is the root HTML file, which all pages like `carbon/templates/page.html` inherit from.
 
-This file imports all CSS for the website. This is an excerpt from the `/themes/carbon/templates/index.html`:
+This file imports all CSS for the website. This is an excerpt from the `carbon/templates/index.html`:
 
 ```html
 <head>
@@ -43,11 +43,11 @@ In your project, create `/template/index.html` with the following contents:
 {% endblock extra_head %}
 ```
 
-The above will essentially copy all of the code from [`/themes/carbon/templates/index.html`](https://github.com/nik-rev/carbon/blob/main/templates/index.html) and put it into your own `/templates/index.html` but with an extension, namely it will import your `/static/custom.css` file.
+The above will essentially copy all of the code from [`carbon/templates/index.html`](https://github.com/nik-rev/carbon/blob/main/templates/index.html) and put it into your own `/templates/index.html` but with an extension, namely it will import your `/static/custom.css` file.
 
 Your `/templates/index.html` is now the source of truth.
 
-You can take a look at other templates in `/themes/carbon/templates/*.html`. All of them can be extended in similar ways.
+You can take a look at other templates in `carbon/templates/*.html`. All of them can be extended in similar ways.
 
 Specifically, all the templates `{% extends "carbon/templates/index.html" %}` so usually you will want to do the same.
 
@@ -56,13 +56,13 @@ Everywhere you see a `{% block %} ... {% endblock %}`, you can extend it without
 ## Custom theme
 
 Similarly, you can override any of the static assets.
-Carbon uses the `/themes/carbon/static/carbon/theme.css` file for all the colors:
+Carbon uses the `carbon/static/carbon/theme.css` file for all the colors:
 
 ```css
-{{ include(path="/static/carbon/theme.css") }}
+{{ include(path="/static/css/theme.css") }}
 ```
 
-You can place the file in your own website at `/static/carbon/theme.css` and Carbon's file will be overwritten by your file.
+You can place the file in your own website at `/static/css/theme.css` and Carbon's file will be overwritten by your file.
 
 Relevant Zola documentation:
 
