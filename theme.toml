@@ -10,6 +10,8 @@ min_version = "0.20.0"
 demo = "https://nik-rev.github.io/carbon/"
 
 [extra]
+show_footer = true
+footer_message = "Powered by [Zola](https://github.com/getzola/zola) and [nik-rev/carbon](https://github.com/nik-rev/carbon)"
 
 [author]
 name = "Nik Revenco"

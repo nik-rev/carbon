@@ -53,6 +53,17 @@ Specifically, all the templates `{% extends "carbon/templates/index.html" %}` so
 
 Everywhere you see a `{% block %} ... {% endblock %}`, you can extend it without having to override the rest of the page!
 
+## Custom theme
+
+Similarly, you can override any of the static assets.
+Carbon uses the `/themes/carbon/static/carbon/theme.css` file for all the colors:
+
+```css
+{{ include(path="/static/carbon/theme.css") }}
+```
+
+You can place the file in your own website at `/static/carbon/theme.css` and Carbon's file will be overwritten by your file.
+
 Relevant Zola documentation:
 
 - [Customizing a theme](https://www.getzola.org/documentation/themes/extending-a-theme/)

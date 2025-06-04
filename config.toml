@@ -1,4 +1,4 @@
-base_url = "https://nik-rev.github.io/carbon/"
+base_url = "https://carbon.nikrev.com"
 build_search_index = false
 
 minify_html = true
@@ -16,9 +16,11 @@ insert_anchor_links = "heading"
 smart_punctuation = true
 
 [extra]
+show_footer = true
+footer_message = "Powered by [Zola](https://github.com/getzola/zola) and [nik-rev/carbon](https://github.com/nik-rev/carbon)"
 header_links = [
-  { name = "/home", link = "/carbon" },
-  { name = "/features", link = "/carbon/features" },
-  { name = "/blog", link = "/carbon/blog" },
-  { name = "/installation.md", link = "/carbon/installation" },
+  { name = "/home", link = "/" },
+  "/features",
+  "/blog",
+  { name = "/installation.md", link = "/installation" },
 ]

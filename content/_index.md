@@ -9,6 +9,10 @@ Carbon is a [Zola](https://github.com/getzola/zola) theme *inspired by simplicit
 - Responsive
 - Accessible
 - Fast
-- Expressive markdown features
+- [Expressive markdown features](/features/markdown/)
 - Consistent site design and feel
-- GitHub actions for deployment and automatic OpenGraph image generation, powered by [og-image-generator](git@github.com:nik-rev/og-image-generator.git)
+- [GitHub actions for deployment and automatic OpenGraph image generation](/features/open-graph)
+
+The theme itself is very modular, the idea being that it is solid base for your site but you are free to customize it to your own needs. Carbon makes heavy use of [tera blocks](https://www.getzola.org/documentation/themes/extending-a-theme/#overriding-a-block) to make this possible.
+
+To add the theme in your project, follow the steps in [`installation.md`](/installation).

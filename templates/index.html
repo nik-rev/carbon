@@ -36,13 +36,13 @@
       {% block carbon_css %}
         <link
           rel="stylesheet"
-          href="{{ get_url(path='carbon/index.css', cachebust=true) }}"
+          href="{{ get_url(path='css/index.css', cachebust=true) }}"
         />
       {% endblock %}
 
       {% block carbon_javascript %}
-        <script src="/carbon/code_blocks.js" type="text/javascript" defer></script>
-        <script src="/carbon/theme_toggle.js" type="text/javascript" defer></script>
+        <script src="/js/code_blocks.js" type="text/javascript" defer></script>
+        <script src="/js/theme_toggle.js" type="text/javascript" defer></script>
       {% endblock carbon_javascript %}
 
       {% if config.author %}
@@ -183,7 +183,7 @@
       {% if config.extra.show_footer | default(value=true) %}
         {% block footer %}
           <footer>
-            {{ config.extra.footer_message | default(value="Powered by [Zola](https://github.com/getzola/zola) and [nik-rev/carbon](https://github.com/nik-rev/carbon)") | markdown | safe }}
+            {{ config.extra.footer_message | markdown | safe }}
           </footer>
         {% endblock footer %}
       {% endif %}
