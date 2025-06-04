@@ -1,12 +1,22 @@
 {% extends "index.html" %}
 
-{% block head_variables %}
-  {% set title = section.title | default(value=config.title) %}
-  {% set description = section.description %}
+<!-- The section renders a collection of links to various other pages -->
 
+{% block title %}
+  {% set title = section.title | default(value=config.title) %}
+{% endblock title %}
+
+{% block description %}
+  {% set description = section.description %}
+{% endblock description %}
+
+{% block og_image_title %}
   {% set og_image_title = section.title %}
+{% endblock og_image_title %}
+
+{% block og_image_description %}
   {% set og_image_description = section.description %}
-{% endblock head_variables %}
+{% endblock og_image_description %}
 
 {% block heading %}
   {% set title = section.title | default(value=config.title) %}

@@ -1,128 +1,172 @@
 <!-- Entry point to every rendered page -->
 
 <!doctype html>
-<html lang="en" data-theme="dark">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<html
+  lang="{% block language %}en{% endblock language %}"
+  data-theme="{% block default_theme %}dark{% endblock default_theme %}"
+>
+  {% block head %}
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    {% set og_height = 675 %}
-    {% set og_width = 1280 %}
+      {% set og_height = 675 %}
+      {% set og_width = 1280 %}
 
-    {% block head_variables %}
-      {% set description = section.description | default(value=config.description) %}
-      {% set title = config.title %}
+      {% block description %}
+        {% set description = section.description | default(value=config.description) %}
+      {% endblock description %}
 
-      {% set og_image_title = config.title %}
-      {% set og_image_description = config.description %}
-    {% endblock head_variables %}
+      {% block title %}
+        {% set title = config.title %}
+      {% endblock title %}
 
-    <title>{{ title }}</title>
-    <link
-      rel="stylesheet"
-      href="{{ get_url(path='main.css', cachebust=true) }}"
-    />
-    {% if config.author %}
-      <meta name="author" content="{{ config.author }}" />
-    {% endif %}
+      {% block og_image_title %}
+        {% set og_image_title = config.title %}
+      {% endblock og_image_title %}
 
-    <!-- og-image-generator specific -->
-    {% if og_image_title %}
-      <meta property="og-image-generator" key="title" value="{{ og_image_title }}" />
-    {% endif %}
-    {% if og_image_description %}
-      <meta property="og-image-generator" key="description" value="{{ og_image_description }}" />
-    {% endif %}
-    {% set has_og_image = og_image_title or or_image_description %}
+      {% block og_image_description %}
+        {% set og_image_description = config.description %}
+      {% endblock og_image_description %}
 
-    <!-- SEO Tags -->
-    <meta property="og:title" content="{{ title }}" />
-    <meta property="og:description" content="{{ description }}" />
-    <meta itemprop="headline" content="{{ title }}" />
-    <meta name="description" content="{{ description }}" />
+      <title>
+        {{ title }}
+      </title>
 
-    {% if current_url %}
-      {% set url = current_url | safe %}
-      <meta property="og:url" content="{{ url }}" />
+      {% block carbon_css %}
+        <link
+          rel="stylesheet"
+          href="{{ get_url(path='carbon/index.css', cachebust=true) }}"
+        />
+      {% endblock %}
 
-      <!-- OG image -->
-      {% if has_og_image %}
-        <meta name="og:type" content="summary_large_image" />
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:title" content="{{ title }}" />
-        <meta property="og:image" content="{{ url ~ 'og.png' }}" >
-        <meta property="og:image:alt" content="{{ title }}" >
+      {% block carbon_javascript %}
+        <script src="/carbon/code_blocks.js" type="text/javascript" defer></script>
+        <script src="/carbon/theme_toggle.js" type="text/javascript" defer></script>
+      {% endblock carbon_javascript %}
 
-        <meta property="og:image:width" content="{{ og_width }}" />
-        <meta property="og:image:height" content="{{ og_height }}" />
-        <meta property="twitter:image:width" content="{{ og_width }}" />
-        <meta property="twitter:image:height" content="{{ og_height }}" />
+      {% if config.author %}
+        <meta name="author" content="{% block author %}{{ config.author }}{% endblock author %}" />
       {% endif %}
-    {% endif %}
 
-    <script src="/code_blocks.js" type="text/javascript" defer></script>
-    <script src="/theme_toggle.js" type="text/javascript" defer></script>
+      {% block og_image_generator %}
+        <!-- og-image-generator specific -->
+        {% if og_image_title %}
+          <meta property="og-image-generator" key="title" value="{{ og_image_title }}" />
+        {% endif %}
+        {% if og_image_description %}
+          <meta property="og-image-generator" key="description" value="{{ og_image_description }}" />
+        {% endif %}
+        {% set has_og_image = og_image_title or or_image_description %}
+      {% endblock og_image_generator %}
 
-    <!-- Allow adding custom elements to the <head> -->
-    {% block head %}
-    {% endblock head %}
-  </head>
+      <!-- SEO Tags -->
+      <meta property="og:title" content="{{ title }}" />
+      <meta property="og:description" content="{{ description }}" />
+      <meta itemprop="headline" content="{{ title }}" />
+      <meta name="description" content="{{ description }}" />
+
+      {% if current_url %}
+        {% set url = current_url | safe %}
+        <meta property="og:url" content="{{ url }}" />
+
+        <!-- OG image -->
+        {% if has_og_image %}
+          <meta name="og:type" content="summary_large_image" />
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:title" content="{{ title }}" />
+          <meta property="og:image" content="{{ url ~ 'og.png' }}" >
+          <meta property="og:image:alt" content="{{ title }}" >
+
+          <meta property="og:image:width" content="{{ og_width }}" />
+          <meta property="og:image:height" content="{{ og_height }}" />
+          <meta property="twitter:image:width" content="{{ og_width }}" />
+          <meta property="twitter:image:height" content="{{ og_height }}" />
+        {% endif %}
+      {% endif %}
+
+      <!-- Allow adding custom elements to the <head> -->
+      {% block extra_head %}
+      {% endblock extra_head %}
+    </head>
+  {% endblock head %}
   <body>
     <div id="site">
-      <header class="header">
+      {% block header %}
+        <header class="header">
 
-        <!-- Header -->
+          <!-- Header -->
     
-        <div class="header__heading">
-          <h1 class="header__heading__title">
-            {% block heading %}
-              {{ config.title }}
-            {% endblock %}
-          </h1>
-          <div class="header__heading__icon-container">
-            <button type="button" class="header__heading__theme-toggle">
-              <!-- A sun or moon icon gets inserted here with JavaScript -->
-            </button>
-            {% if config.generate_feeds %}
-              <button type="button" class="header__heading__rss" aria-label="RSS Feed" title="RSS Feed">
-                <a href="{{ config.base_url }}/{{ config.feed_filenames | first }}">
-                  <svg class="header__heading__rss__icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M119.9 336.1c-30.8 0-55.9 25.1-55.9 55.8 0 30.8 25.1 55.6 55.9 55.6 30.9 0 55.9-24.9 55.9-55.6 0-30.7-25-55.8-55.9-55.8z"></path><path d="M64 192v79.9c48 0 94.1 14.2 128 48.1 33.9 33.9 48 79.9 48 128h80c0-139.9-116-256-256-256z"></path><path d="M64 64v79.9c171 0 303.9 133 303.9 304.1H448C448 236.3 276 64 64 64z"></path></svg>
-                </a>
-              </button>
+          {% block header_heading %}
+            <div class="header__heading">
+              {% block heading_wrapper %}
+                <h1 class="header__heading__title">
+                  {% block heading %}
+                    {{ config.title }}
+                  {% endblock %}
+                </h1>
+              {% endblock heading_wrapper %}
+              <!-- Icons, after the title -->
+              {% block icons %}
+                <div class="header__heading__icon-container">
+                  <!-- Light / dark mode toggle -->
+                  {% block theme_toggle %}
+                    <button type="button" class="header__heading__theme-toggle">
+                      <!-- A sun or moon icon gets inserted here with JavaScript -->
+                    </button>
+                  {% endblock theme_toggle %}
+
+                  {% block rss_feed %}
+                    {% if config.generate_feeds %}
+                      <button type="button" class="header__heading__rss" aria-label="RSS Feed" title="RSS Feed">
+                        <a href="{{ config.base_url }}/{{ config.feed_filenames | first }}">
+                          <svg class="header__heading__rss__icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M119.9 336.1c-30.8 0-55.9 25.1-55.9 55.8 0 30.8 25.1 55.6 55.9 55.6 30.9 0 55.9-24.9 55.9-55.6 0-30.7-25-55.8-55.9-55.8z"></path><path d="M64 192v79.9c48 0 94.1 14.2 128 48.1 33.9 33.9 48 79.9 48 128h80c0-139.9-116-256-256-256z"></path><path d="M64 64v79.9c171 0 303.9 133 303.9 304.1H448C448 236.3 276 64 64 64z"></path></svg>
+                        </a>
+                      </button>
+                    {% endif %}
+                  {% endblock rss_feed %}
+
+                  <!-- Allow adding more icons -->
+                  {% block extra_icons %}
+                  {% endblock extra_icons %}
+                </div>
+              {% endblock icons %}
+            </div>
+          {% endblock heading %}
+
+          <!-- Navigation -->
+
+          {% block nav_bar %}
+            {% if config.extra.header_links %}
+              <nav>
+                <ul class="header__links">
+                  {% for link in config.extra.header_links %}
+                    {% set current_path = current_path | default(value="ERROR") %}
+                    {% set link = link.link | default(value=link) %}
+                    {% set name = link.name | default(value=link) %}
+                    <!-- `current_path` contains a '/' at the end, but `link` may not -->
+                    {% set is_active = link | trim_end_matches(pat='/') == current_path | trim_end_matches(pat='/') %}
+                    <li>
+                      <a
+                        href="{{ link }}"
+                        class="
+                          header__links__link
+
+                          {% if is_active %}
+                            active
+                          {% endif %}
+                        "
+                      >
+                        {{ name }}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </nav>
             {% endif %}
-          </div>
-        </div>
-
-        <!-- Navigation -->
-
-        {% if config.extra.header_links %}
-          <nav>
-            <ul class="header__links">
-              {% for link in config.extra.header_links %}
-                {% set current_path = current_path | default(value="ERROR") %}
-                {% set link = link.link | default(value=link) %}
-                {% set name = link.name | default(value=link) %}
-                <!-- `current_path` contains a '/' at the end, but `link` may not -->
-                {% set is_active = link | trim_end_matches(pat='/') == current_path | trim_end_matches(pat='/') %}
-                <li>
-                  <a
-                    href="{{ link }}"
-                    class="
-                      header__links__link
-
-                      {% if is_active %}
-                        active
-                      {% endif %}
-                    "
-                  >
-                    {{ name }}
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
-          </nav>
-        {% endif %}
-      </header>
+          {% endblock nav_bar %}
+        </header>
+      {% endblock header_heading %}
 
       <!-- Actual content of the page -->
 
@@ -137,9 +181,11 @@
       <!-- Footer -->
 
       {% if config.extra.show_footer | default(value=true) %}
-        <footer>
-          {{ config.extra.footer_message | default(value="Powered by [Zola](https://github.com/getzola/zola) and [nik-rev/carbon](https://github.com/nik-rev/carbon)") | markdown | safe }}
-        </footer>
+        {% block footer %}
+          <footer>
+            {{ config.extra.footer_message | default(value="Powered by [Zola](https://github.com/getzola/zola) and [nik-rev/carbon](https://github.com/nik-rev/carbon)") | markdown | safe }}
+          </footer>
+        {% endblock footer %}
       {% endif %}
     </div>
   </body>

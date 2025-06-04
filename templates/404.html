@@ -2,13 +2,21 @@
 
 <!-- This page gets displayed when a HTML page couldn't be found for the given URL -->
 
-{% block head_variables %}
+{% block title %}
   {% set title = config.title ~ " | Page Not Found" %}
-  {% set description = config.title ~ " | Page Not Found" %}
+{% endblock title %}
 
+{% block description %}
+  {% set description = config.title ~ " | Page Not Found" %}
+{% endblock description %}
+
+{% block og_image_title %}
   {% set og_image_title = config.title %}
+{% endblock og_image_title %}
+
+{% block og_image_description %}
   {% set og_image_description = "Page Not Found (404)" %}
-{% endblock head_variables %}
+{% endblock og_image_description %}
 
 {% block content %}
   <main>

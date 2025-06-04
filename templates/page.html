@@ -1,6 +1,8 @@
 {% extends "index.html" %}
 
-{% block head_variables %}
+<!-- This page is where the actual markdown gets rendered -->
+
+{% block title %}
   <!-- The page is not part of any collection, it is a standalone page -->
   {% set is_standalone = page.ancestors | length == 1 %}
 
@@ -17,12 +19,19 @@
       {% set title = base_title %}
     {% endif %}
   {% endif %}
+{% endblock title %}
 
+{% block description %}
   {% set description = page.description | default(value=config.description) %}
+{% endblock description %}
 
+{% block og_image_title %}
   {% set og_image_title = page.title %}
+{% endblock og_image_title %}
+
+{% block og_image_description %}
   {% set og_image_description = page.description %}
-{% endblock head_variables %}
+{% endblock og_image_description %}
 
 {% block heading %}
   <!-- The page is not part of any collection, it is a standalone page -->
