@@ -1,12 +1,9 @@
 name = "Carbon"
 description = "A Zola theme inspired by simplicity"
-# An optional tags to allow quick search
-tags = []
+tags = ["minimal", "responsive", "seo", "blog", "designed"]
 license = "MIT OR Apache-2.0"
 homepage = "https://github.com/nik-rev/carbon"
-# The minimum version of Zola required
-min_version = "0.20.0"
-# An optional live demo URL
+min_version = "0.19.0"
 demo = "https://nik-rev.github.io/carbon/"
 
 [extra]
