@@ -17,8 +17,7 @@ insert_anchor_links = "heading"
 smart_punctuation = true
 
 [extra]
-show_footer = true
-footer_message = "Powered by [Zola](https://github.com/getzola/zola) and [nik-rev/carbon](https://github.com/nik-rev/carbon)"
+footer = "Powered by [Zola](https://github.com/getzola/zola) and [nik-rev/carbon](https://github.com/nik-rev/carbon)"
 header_links = [
   { name = "/home", link = "/" },
   "/features",

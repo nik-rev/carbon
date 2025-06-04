@@ -5,7 +5,7 @@ Carbon is a [Zola](https://github.com/getzola/zola) theme *inspired by simplicit
 
 - [SEO Friendly](/features/ci/#seo)
 - Light and Dark mode toggle
-- [Customizable](/features/extending)
+- Fully [extensible](/features/extending) and [configurable](/features/config)
 - Responsive
 - Accessible
 - Fast

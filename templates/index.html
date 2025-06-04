@@ -203,10 +203,10 @@
 
       <!-- Footer -->
 
-      {% if config.extra.show_footer | default(value=true) %}
+      {% if config.extra.footer %}
         {% block footer %}
           <footer>
-            {{ config.extra.footer_message | markdown | safe }}
+            {{ config.extra.footer | markdown | safe }}
           </footer>
         {% endblock footer %}
       {% endif %}
