@@ -10,4 +10,4 @@ A zola theme inspired by simplicity
 - Responsive
 - Accessible
 
-[Learn more](nik-rev.github.io/carbon)
+[Learn more](https://nik-rev.github.io/carbon)
