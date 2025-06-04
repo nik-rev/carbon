@@ -1,11 +1,12 @@
 # Carbon
 
+![Carbon theme](screenshot.png)
+
 A zola theme inspired by simplicity
 
 ## Features
 
 - SEO Friendly
-- Light and Dark mode toggle
 - Customizable
 - Responsive
 - Accessible
