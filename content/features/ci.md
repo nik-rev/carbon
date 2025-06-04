@@ -35,8 +35,8 @@ jobs:
           export PATH="$HOME/.cargo/bin:$PATH"
           chmod +x $HOME/.cargo/bin/og-image-generator || true
 
-          sudo chmod -R u+w .public
-          cd .public
+          sudo chmod -R u+w public
+          cd public
 
           sudo /home/runner/.cargo/bin/og-image-generator all --font fonts/Literata/Literata.ttf open_graph_template.html .
 
