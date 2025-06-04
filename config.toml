@@ -7,6 +7,7 @@ default_language = "en"
 author = "Nik Revenco"
 title = "Carbon"
 description = "A minimalistic Zola theme"
+generate_feeds = true
 
 [markdown]
 highlight_code = true
