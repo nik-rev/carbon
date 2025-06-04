@@ -156,25 +156,30 @@ The following image will be available at url `/content/blog/recipe_list/og.png`:
 
 ![recipes preview](/features/recipes.png)
 
+## SEO
+
 All of the appropriate meta tags are already setup for you.
 
 ```html
-{% set url = current_url | safe %}
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="author" content="{{ config.author }}" />
+<meta property="og-image-generator" key="title" value="{{ og_image_title }}" />
+<meta property="og-image-generator" key="description" value="{{ og_image_description }}" />
+<meta property="og:title" content="{{ title }}" />
+<meta property="og:description" content="{{ description }}" />
+<meta itemprop="headline" content="{{ title }}" />
+<meta name="description" content="{{ description }}" />
 <meta property="og:url" content="{{ url }}" />
-
-<!-- OG image -->
-{% if has_og_image %}
-  <meta name="og:type" content="summary_large_image" />
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:title" content="{{ title }}" />
-  <meta property="og:image" content="{{ url ~ 'og.png' }}" >
-  <meta property="og:image:alt" content="{{ title }}" >
-
-  <meta property="og:image:width" content="{{ og_width }}" />
-  <meta property="og:image:height" content="{{ og_height }}" />
-  <meta property="twitter:image:width" content="{{ og_width }}" />
-  <meta property="twitter:image:height" content="{{ og_height }}" />
-{% endif %}
+<meta name="og:type" content="summary_large_image" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="{{ title }}" />
+<meta property="og:image" content="{{ url ~ 'og.png' }}" >
+<meta property="og:image:alt" content="{{ title }}" >
+<meta property="og:image:width" content="{{ og_width }}" />
+<meta property="og:image:height" content="{{ og_height }}" />
+<meta property="twitter:image:width" content="{{ og_width }}" />
+<meta property="twitter:image:height" content="{{ og_height }}" />
 ```
 
-You might want to customize the Open Graph image, in which case, creating `/static/open_graph_template.html` will overwrite Carbon's default `open_graph_template.html`.
+You might want to customize the Open Graph image, in which case, creating `/static/open_graph_template.html` will overwrite Carbon's default `open_graph_template.html`. This default is configured in the GitHub actions shown above.
