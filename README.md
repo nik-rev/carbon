@@ -1,6 +1,6 @@
 # Carbon
 
-A zola theme inspired by simplicity
+A zola theme inspired by simplicity.
 
 ![Carbon theme](screenshot.png)
 
